@@ -44,7 +44,7 @@ public class Person3 {
 	private String calc(String input) {
 	  //Person 3 put your implementation here
 		String string1 = "";
-		for (int i = input.length - 1; i >= 0; i--) {
+		for (int i = input.length() - 1; i >= 0; i--) {
 			string1 = string1 + input.charAt(i);
 		}
 	  	return string1;
