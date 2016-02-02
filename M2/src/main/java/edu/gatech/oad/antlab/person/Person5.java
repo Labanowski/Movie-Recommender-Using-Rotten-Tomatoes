@@ -33,7 +33,7 @@ public class Person5 {
 	  //Person 5 put your implementation here
         StringBuilder strb = new StringBuilder(input.length());
         strb.append(input.substring(2,input.length()));
-        strb.append(input.substring(0,1));
+        strb.append(input.substring(0,2));
         return strb.toString();
 	}
 	
