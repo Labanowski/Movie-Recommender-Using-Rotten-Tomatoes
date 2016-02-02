@@ -30,8 +30,8 @@ public class Person1 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  Stringbuilder strb = new Stringbuilder(input.length);
-      strb.append(input.substring(2,input.length));
+	  StringBuilder strb = new StringBuilder(input.length());
+      strb.append(input.substring(2,input.length()));
       strb.append(input.substring(0,1));
       return strb.toString();
 	}
