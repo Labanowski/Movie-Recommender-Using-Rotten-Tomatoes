@@ -20,6 +20,7 @@
 *.classpath
 *.project
 *.jar
+!resources.jar
 *.log
 .idea/misc.xml
 app/app.iml
