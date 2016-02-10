@@ -1,4 +1,4 @@
-package com.example.alexlabanowski.movierecommenderusingrottentomatoes;
+package team56.mrurt;
 
 import org.junit.Test;
 
