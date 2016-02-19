@@ -1,4 +1,5 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
+
 
 /**
  * Created by Wyckoff on 2/13/2016.

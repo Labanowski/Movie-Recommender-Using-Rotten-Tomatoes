@@ -1,4 +1,5 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.register);
         //mUserStorage = new UserStorage();
 
         mEmailView = (EditText) findViewById(R.id.eEmailView);
@@ -38,6 +39,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the username in the editText
+     *
      * @return username
      */
     public String getUsernameString() {
@@ -46,14 +48,16 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the password in the editText
+     *
      * @return password
      */
     public String getPasswordString() {
-        return  mPasswordView.getText().toString();
+        return mPasswordView.getText().toString();
     }
 
     /**
      * Returns the name in the editText
+     *
      * @return name
      */
     public String getNameString() {
@@ -62,6 +66,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the major in the editText
+     *
      * @return major
      */
     public String getMajorString() {
@@ -70,18 +75,20 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the email in the editText
+     *
      * @return email
      */
     public String getEmailString() {
-        return  mEmailView.getText().toString();
+        return mEmailView.getText().toString();
     }
 
     /**
      * Registers the new user into the map
+     *
      * @param v The View
      */
     public void register(View v) {
-        HomePage.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
+        Welcome.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();

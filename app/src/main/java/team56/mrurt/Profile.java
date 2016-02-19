@@ -1,4 +1,4 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,14 +15,14 @@ public class Profile extends AppCompatActivity {
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
     String currentLoggedIn = Login.currentLoggedInUser;
-    User user = HomePage.mUserStorage.findUserByName(currentLoggedIn);
+    User user = Welcome.mUserStorage.findUserByName(currentLoggedIn);
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.profile);
 
         mEmailView = (EditText) findViewById(R.id.userEmail);
         mUsernameView = (EditText) findViewById(R.id.userUsername);
@@ -50,8 +50,8 @@ public class Profile extends AppCompatActivity {
         String p1 = mPasswordView.getText().toString();
 
 
-        HomePage.mUserStorage.remove(currentLoggedIn);
-        HomePage.mUserStorage.addUser(e1, u1, n1, m1, p1);
+        Welcome.mUserStorage.remove(currentLoggedIn);
+        Welcome.mUserStorage.addUser(e1, u1, n1, m1, p1);
 
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);
