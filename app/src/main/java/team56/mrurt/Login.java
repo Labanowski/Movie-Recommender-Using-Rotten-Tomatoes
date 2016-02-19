@@ -43,9 +43,7 @@ public class Login extends AppCompatActivity {
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-
-
-        if(HomePage.mUserStorage.handleLoginRequest(username, password)){
+        if(Welcome.mUserStorage.handleLoginRequest(username, password)){
             Intent intent = new Intent(this, Profile.class);
             startActivity(intent);
             finish();

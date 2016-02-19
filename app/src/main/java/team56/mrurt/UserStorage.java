@@ -1,4 +1,4 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -26,8 +26,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        //mUserStorage = new UserStorage();
+        setContentView(R.layout.register);
 
         mEmailView = (EditText) findViewById(R.id.eEmailView);
         mUsernameView = (EditText) findViewById(R.id.eUsernameView);
@@ -49,7 +48,7 @@ public class Register extends AppCompatActivity {
      * @return password
      */
     public String getPasswordString() {
-        return  mPasswordView.getText().toString();
+        return mPasswordView.getText().toString();
     }
 
     /**
@@ -70,18 +69,20 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the email in the editText
+     *
      * @return email
      */
     public String getEmailString() {
-        return  mEmailView.getText().toString();
+        return mEmailView.getText().toString();
     }
 
     /**
      * Registers the new user into the map
+     *
      * @param v The View
      */
     public void register(View v) {
-        HomePage.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
+        Welcome.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
