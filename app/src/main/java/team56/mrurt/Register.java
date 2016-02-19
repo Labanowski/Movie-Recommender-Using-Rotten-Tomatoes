@@ -1,4 +1,5 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
+        //mUserStorage = new UserStorage();
 
         mEmailView = (EditText) findViewById(R.id.eEmailView);
         mUsernameView = (EditText) findViewById(R.id.eUsernameView);
@@ -37,6 +39,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the username in the editText
+     *
      * @return username
      */
     public String getUsernameString() {
@@ -45,6 +48,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the password in the editText
+     *
      * @return password
      */
     public String getPasswordString() {
@@ -53,6 +57,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the name in the editText
+     *
      * @return name
      */
     public String getNameString() {
@@ -61,6 +66,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Returns the major in the editText
+     *
      * @return major
      */
     public String getMajorString() {

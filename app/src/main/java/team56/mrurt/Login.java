@@ -1,6 +1,7 @@
-package mrurt.team56.movierecommender;
+package team56.mrurt;
 
 import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,19 +10,18 @@ import android.widget.Toast;
 import android.view.View;
 
 /**
- * Created by connorwyckoff
+ * Created by alexlabanowski on 2/10/16.
  */
 public class Login extends AppCompatActivity {
 
     private EditText mUsernameView;
     private EditText mPasswordView;
-
     public static String currentLoggedInUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
 
         mUsernameView = (EditText) findViewById(R.id.login_username);
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -42,6 +42,8 @@ public class Login extends AppCompatActivity {
     public void login(View v){
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
+
+
 
         if(Welcome.mUserStorage.handleLoginRequest(username, password)){
             Intent intent = new Intent(this, Profile.class);

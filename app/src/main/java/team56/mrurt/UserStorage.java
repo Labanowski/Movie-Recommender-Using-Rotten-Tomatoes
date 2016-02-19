@@ -20,7 +20,7 @@ public class UserStorage {
 
     /**
      * Adds a user to the map
-     * @param email email of new user 
+     * @param email email of new user
      * @param username username of new user
      * @param name name of new user
      * @param major major of new user
