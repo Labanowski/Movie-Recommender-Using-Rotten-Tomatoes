@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
 
 
 
-        if(Homepage.mUserStorage.handleLoginRequest(username, password)){
+        if(Welcome.mUserStorage.handleLoginRequest(username, password)){
             Intent intent = new Intent(this, Profile.class);
             startActivity(intent);
             finish();

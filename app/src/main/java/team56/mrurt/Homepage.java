@@ -11,16 +11,10 @@ import android.view.View;
  */
 public class Homepage extends AppCompatActivity {
 
-    public static UserStorage mUserStorage;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
-
-        mUserStorage = new UserStorage();
-
     }
     /**
      * returns the user to the welcome screen after logging them out
@@ -30,13 +24,5 @@ public class Homepage extends AppCompatActivity {
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);
         finish();
-    }
-
-    /**
-     * Returns the UserStorage
-     * @return mUserStorage
-     */
-    public UserStorage getUserStorage() {
-        return mUserStorage;
     }
 }

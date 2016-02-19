@@ -15,7 +15,7 @@ public class Profile extends AppCompatActivity {
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
     String currentLoggedIn = Login.currentLoggedInUser;
-    User user = Homepage.mUserStorage.findUserByName(currentLoggedIn);
+    User user = Welcome.mUserStorage.findUserByName(currentLoggedIn);
 
 
 
@@ -50,8 +50,8 @@ public class Profile extends AppCompatActivity {
         String p1 = mPasswordView.getText().toString();
 
 
-        Homepage.mUserStorage.remove(currentLoggedIn);
-        Homepage.mUserStorage.addUser(e1, u1, n1, m1, p1);
+        Welcome.mUserStorage.remove(currentLoggedIn);
+        Welcome.mUserStorage.addUser(e1, u1, n1, m1, p1);
 
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);

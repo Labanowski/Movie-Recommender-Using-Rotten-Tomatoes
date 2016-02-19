@@ -88,7 +88,7 @@ public class Register extends AppCompatActivity {
      * @param v The View
      */
     public void register(View v) {
-        Homepage.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
+        Welcome.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
         finish();
