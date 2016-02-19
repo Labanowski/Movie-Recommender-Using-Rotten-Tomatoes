@@ -3,12 +3,13 @@ package team56.mrurt;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
  * HomePage
  */
-public class Homepage extends Activity {
+public class Homepage extends AppCompatActivity {
 
     public static UserStorage mUserStorage;
 

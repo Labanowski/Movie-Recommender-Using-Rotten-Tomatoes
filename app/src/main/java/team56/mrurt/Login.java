@@ -4,6 +4,7 @@ import android.content.Context;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.view.View;
 /**
  * Created by alexlabanowski on 2/10/16.
  */
-public class Login extends Activity {
+public class Login extends AppCompatActivity {
 
     private EditText mUsernameView;
     private EditText mPasswordView;
