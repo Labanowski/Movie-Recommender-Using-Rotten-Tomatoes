@@ -8,8 +8,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 
-import javax.xml.datatype.Duration;
-
 /**
  * Created by alexlabanowski on 2/10/16.
  */
@@ -17,6 +15,7 @@ public class Login extends Activity {
 
     private EditText mUsernameView;
     private EditText mPasswordView;
+    public static String currentLoggedInUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +26,26 @@ public class Login extends Activity {
         mPasswordView = (EditText) findViewById(R.id.password);
     }
 
+    public EditText getUsernameView() {
+        return mUsernameView;
+    }
+
+    public EditText getPassWordView() {
+        return  mPasswordView;
+    }
+
+    /**
+     * Logins in the user if they input registered username and password
+     * @param v The View
+     */
     public void login(View v){
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-        if(username.equals("user") && password.equals("pass")){
-            Intent intent = new Intent(this, Homepage.class);
+
+
+        if(Homepage.mUserStorage.handleLoginRequest(username, password)){
+            Intent intent = new Intent(this, Profile.class);
             startActivity(intent);
             finish();
         } else {
@@ -41,5 +54,6 @@ public class Login extends Activity {
             Toast t = Toast.makeText(context, "Login failure!", duration);
             t.show();
         }
+        currentLoggedInUser = username;
     }
 }
