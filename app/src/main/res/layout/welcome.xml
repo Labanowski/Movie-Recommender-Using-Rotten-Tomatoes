@@ -34,7 +34,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/app_name"
         android:id="@+id/textView"
-        android:layout_marginTop="57sp"
         android:textSize="28sp"
         android:singleLine="true"
         android:layout_alignParentTop="true"
