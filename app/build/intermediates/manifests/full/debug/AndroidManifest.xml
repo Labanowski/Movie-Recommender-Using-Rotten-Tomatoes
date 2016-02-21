@@ -38,6 +38,10 @@
             android:name="mrurt.team56.movierecommender.Profile"
             android:label="@string/title_activity_profile" >
         </activity>
+        <activity
+            android:name="mrurt.team56.movierecommender.SearchMovie"
+            android:label="@string/title_activity_search_movie" >
+        </activity>
     </application>
 
 </manifest>

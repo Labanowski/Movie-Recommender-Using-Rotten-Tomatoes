@@ -32,6 +32,10 @@
             android:name=".Profile"
             android:label="@string/title_activity_profile" >
         </activity>
+        <activity
+            android:name=".SearchMovie"
+            android:label="@string/title_activity_search_movie" >
+        </activity>
     </application>
 
 </manifest>

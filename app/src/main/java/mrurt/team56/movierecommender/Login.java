@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
 
 
         if(HomePage.mUserStorage.handleLoginRequest(username, password)){
-            Intent intent = new Intent(this, Profile.class);
+            Intent intent = new Intent(this, HomePage.class);
             startActivity(intent);
             finish();
         } else {

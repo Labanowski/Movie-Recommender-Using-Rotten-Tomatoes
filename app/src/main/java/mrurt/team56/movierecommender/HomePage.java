@@ -22,6 +22,18 @@ public class HomePage extends AppCompatActivity {
 
     }
 
+    public void searchMovie(View view) {
+        Intent intent = new Intent(this, SearchMovie.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void viewProfile(View view) {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void logout(View view){
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);

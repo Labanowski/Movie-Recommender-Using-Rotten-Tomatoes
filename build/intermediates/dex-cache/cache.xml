@@ -2,32 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\kuiski\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-4b6662a1e1b3d66f4f885737d3075f53963219db.jar" />
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\classes-e34a72b78c404191a0cca0a1c90eca24b2505dd8.jar" />
     </item>
     <item
-        jar="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-f4a6b01b269dc80323bbf896ec2fe5cfbe728f28.jar" />
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\classes-91a2ddfd6656509eaf5ca768b9f3bf89fe33cfac.jar" />
     </item>
     <item
-        jar="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\pre-dexed\debug\classes-0015982b7c404407679fe0aa4fced9f46082fe3b.jar" />
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-5262f5a66d093dd54424166363850fbe9b70ad52.jar" />
     </item>
     <item
-        jar="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\kuiski\Documents\GitHub\app\build\intermediates\pre-dexed\debug\classes-39348ee70d830558c3af14ece91da41efdf369a8.jar" />
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\classes-9b9588cf6149d8d67865883facecb2b34fb8e643.jar" />
+    </item>
+    <item
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\classes-109310ab50274f4eb816743d74f58c4cb6f081c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.volley\volley\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1a8c16def239831d40d17c38884fd69ae1609cb6">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\classes-13aef2ee44500aebc69e58a26884090b220da593.jar" />
+    </item>
+    <item
+        jar="C:\Users\kuiski\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\kuiski\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-5df54dd2db2c3f993197aa6b60fceb9c8cdba7cc.jar" />
     </item>
 
 </items>
