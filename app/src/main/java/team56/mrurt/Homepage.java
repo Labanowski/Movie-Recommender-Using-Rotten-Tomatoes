@@ -15,7 +15,7 @@ import android.view.Window;
 /**
  * HomePage
  */
-public class Homepage extends menu_activity {
+public class Homepage extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,9 @@ public class Homepage extends menu_activity {
                 return true;
             case R.id.logout_id:
                 logout(item);
+                return true;
+            case R.id.search_id:
+                searchMovie(item);
                 return true;
             case R.id.newDVD_id:
                 logout(item);

@@ -7,7 +7,7 @@ import android.view.MenuItem;
 /**
  * Created by Haruka on 2016/02/21.
  */
-public class menu_activity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     public void logout(MenuItem item){
         Intent intent = new Intent(this, Welcome.class);
@@ -17,6 +17,12 @@ public class menu_activity extends AppCompatActivity {
 
     public void viewProfile(MenuItem item){
         Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void searchMovie(MenuItem item) {
+        Intent intent = new Intent(this, SearchMovie.class);
         startActivity(intent);
         finish();
     }

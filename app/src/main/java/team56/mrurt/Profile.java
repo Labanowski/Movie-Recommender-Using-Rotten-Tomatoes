@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * The user's profile page
  */
-public class Profile extends menu_activity {
+public class Profile extends MenuActivity {
 
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
