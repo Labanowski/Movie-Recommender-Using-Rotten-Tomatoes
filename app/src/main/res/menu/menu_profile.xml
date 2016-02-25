@@ -16,16 +16,10 @@
         android:title="Profile"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/newDVD_id"
-        android:title="New On DVD"
+    <item android:id="@+id/search_id"
+        android:title="Search"
         app:showAsAction="ifRoom"
         android:orderInCategory="3"
         android:menuCategory="secondary"/>
-
-    <item
-        android:id="@+id/newRelease_id"
-        android:orderInCategory="4"
-        android:title="New Releases"
-        app:showAsAction="ifRoom"/>
 
 </menu>

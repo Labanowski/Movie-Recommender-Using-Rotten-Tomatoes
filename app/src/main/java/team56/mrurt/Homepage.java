@@ -42,12 +42,6 @@ public class Homepage extends MenuActivity {
             case R.id.search_id:
                 searchMovie(item);
                 return true;
-            case R.id.newDVD_id:
-                logout(item);
-                return true;
-            case R.id.newRelease_id:
-                logout(item);
-                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

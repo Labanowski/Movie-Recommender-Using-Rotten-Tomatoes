@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void searchMovie(MenuItem item) {
-        Intent intent = new Intent(this, SearchMovie.class);
+        Intent intent = new Intent(this, SearchMovieActivity.class);
         startActivity(intent);
         finish();
     }

@@ -22,16 +22,4 @@
         android:orderInCategory="3"
         android:menuCategory="secondary"/>
 
-    <item android:id="@+id/newDVD_id"
-        android:title="New On DVD"
-        app:showAsAction="ifRoom"
-        android:orderInCategory="4"
-        android:menuCategory="secondary"/>
-
-    <item
-        android:id="@+id/newRelease_id"
-        android:orderInCategory="5"
-        android:title="New Releases"
-        app:showAsAction="ifRoom"/>
-
 </menu>

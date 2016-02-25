@@ -45,6 +45,7 @@ public class Profile extends MenuActivity {
         return true;
     }
 
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -54,11 +55,8 @@ public class Profile extends MenuActivity {
             case R.id.logout_id:
                 logout(item);
                 return true;
-            case R.id.newDVD_id:
-                logout(item);
-                return true;
-            case R.id.newRelease_id:
-                logout(item);
+            case R.id.search_id:
+                searchMovie(item);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
