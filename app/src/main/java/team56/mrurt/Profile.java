@@ -37,6 +37,14 @@ public class Profile extends AppCompatActivity {
         mPasswordView.setText(user.getPassword(), TextView.BufferType.EDITABLE);
     }
 
+    @Override
+    public void onBackPressed() {
+        //Go back to HomePage instead logging out
+        Intent homeIntent = new Intent(Profile.this, Homepage.class);
+        startActivity(homeIntent);
+        finish();
+    }
+
     /**
      * Logs out the user, if any changes have been made to the profile, the old user
      * data is removed and the new data is added
