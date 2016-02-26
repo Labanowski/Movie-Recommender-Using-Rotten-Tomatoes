@@ -24,6 +24,15 @@ import java.util.List;
 /**
  * Created by Haruka on 2016/02/24.
  */
+
+/**
+ * An activity representing a list of Movies. This activity
+ * has different presentations for handset and tablet-size devices. On
+ * handsets, the activity presents a list of items, which when touched,
+ * lead to a {@link MovieDetailActivity} representing
+ * item details. On tablets, the activity presents the list of items and
+ * item details side-by-side using two vertical panes.
+ */
 public class MovieListActivity extends AppCompatActivity {
 
     /**
@@ -46,12 +55,6 @@ public class MovieListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        // Show the Up button in the action bar.
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(false);
-        }
-
         View recyclerView = findViewById(R.id.movie_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
@@ -64,6 +67,8 @@ public class MovieListActivity extends AppCompatActivity {
             mTwoPane = true;
         }
 
+        //Here we extract the objects out of the intent
+        //Note that to pass them, they have to be serializable
         movies = (List<Movie>) getIntent().getSerializableExtra("movies");
         for (Movie s : movies) {
             Movies.addItem(s);
@@ -79,18 +84,6 @@ public class MovieListActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            // This ID represents the Home or Up button. In the case of this
-            // activity, the Up button is not shown. The back button is used to go up one level.
-            //
-            NavUtils.navigateUpFromSameTask(this);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     /**
      * Sets up RecyclerView scrolling list.

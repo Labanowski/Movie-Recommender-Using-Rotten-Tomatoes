@@ -3,8 +3,6 @@ package team56.mrurt;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,7 +10,7 @@ import android.widget.TextView;
 /**
  * The user's profile page
  */
-public class Profile extends MenuActivity {
+public class Profile extends AppCompatActivity {
 
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
@@ -39,36 +37,12 @@ public class Profile extends MenuActivity {
         mPasswordView.setText(user.getPassword(), TextView.BufferType.EDITABLE);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_homepage, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.profile_id:
-                viewProfile(item);
-                return true;
-            case R.id.logout_id:
-                logout(item);
-                return true;
-            case R.id.search_id:
-                searchMovie(item);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     /**
      * Logs out the user, if any changes have been made to the profile, the old user
      * data is removed and the new data is added
-     * @param item The View
+     * @param view The View
      */
-    public void logoutAndSave(MenuItem item){
+    public void logout(View view){
         String e1 = mEmailView.getText().toString();
         String u1 = mUsernameView.getText().toString();
         String n1 = mNameView.getText().toString();

@@ -21,8 +21,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import team56.mrurt.dummy.Movie;
+import team56.mrurt.dummy.Movies;
 
-
+/**
+ * This is the Search Movie Page
+ * Here you can search by tile, new Releases and new on DVD
+ */
 public class SearchMovieActivity extends AppCompatActivity {
     /** this is our volley queue for holding our REST requests.  Volley will create the necessary threading to
      * handle the requests for us in the background.
@@ -72,6 +76,14 @@ public class SearchMovieActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        //Go back to HomePage instead logging out
+        Intent homeIntent = new Intent(SearchMovieActivity.this, Homepage.class);
+        startActivity(homeIntent);
+        finish();
+    }
+
+    @Override
     public boolean onSearchRequested() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=yedukp76ffytfuy24zsqk7f5";
         String query = MovieSearchView.getQuery().toString().replace(" ", "+");
@@ -92,9 +104,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         assert array != null;
-                        //From that object, we extract the array of actual data labeled result
-                        // (NOT IN ROTTEN TOMATOES)
-                        //JSONArray array = obj1.optJSONArray("result");
+
                         ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
 
@@ -131,7 +141,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     }
 
     /**
-     * Gets recent releases from RottenTomatoes REST API and displays them.
+     * Gets recent releases from RottenTomatoes API and displays them.
      */
     public void getRecentReleases() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=yedukp76ffytfuy24zsqk7f5";
@@ -168,7 +178,7 @@ public class SearchMovieActivity extends AppCompatActivity {
 
 
                             } catch (JSONException e) {
-                                Log.d("VolleyApp", "Failed to get JSON object");
+                                Log.d("MovieApp", "Failed to get JSON object");
                                 e.printStackTrace();
                             }
                         }
@@ -187,7 +197,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     }
 
     /**
-     * Gets recent DVDs from RottenTomatoes REST API and displays.
+     * Gets recent DVDs from RottenTomatoes API and displays.
      */
     public void getRecentDVDs() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?apikey=yedukp76ffytfuy24zsqk7f5";
@@ -224,7 +234,7 @@ public class SearchMovieActivity extends AppCompatActivity {
 
 
                             } catch (JSONException e) {
-                                Log.d("VolleyApp", "Failed to get JSON object");
+                                Log.d("MovieApp", "Failed to get JSON object");
                                 e.printStackTrace();
                             }
                         }
@@ -236,14 +246,18 @@ public class SearchMovieActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         response = "JSon Request Failed!!";
-                        //show error on phone
-                        //TextView view = (TextView) findViewById(R.id.textView2);
-                        //view.setText(response);
                     }
                 });
         //this actually queues up the async response with Volley
         queue.add(jsObjRequest);
     }
+
+    /**
+     * This method changes to our new list view of the movies, but we have to pass the
+     * moviearray into the intent so the new screen gets the data.
+     *
+     * @param movies the list of movie objects we created from the JSon response
+     */
     public void changeView(ArrayList<Movie> movies) {
         Intent viewResultsIntent = new Intent(this, MovieListActivity.class);
         viewResultsIntent.putExtra("movies", movies);
