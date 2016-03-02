@@ -3,7 +3,8 @@ import java.io.Serializable;
 
 
 public class Movie implements Serializable {
-    String title, year, synopsis;
+    String title, year, synopsis, criticsRating;
+    int userRating;
 
     /**
      * Sets Movie title.
@@ -27,6 +28,21 @@ public class Movie implements Serializable {
      */
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
+    }
+
+    /**
+     * Sets critics rating
+     * @param userRating is critics rating
+     */
+    public void setUserRating(int userRating) {
+        this.userRating = userRating;
+    }
+    /**
+     * Sets critics rating
+     * @param criticsRating is critics rating
+     */
+    public void setCriticsRating(String criticsRating) {
+        this.criticsRating = criticsRating;
     }
 
     /**
@@ -54,10 +70,27 @@ public class Movie implements Serializable {
     }
 
     /**
+     * Gets critics rating
+     * @return the rating.
+     */
+    public String getCriticsRating() {
+        return this.criticsRating;
+    }
+
+    /**
+     * Gets critics rating
+     * @return the rating.
+     */
+    public int getUserRating() {
+        return this.userRating;
+    }
+
+
+    /**
      * Gets movie title and year.
      * @return a string that contains title and year of movie.
      */
     public String toString() {
-        return (getTitle() + " (" + getYear() + ")");
+        return (getTitle() + " (" + getYear() + ") " + getCriticsRating() + " %");
     }
 }

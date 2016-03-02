@@ -3,13 +3,24 @@ package team56.mrurt;
 /**
  * Created by Haruka on 2016/02/24.
  */
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.TextView;
+import android.app.AlertDialog;
+import android.widget.Toast;
 
 
 /**
@@ -19,6 +30,11 @@ import android.view.MenuItem;
  * in a {@link MovieListActivity}.
  */
 public class MovieDetailActivity extends AppCompatActivity {
+    int mRating;
+    final Context context = this;
+    private Button button;
+    RatingBar ratingbar1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +59,46 @@ public class MovieDetailActivity extends AppCompatActivity {
                     .commit();
         }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_movie_detail, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            NavUtils.navigateUpTo(this, new Intent(this, MovieListActivity.class));
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                NavUtils.navigateUpTo(this, new Intent(this, MovieListActivity.class));
+                return true;
+            case R.id.rate_id:
+                rateMovie(item);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
+    }
+
+    public void rateMovie(MenuItem item) {
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.rank_dialog);
+        dialog.setTitle("Title...");
+
+        //Custom Content
+        ratingbar1=(RatingBar)findViewById(R.id.ratingBar);
+        Button button=(Button)findViewById(R.id.rate_movie);
+        //Performing action on Button Click
+
+        Button dialogButton = (Button) dialog.findViewById(R.id.rate_movie);
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 }

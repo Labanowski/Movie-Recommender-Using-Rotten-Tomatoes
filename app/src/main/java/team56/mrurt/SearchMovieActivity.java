@@ -111,12 +111,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
-                                //save the object for later
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 movies.add(m);
 
 
@@ -168,11 +169,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 //save the object for later
                                 movies.add(m);
 
@@ -224,11 +227,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 //save the object for later
                                 movies.add(m);
 
