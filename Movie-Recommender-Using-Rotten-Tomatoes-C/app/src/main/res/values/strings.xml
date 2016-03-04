@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Movie Recommendations</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="action_register_short">Register</string>
+    <string name="enter_pass_again">Enter Password Again</string>
+
+    <string name="prompt_username">Username</string>
+    <string name="prompt_name">Name</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_short">Sign In</string>
+    <string name="action_register">Register</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is invalid</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="search_hint">Enter a Name or Email Address</string>
+</resources>
