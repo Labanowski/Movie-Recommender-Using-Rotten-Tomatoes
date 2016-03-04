@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,8 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import team56.mrurt.dummy.Movie;
-import team56.mrurt.dummy.Movies;
+import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+
 
 /**
  * This is the Search Movie Page
@@ -47,7 +48,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_movie);
+        setContentView(R.layout.search_movie_activity);
         queue = Volley.newRequestQueue(this);
 
         this.MovieSearchView = (SearchView) findViewById(R.id.movieSearchView);
@@ -78,7 +79,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to HomePage instead logging out
-        Intent homeIntent = new Intent(SearchMovieActivity.this, Homepage.class);
+        Intent homeIntent = new Intent(SearchMovieActivity.this, HomepageActivity.class);
         startActivity(homeIntent);
         finish();
     }

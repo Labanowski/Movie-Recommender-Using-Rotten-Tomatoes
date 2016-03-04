@@ -9,7 +9,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".MovieListActivity">
+    tools:context=".activity.MovieListActivity">
 
     <!--
     This layout is a two-pane layout for the Movies

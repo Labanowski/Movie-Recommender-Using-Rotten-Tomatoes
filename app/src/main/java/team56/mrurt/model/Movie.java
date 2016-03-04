@@ -1,4 +1,4 @@
-package team56.mrurt.dummy;
+package team56.mrurt.model;
 import java.io.Serializable;
 
 

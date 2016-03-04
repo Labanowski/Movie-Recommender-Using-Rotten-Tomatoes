@@ -1,20 +1,20 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
+import team56.mrurt.R;
 
 /**
  * Home Page of the App
  */
-public class Homepage extends MenuActivity {
+public class HomepageActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.homepage_activity);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.model;
 
 
 /**

@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 import android.content.Context;
 import android.app.Activity;
@@ -9,10 +9,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
 
+import team56.mrurt.R;
+import team56.mrurt.activity.HomepageActivity;
+import team56.mrurt.activity.WelcomeActivity;
+
 /**
  * Created by alexlabanowski on 2/10/16.
  */
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private EditText mUsernameView;
     private EditText mPasswordView;
@@ -21,7 +25,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.login_activity);
 
         mUsernameView = (EditText) findViewById(R.id.login_username);
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -45,8 +49,8 @@ public class Login extends AppCompatActivity {
 
 
 
-        if(Welcome.mUserStorage.handleLoginRequest(username, password)){
-            Intent intent = new Intent(this, Homepage.class);
+        if(WelcomeActivity.mUserStorage.handleLoginRequest(username, password)){
+            Intent intent = new Intent(this, HomepageActivity.class);
             startActivity(intent);
             finish();
         } else {

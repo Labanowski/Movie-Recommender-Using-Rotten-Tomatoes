@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 
 import android.content.Context;
@@ -16,8 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import team56.mrurt.dummy.Movie;
-import team56.mrurt.dummy.Movies;
+import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+import team56.mrurt.model.Movies;
+import team56.mrurt.presenters.MovieDetailFragment;
 
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class MovieListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_list);
+        setContentView(R.layout.movie_list_activity);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

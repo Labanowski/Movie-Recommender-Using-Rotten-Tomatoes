@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,22 +7,25 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import team56.mrurt.R;
+import team56.mrurt.model.User;
+
 /**
  * The user's profile page
  */
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
-    String currentLoggedIn = Login.currentLoggedInUser;
-    User user = Welcome.mUserStorage.findUserByName(currentLoggedIn);
+    String currentLoggedIn = LoginActivity.currentLoggedInUser;
+    User user = WelcomeActivity.mUserStorage.findUserByName(currentLoggedIn);
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.profile_activity);
 
         mEmailView = (EditText) findViewById(R.id.userEmail);
         mUsernameView = (EditText) findViewById(R.id.userUsername);
@@ -40,7 +43,7 @@ public class Profile extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to HomePage instead logging out
-        Intent homeIntent = new Intent(Profile.this, Homepage.class);
+        Intent homeIntent = new Intent(ProfileActivity.this, HomepageActivity.class);
         startActivity(homeIntent);
         finish();
     }
@@ -58,10 +61,10 @@ public class Profile extends AppCompatActivity {
         String p1 = mPasswordView.getText().toString();
 
 
-        Welcome.mUserStorage.remove(currentLoggedIn);
-        Welcome.mUserStorage.addUser(e1, u1, n1, m1, p1);
+        WelcomeActivity.mUserStorage.remove(currentLoggedIn);
+        WelcomeActivity.mUserStorage.addUser(e1, u1, n1, m1, p1);
 
-        Intent intent = new Intent(this, Welcome.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
         finish();
     }

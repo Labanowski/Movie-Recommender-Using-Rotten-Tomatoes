@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 /**
  * Created by Haruka on 2016/02/24.
@@ -22,6 +22,9 @@ import android.widget.TextView;
 import android.app.AlertDialog;
 import android.widget.Toast;
 
+import team56.mrurt.R;
+import team56.mrurt.presenters.MovieDetailFragment;
+
 
 /**
  * An activity representing a single Movie detail screen. This
@@ -39,13 +42,14 @@ public class MovieDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
+        setContentView(R.layout.movie_detail_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(false);
         }
 
         if (savedInstanceState == null) {
@@ -87,8 +91,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         //Custom Content
         ratingbar1=(RatingBar)findViewById(R.id.ratingBar);
-        Button button=(Button)findViewById(R.id.rate_movie);
-        //Performing action on Button Click
 
         Button dialogButton = (Button) dialog.findViewById(R.id.rate_movie);
         // if button is clicked, close the custom dialog

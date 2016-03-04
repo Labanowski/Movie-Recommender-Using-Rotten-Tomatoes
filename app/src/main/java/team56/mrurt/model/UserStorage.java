@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.model;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.presenters;
 
 /**
  * Created by Haruka on 2016/02/24.
@@ -8,14 +8,17 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import team56.mrurt.dummy.Movie;
-import team56.mrurt.dummy.Movies;
+
+
+import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+import team56.mrurt.model.Movies;
+import team56.mrurt.activity.MovieDetailActivity;
+import team56.mrurt.activity.MovieListActivity;
+
 
 /**
  * A fragment representing a single Movie detail screen.
