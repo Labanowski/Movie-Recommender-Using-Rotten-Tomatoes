@@ -18,4 +18,9 @@
     <string name="error_invalid_password">This password is invalid</string>
     <string name="error_field_required">This field is required</string>
     <string name="search_hint">Enter a Name or Email Address</string>
+<<<<<<< HEAD
+=======
+    <string name="title_movie_list">Movies</string>
+    <string name="title_movie_detail">Movie Detail</string>
+>>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7
 </resources>

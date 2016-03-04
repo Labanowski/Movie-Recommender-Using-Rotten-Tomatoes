@@ -1,4 +1,8 @@
+<<<<<<< HEAD:app/src/main/java/team56/mrurt/UserStorage.java
 package team56.mrurt;
+=======
+package team56.mrurt.model;
+>>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/model/UserStorage.java
 
 import java.util.HashMap;
 import java.util.Map;

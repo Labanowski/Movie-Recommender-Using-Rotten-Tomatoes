@@ -1,5 +1,12 @@
+<<<<<<< HEAD:app/src/main/java/team56/mrurt/User.java
 package team56.mrurt;
 
+=======
+package team56.mrurt.model;
+
+
+import java.util.ArrayList;
+>>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/model/User.java
 
 /**
  * Created by Wyckoff on 2/13/2016.
@@ -10,6 +17,7 @@ public class User {
     private String name;
     private String major;
     private String password;
+    private ArrayList<Rating> ratingList;
 
     public User(String email, String username, String name, String major, String password) {
         this.email = email;
@@ -17,6 +25,7 @@ public class User {
         this.name = name;
         this.major = major;
         this.password = password;
+        this.ratingList = new ArrayList<>();
     }
 
     /**
@@ -67,4 +76,47 @@ public class User {
     public boolean checkPassword(String pass) {
         return password.equals(pass);
     }
+<<<<<<< HEAD:app/src/main/java/team56/mrurt/User.java
 }
+=======
+
+    /**
+     * Add a rating to user's list of ratings made
+     * @param newRating the new rating to be added
+     */
+    public void addRating(Rating newRating) {
+        this.ratingList.add(newRating);
+    }
+
+    /**
+     * Remove a rating to user's list of ratings made
+     * @param oldRating the rating to be removed
+     */
+    public void removeRating(Rating oldRating) {
+        this.ratingList.remove(oldRating);
+    }
+
+    /**
+     * Return the user's ratings list
+     * @return the user's rating list
+     */
+    public ArrayList<Rating> getRatingList() {
+        return this.ratingList;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        User u = (User) o;
+        if (u.getUsername().equals(this.getUsername())) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getUsername().hashCode();
+    }
+}
+
+>>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/model/User.java
