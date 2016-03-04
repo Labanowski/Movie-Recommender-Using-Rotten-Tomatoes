@@ -31,10 +31,10 @@ public class MovieDetailFragment extends Fragment {
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
-    public static final String ARG_ITEM_ID = "item_id";
+    public static final String ARG_ITEM_ID = "movie_title_id";
 
     /**
-     * The dummy content this fragment is presenting.
+     * The movie content this fragment is presenting.
      */
     private Movie mItem;
 

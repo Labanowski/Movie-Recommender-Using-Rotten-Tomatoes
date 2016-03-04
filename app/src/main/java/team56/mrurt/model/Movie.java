@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class Movie implements Serializable {
     String title, year, synopsis, criticsRating;
-    int userRating;
 
     /**
      * Sets Movie title.
@@ -30,13 +29,6 @@ public class Movie implements Serializable {
         this.synopsis = synopsis;
     }
 
-    /**
-     * Sets critics rating
-     * @param userRating is critics rating
-     */
-    public void setUserRating(int userRating) {
-        this.userRating = userRating;
-    }
     /**
      * Sets critics rating
      * @param criticsRating is critics rating
@@ -76,15 +68,6 @@ public class Movie implements Serializable {
     public String getCriticsRating() {
         return this.criticsRating;
     }
-
-    /**
-     * Gets critics rating
-     * @return the rating.
-     */
-    public int getUserRating() {
-        return this.userRating;
-    }
-
 
     /**
      * Gets movie title and year.

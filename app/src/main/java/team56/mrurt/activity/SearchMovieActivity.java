@@ -33,10 +33,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      * handle the requests for us in the background.
      */
     private RequestQueue queue;
-    /**
-     * hold whatever result comes back from the REST call.  Not required in this case really, but comes
-     * in handy for debugging.
-     */
+
     private String response;
 
     private SearchView MovieSearchView;
