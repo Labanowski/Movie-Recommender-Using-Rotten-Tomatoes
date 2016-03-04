@@ -1,8 +1,10 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import team56.mrurt.activity.WelcomeActivity;
 
 /**
  * Created by Haruka on 2016/02/21.
@@ -17,7 +19,7 @@ public class MenuActivity extends AppCompatActivity {
      * @param item the menu item clicked on
      */
     public void logout(MenuItem item){
-        Intent intent = new Intent(this, Welcome.class);
+        Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
         finish();
     }
@@ -27,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
      * @param item the menu item clicked on
      */
     public void viewProfile(MenuItem item){
-        Intent intent = new Intent(this, Profile.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
         finish();
     }
@@ -37,6 +39,16 @@ public class MenuActivity extends AppCompatActivity {
      * @param item the menu item clicked on
      */
     public void searchMovie(MenuItem item) {
+        Intent intent = new Intent(this, SearchMovieActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Takes user to Search Page
+     * @param item the menu item clicked on
+     */
+    public void recommendMovie(MenuItem item) {
         Intent intent = new Intent(this, SearchMovieActivity.class);
         startActivity(intent);
         finish();

@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
 
 import android.content.Intent;
@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import team56.mrurt.R;
+
 /**
  * Created by connorwyckoff
  */
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
 
     private EditText mEmailView;
@@ -27,7 +29,7 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.register_activity);
         //mUserStorage = new UserStorage();
 
         mEmailView = (EditText) findViewById(R.id.eEmailView);
@@ -88,8 +90,8 @@ public class Register extends AppCompatActivity {
      * @param v The View
      */
     public void register(View v) {
-        Welcome.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
-        Intent intent = new Intent(this, Login.class);
+        WelcomeActivity.mUserStorage.addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

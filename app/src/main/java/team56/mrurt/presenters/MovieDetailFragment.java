@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.presenters;
 
 /**
  * Created by Haruka on 2016/02/24.
@@ -12,8 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import team56.mrurt.dummy.Movie;
-import team56.mrurt.dummy.Movies;
+
+import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+import team56.mrurt.model.Movies;
+import team56.mrurt.activity.MovieDetailActivity;
+import team56.mrurt.activity.MovieListActivity;
+
 
 /**
  * A fragment representing a single Movie detail screen.
@@ -26,10 +31,10 @@ public class MovieDetailFragment extends Fragment {
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
-    public static final String ARG_ITEM_ID = "item_id";
+    public static final String ARG_ITEM_ID = "movie_title_id";
 
     /**
-     * The dummy content this fragment is presenting.
+     * The movie content this fragment is presenting.
      */
     private Movie mItem;
 

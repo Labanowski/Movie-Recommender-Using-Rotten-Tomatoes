@@ -1,9 +1,9 @@
-package team56.mrurt.dummy;
+package team56.mrurt.model;
 import java.io.Serializable;
 
 
 public class Movie implements Serializable {
-    String title, year, synopsis;
+    String title, year, synopsis, criticsRating;
 
     /**
      * Sets Movie title.
@@ -27,6 +27,14 @@ public class Movie implements Serializable {
      */
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
+    }
+
+    /**
+     * Sets critics rating
+     * @param criticsRating is critics rating
+     */
+    public void setCriticsRating(String criticsRating) {
+        this.criticsRating = criticsRating;
     }
 
     /**
@@ -54,10 +62,18 @@ public class Movie implements Serializable {
     }
 
     /**
+     * Gets critics rating
+     * @return the rating.
+     */
+    public String getCriticsRating() {
+        return this.criticsRating;
+    }
+
+    /**
      * Gets movie title and year.
      * @return a string that contains title and year of movie.
      */
     public String toString() {
-        return (getTitle() + " (" + getYear() + ")");
+        return (getTitle() + " (" + getYear() + ") " + getCriticsRating() + " %");
     }
 }

@@ -1,4 +1,4 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,8 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import team56.mrurt.dummy.Movie;
-import team56.mrurt.dummy.Movies;
+import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+
 
 /**
  * This is the Search Movie Page
@@ -32,10 +33,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      * handle the requests for us in the background.
      */
     private RequestQueue queue;
-    /**
-     * hold whatever result comes back from the REST call.  Not required in this case really, but comes
-     * in handy for debugging.
-     */
+
     private String response;
 
     private SearchView MovieSearchView;
@@ -47,7 +45,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_movie);
+        setContentView(R.layout.search_movie_activity);
         queue = Volley.newRequestQueue(this);
 
         this.MovieSearchView = (SearchView) findViewById(R.id.movieSearchView);
@@ -78,7 +76,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to HomePage instead logging out
-        Intent homeIntent = new Intent(SearchMovieActivity.this, Homepage.class);
+        Intent homeIntent = new Intent(SearchMovieActivity.this, HomepageActivity.class);
         startActivity(homeIntent);
         finish();
     }
@@ -111,12 +109,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
-                                //save the object for later
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 movies.add(m);
 
 
@@ -168,11 +167,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 //save the object for later
                                 movies.add(m);
 
@@ -224,11 +225,13 @@ public class SearchMovieActivity extends AppCompatActivity {
                             try {
                                 //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
+                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
                                 assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
+                                m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 //save the object for later
                                 movies.add(m);
 
