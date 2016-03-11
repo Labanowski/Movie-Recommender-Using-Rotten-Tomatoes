@@ -1,26 +1,20 @@
-package team56.mrurt;
+package team56.mrurt.activity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.Window;
-
+import team56.mrurt.R;
 
 /**
- * HomePage
+ * Home Page of the App
  */
-public class Homepage extends MenuActivity {
+public class HomepageActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage);
+        setContentView(R.layout.homepage_activity);
     }
 
     @Override
@@ -42,11 +36,8 @@ public class Homepage extends MenuActivity {
             case R.id.search_id:
                 searchMovie(item);
                 return true;
-            case R.id.newDVD_id:
-                logout(item);
-                return true;
-            case R.id.newRelease_id:
-                logout(item);
+            case R.id.recommend_id:
+                recommendMovie(item);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
