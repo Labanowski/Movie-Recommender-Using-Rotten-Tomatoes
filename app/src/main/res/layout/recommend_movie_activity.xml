@@ -7,10 +7,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="By Genre"
-        android:id="@+id/recommend_genre"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true" />
+        android:text="By Year"
+        android:id="@+id/recommend_year"
+        android:layout_below="@+id/year"
+        android:layout_centerHorizontal="true"
+        android:singleLine="false" />
 
 
     <Button
@@ -18,14 +19,14 @@
         android:layout_height="wrap_content"
         android:text="Recommend by My Major"
         android:id="@+id/recommend_major"
-        android:layout_marginTop="138dp"
-        android:layout_below="@+id/recommend_genre"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/year"
         android:layout_alignParentTop="true"
         android:layout_marginTop="49dp"
         android:layout_alignLeft="@+id/recommend_major"
@@ -37,10 +38,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Select your Genre"
+        android:text="Select your Year"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:singleLine="false" />
 
     <TextView
         android:layout_width="wrap_content"

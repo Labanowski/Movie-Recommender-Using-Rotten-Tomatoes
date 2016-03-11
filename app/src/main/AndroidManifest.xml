@@ -48,6 +48,20 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.RecommendMovieActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.RECOMMEND" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RecommendListActivity"
+            android:label="@string/title_movie_list"
+            android:parentActivityName=".activity.HomepageActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.HomepageActivity" />
+        </activity>
     </application>
 
 </manifest>
