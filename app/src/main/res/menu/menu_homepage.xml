@@ -25,6 +25,11 @@
         app:showAsAction="ifRoom"
         android:orderInCategory="3"
         android:menuCategory="secondary"/>
+    <item android:id="@+id/recommend_id"
+        android:title="Recommend"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="4"
+        android:menuCategory="secondary"/>
 
 <<<<<<< HEAD
     <item android:id="@+id/newDVD_id"

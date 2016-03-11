@@ -36,6 +36,9 @@ public class HomepageActivity extends MenuActivity {
             case R.id.search_id:
                 searchMovie(item);
                 return true;
+            case R.id.recommend_id:
+                recommendMovie(item);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -61,8 +61,15 @@ public class RatingStorage {
      * @return the average rating for that major group
      */
     public double getAverageRatingByMajor(String movie_id, String major) {
-        //Not implementing this now, not needed yet
-        return 0;
+        double movie_rating = 0;
+        int counter = 0;
+        for (Rating r : this.ratings) {
+            if (r.getMovie_id().equals(movie_id) && r.getMajor().equals(major)) {
+                counter++;
+                movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
+            }
+        }
+        return movie_rating;
     }
 
     /**
@@ -72,8 +79,15 @@ public class RatingStorage {
      * @return the average rating
      */
     public String getAverageRating(String movie_id) {
-        //Not implementing this now, not needed yet
-        return "";
+        double movie_rating = 0;
+        int counter = 0;
+        for (Rating r : this.ratings) {
+            if (r.getMovie_id().equals(movie_id)) {
+                counter++;
+                movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
+            }
+        }
+        return "Average User Rating: " + movie_rating ;
     }
 
 

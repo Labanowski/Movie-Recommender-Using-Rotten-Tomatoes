@@ -117,14 +117,14 @@ public class MovieDetailActivity extends AppCompatActivity {
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-if");
+                                   System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() );
                                } else {
                                    RatingStorage.getInstance().removeRating(newRating);
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.removeRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-else");
+                                   System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor());
                                }
                         return;
                     }

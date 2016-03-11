@@ -44,4 +44,14 @@ public class MenuActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * Takes user to Search Page
+     * @param item the menu item clicked on
+     */
+    public void recommendMovie(MenuItem item) {
+        Intent intent = new Intent(this, SearchMovieActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }
