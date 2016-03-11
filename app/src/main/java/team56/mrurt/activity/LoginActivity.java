@@ -1,8 +1,4 @@
-<<<<<<< HEAD:app/src/main/java/team56/mrurt/Login.java
-package team56.mrurt;
-=======
 package team56.mrurt.activity;
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/activity/LoginActivity.java
 
 import android.content.Context;
 import android.app.Activity;
@@ -29,11 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD:app/src/main/java/team56/mrurt/Login.java
-        setContentView(R.layout.login);
-=======
         setContentView(R.layout.login_activity);
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/activity/LoginActivity.java
 
         mUsernameView = (EditText) findViewById(R.id.login_username);
         mPasswordView = (EditText) findViewById(R.id.password);
@@ -57,13 +49,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-<<<<<<< HEAD:app/src/main/java/team56/mrurt/Login.java
-        if(Welcome.mUserStorage.handleLoginRequest(username, password)){
-            Intent intent = new Intent(this, Homepage.class);
-=======
         if(WelcomeActivity.mUserStorage.handleLoginRequest(username, password)){
             Intent intent = new Intent(this, HomepageActivity.class);
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/activity/LoginActivity.java
             startActivity(intent);
             finish();
         } else {

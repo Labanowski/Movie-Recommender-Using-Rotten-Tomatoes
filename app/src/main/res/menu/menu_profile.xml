@@ -2,11 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-<<<<<<< HEAD
-    tools:context=".Profile">
-=======
     tools:context=".activity.ProfileActivity">
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7
 
     <item android:id="@+id/logout_id"
         android:title="LogOut"
@@ -20,24 +16,10 @@
         android:title="Profile"
         app:showAsAction="always"/>
 
-<<<<<<< HEAD
-    <item android:id="@+id/newDVD_id"
-        android:title="New On DVD"
-=======
     <item android:id="@+id/search_id"
         android:title="Search"
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7
         app:showAsAction="ifRoom"
         android:orderInCategory="3"
         android:menuCategory="secondary"/>
 
-<<<<<<< HEAD
-    <item
-        android:id="@+id/newRelease_id"
-        android:orderInCategory="4"
-        android:title="New Releases"
-        app:showAsAction="ifRoom"/>
-
-=======
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7
 </menu>

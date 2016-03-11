@@ -1,12 +1,7 @@
-<<<<<<< HEAD:app/src/main/java/team56/mrurt/User.java
-package team56.mrurt;
-
-=======
 package team56.mrurt.model;
 
 
 import java.util.ArrayList;
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/model/User.java
 
 /**
  * Created by Wyckoff on 2/13/2016.
@@ -76,9 +71,6 @@ public class User {
     public boolean checkPassword(String pass) {
         return password.equals(pass);
     }
-<<<<<<< HEAD:app/src/main/java/team56/mrurt/User.java
-}
-=======
 
     /**
      * Add a rating to user's list of ratings made
@@ -119,4 +111,3 @@ public class User {
     }
 }
 
->>>>>>> edbfb80134c0950782df951356b6e0da56ee5fe7:app/src/main/java/team56/mrurt/model/User.java

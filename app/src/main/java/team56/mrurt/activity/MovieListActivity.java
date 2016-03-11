@@ -137,6 +137,7 @@ public class MovieListActivity extends AppCompatActivity {
                         Context context = v.getContext();
                         Intent intent = new Intent(context, MovieDetailActivity.class);
                         intent.putExtra(MovieDetailFragment.ARG_ITEM_ID, holder.mItem.toString());
+                        intent.putExtra("Movie Object", holder.mItem);
 
                         context.startActivity(intent);
                     }
