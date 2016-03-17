@@ -19,8 +19,6 @@ public class MenuActivity extends AppCompatActivity {
      * @param item the menu item clicked on
      */
     public void logout(MenuItem item){
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
         finish();
     }
 
