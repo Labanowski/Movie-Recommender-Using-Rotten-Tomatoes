@@ -1,16 +1,12 @@
 package team56.mrurt.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebChromeClient;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import team56.mrurt.R;
