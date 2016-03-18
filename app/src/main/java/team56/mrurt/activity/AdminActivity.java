@@ -31,6 +31,14 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
         dropdown.setAdapter(adapter);
     }
 
+
+    /**
+     * Handles what is selected from the dropdown spinner.
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
@@ -45,20 +53,40 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
         }
     }
 
+    /**
+     * No current use.
+     * @param arg0
+     */
     public void onNothingSelected(AdapterView<?> arg0) {
         //Todo
     }
 
+    /**
+     * Bans the selected user from the dropdown spinner and updates the textview.
+     * @param view
+     */
     public void banUser(View view){
         WelcomeActivity.mUserStorage.findUserByName(currentUser).banUser();
-        ((TextView) findViewById(R.id.textView4)).setText(currentUser + "is now banned.");
+        if(WelcomeActivity.mUserStorage.findUserByName(currentUser).isAdmin()){
+            ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is an admin.");
+        } else {
+            ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is now banned.");
+        }
     }
 
+    /**
+     * Unbans the selected user from the dropdown spinner and updates the textview.
+     * @param view
+     */
     public void unlockUser(View view){
         WelcomeActivity.mUserStorage.findUserByName(currentUser).unbanUser();
-        ((TextView) findViewById(R.id.textView4)).setText(currentUser + "is now unbanned.");
+        ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is now unbanned.");
     }
 
+    /**
+     * Logs the admin out
+     * @param view
+     */
     public void logout(View view){
         finish();
     }
