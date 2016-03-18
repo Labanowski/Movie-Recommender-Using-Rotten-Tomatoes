@@ -49,7 +49,7 @@ public class MenuActivity extends AppCompatActivity {
      * @param item the menu item clicked on
      */
     public void recommendMovie(MenuItem item) {
-        Intent intent = new Intent(this, SearchMovieActivity.class);
+        Intent intent = new Intent(this, RecommendMovieActivity.class);
         startActivity(intent);
         finish();
     }

@@ -1,9 +1,15 @@
 package team56.mrurt.model;
 import java.io.Serializable;
+import java.util.List;
+import java.util.ArrayList;
+import java.lang.Comparable;
 
 
-public class Movie implements Serializable {
-    String title, year, synopsis, criticsRating;
+public class Movie implements Serializable, Comparable<Movie> {
+    String title, year, synopsis, criticsRating, id;
+    double userRatings;
+    static float numOfUsers, total;
+    List<String> genres, ratingMajor;;
 
     /**
      * Sets Movie title.
@@ -41,6 +47,11 @@ public class Movie implements Serializable {
      * Gets Movie title.
      * @return the title.
      */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return this.title;
     }
@@ -73,7 +84,25 @@ public class Movie implements Serializable {
      * Gets movie title and year.
      * @return a string that contains title and year of movie.
      */
+
+    public String getId() {
+        return this.id;
+    }
+
     public String toString() {
         return (getTitle() + " (" + getYear() + ") " + getCriticsRating() + " %");
+    }
+
+    @Override
+    public int compareTo(Movie a) {
+        return (int) this.userRatings - (int) a.userRatings;
+    }
+
+    public boolean equals(Object o) {
+        Movie m = (Movie) o;
+        if(m.getTitle().equals(this.title)) {
+            return true;
+        }
+        return false;
     }
 }

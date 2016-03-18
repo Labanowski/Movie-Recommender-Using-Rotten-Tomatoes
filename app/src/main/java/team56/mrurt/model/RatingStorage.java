@@ -56,15 +56,15 @@ public class RatingStorage {
     /**
      * Gets average Rating of Movie by a particular major group
      *
-     * @param movie_id id of the movie when want the average rating of
+     * @param movie id of the movie when want the average rating of
      * @param major      the major of the user
      * @return the average rating for that major group
      */
-    public double getAverageRatingByMajor(String movie_id, String major) {
+    public double getAverageRatingByMajor(Movie movie, String major) {
         double movie_rating = 0;
         int counter = 0;
         for (Rating r : this.ratings) {
-            if (r.getMovie_id().equals(movie_id) && r.getMajor().equals(major)) {
+            if (r.getMovie().equals(movie) && r.getMajor().equals(major)) {
                 counter++;
                 movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
             }
@@ -75,14 +75,14 @@ public class RatingStorage {
     /**
      * Gets average rating for a movie
      *
-     * @param movie_id id of the movie when want the average rating of
+     * @param movie id of the movie when want the average rating of
      * @return the average rating
      */
-    public String getAverageRating(String movie_id) {
+    public String getAverageRating(Movie movie) {
         double movie_rating = 0;
         int counter = 0;
         for (Rating r : this.ratings) {
-            if (r.getMovie_id().equals(movie_id)) {
+            if (r.getMovie().equals(movie)) {
                 counter++;
                 movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
             }

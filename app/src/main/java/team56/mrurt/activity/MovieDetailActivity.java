@@ -24,6 +24,8 @@ import android.widget.RatingBar;
 import android.app.AlertDialog;
 
 import team56.mrurt.R;
+import team56.mrurt.model.Movie;
+import team56.mrurt.model.Movies;
 import team56.mrurt.model.Rating;
 import team56.mrurt.model.RatingStorage;
 import team56.mrurt.model.User;
@@ -37,7 +39,6 @@ import team56.mrurt.presenters.MovieDetailFragment;
  * in a {@link MovieListActivity}.
  */
 public class MovieDetailActivity extends AppCompatActivity {
-    private String movie_id;
     private User currentUser;
 
     @Override
@@ -46,7 +47,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         setContentView(R.layout.movie_detail_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
-
         String currentLoggedIn = LoginActivity.currentLoggedInUser;
         currentUser = WelcomeActivity.mUserStorage.findUserByName(currentLoggedIn);
 
@@ -65,7 +65,7 @@ public class MovieDetailActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.movie_detail_container, fragment)
                     .commit();
-            this.movie_id = MovieDetailFragment.ARG_ITEM_ID;
+            //this.movie_id = MovieDetailFragment.ARG_ITEM_ID;
         }
     }
     @Override
@@ -95,7 +95,7 @@ public class MovieDetailActivity extends AppCompatActivity {
      */
     public void rateMovie(MenuItem item) {
         AlertDialog.Builder movie_rate = new AlertDialog.Builder(MovieDetailActivity.this);
-        final String movie_id = MovieDetailActivity.this.movie_id;
+        final Movie ratedMovie = (Movie) getIntent().getSerializableExtra("Movie Object");
         final RatingBar ratingbar1 = new RatingBar(MovieDetailActivity.this);
         ratingbar1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
@@ -112,19 +112,19 @@ public class MovieDetailActivity extends AppCompatActivity {
                 .setPositiveButton("Rate", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                               Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), movie_id, ratingbar1.getRating());
+                               Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingbar1.getRating());
                                if (!RatingStorage.getInstance().getRatings().contains(newRating)) {
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() );
+                                   System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                } else {
                                    RatingStorage.getInstance().removeRating(newRating);
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.removeRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor());
+                                   System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                }
                         return;
                     }

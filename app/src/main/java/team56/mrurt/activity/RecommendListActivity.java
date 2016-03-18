@@ -1,42 +1,29 @@
 package team56.mrurt.activity;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.List;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Movie;
 import team56.mrurt.model.Movies;
 import team56.mrurt.presenters.MovieDetailFragment;
 
-import java.util.List;
-
 /**
- * Created by Haruka on 2016/02/24.
+ * Created by kuiski on 3/5/2016.
+ * Displays the movie list from recommendations
  */
-
-/**
- * An activity representing a list of Movies. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link MovieDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
- */
-public class MovieListActivity extends AppCompatActivity {
-
+public class RecommendListActivity extends AppCompatActivity{
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
@@ -81,7 +68,7 @@ public class MovieListActivity extends AppCompatActivity {
     public void onBackPressed() {
         //Go back to SearchMovieActivity instead of closing app.
         Movies.clear();
-        Intent searchIntent = new Intent(MovieListActivity.this, SearchMovieActivity.class);
+        Intent searchIntent = new Intent(RecommendListActivity.this, RecommendMovieActivity.class);
         startActivity(searchIntent);
         finish();
     }
@@ -172,4 +159,5 @@ public class MovieListActivity extends AppCompatActivity {
             }
         }
     }
+
 }

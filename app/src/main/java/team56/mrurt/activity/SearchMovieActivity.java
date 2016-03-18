@@ -19,9 +19,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Movie;
+import team56.mrurt.model.Movies;
 
 
 /**
@@ -116,9 +119,8 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
                                 m.setCriticsRating(ratingsJSON.optString("critics_score"));
+                                m.setId(jsonObject.optString("id"));
                                 movies.add(m);
-
-
                             } catch (JSONException e) {
                                 Log.d("VolleyApp", "Failed to get JSON object");
                                 e.printStackTrace();
@@ -234,8 +236,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 m.setCriticsRating(ratingsJSON.optString("critics_score"));
                                 //save the object for later
                                 movies.add(m);
-
-
                             } catch (JSONException e) {
                                 Log.d("MovieApp", "Failed to get JSON object");
                                 e.printStackTrace();

@@ -7,16 +7,16 @@ package team56.mrurt.model;
 /**
  * A rating for a movie and stores the username that rated a movie
  */
-public class Rating {
+public class Rating implements Comparable<Rating> {
     private String major;
     private String user;
-    private String movie_id;
+    private Movie movie;
     private double movie_Rating;
 
-    public Rating(String major, String user, String movie_id, double movie_Rating) {
+    public Rating(String major, String user, Movie movie, double movie_Rating) {
         this.major = major;
         this.user = user;
-        this.movie_id = movie_id;
+        this.movie = movie;
         this.movie_Rating = movie_Rating;
     }
 
@@ -37,11 +37,11 @@ public class Rating {
     }
 
     /**
-     * Get the rated movie id string
-     * @return the movie id
+     * Get the rated movie object
+     * @return the movie
      */
-    public String getMovie_id() {
-        return this.movie_id;
+    public Movie getMovie() {
+        return this.movie;
     }
 
     /**
@@ -55,7 +55,7 @@ public class Rating {
     @Override
     public boolean equals(Object o) {
         Rating r = (Rating) o;
-        if(r.getUser().equals(this.user)) {
+        if(r.getMovie().equals(this.getMovie())) {
             return true;
         }
         return false;
@@ -71,7 +71,12 @@ public class Rating {
      * @return the string representation of Rating
      */
     public String toString(){
-        return movie_id + " " + movie_Rating + " " + user;
+        return movie.getTitle() + " " + movie_Rating + " " + user;
+    }
+
+    @Override
+    public int compareTo(Rating a) {
+        return (int) (a.getMovie_Rating().compareTo(this.getMovie_Rating()));
     }
 
 }
