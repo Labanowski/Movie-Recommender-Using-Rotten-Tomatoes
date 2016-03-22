@@ -62,6 +62,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.HomepageActivity" />
         </activity>
+        <activity android:name=".activity.AdminActivity">
+        </activity>
     </application>
 
 </manifest>

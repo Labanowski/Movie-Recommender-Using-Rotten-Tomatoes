@@ -1,5 +1,6 @@
 package team56.mrurt.model;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -52,5 +53,9 @@ public class UserStorage {
         } else {
             return user.checkPassword(password);
         }
+    }
+
+    public String[] toArray(){
+        return Arrays.copyOf(this.users.keySet().toArray(), this.users.keySet().toArray().length, String[].class);
     }
 }

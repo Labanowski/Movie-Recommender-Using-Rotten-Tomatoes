@@ -50,9 +50,20 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if(WelcomeActivity.mUserStorage.handleLoginRequest(username, password)){
-            Intent intent = new Intent(this, HomepageActivity.class);
-            startActivity(intent);
-            finish();
+            if(WelcomeActivity.mUserStorage.findUserByName(username).isAdmin()) {
+                Intent intent = new Intent(this, AdminActivity.class);
+                startActivity(intent);
+                finish();
+            } else if(WelcomeActivity.mUserStorage.findUserByName(username).isBanned()){
+                Context context = getApplicationContext();
+                int duration = Toast.LENGTH_SHORT;
+                Toast t = Toast.makeText(context, "You are banned!", duration);
+                t.show();
+            } else {
+                Intent intent = new Intent(this, HomepageActivity.class);
+                startActivity(intent);
+                finish();
+            }
         } else {
             Context context = getApplicationContext();
             int duration = Toast.LENGTH_SHORT;

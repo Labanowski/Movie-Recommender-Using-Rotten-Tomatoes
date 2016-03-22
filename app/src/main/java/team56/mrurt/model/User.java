@@ -13,6 +13,8 @@ public class User {
     private String major;
     private String password;
     private ArrayList<Rating> ratingList;
+    private boolean banned;
+    private boolean admin;
 
     public User(String email, String username, String name, String major, String password) {
         this.email = email;
@@ -21,6 +23,8 @@ public class User {
         this.major = major;
         this.password = password;
         this.ratingList = new ArrayList<>();
+        this.banned = false;
+        this.admin = false;
     }
 
     /**
@@ -94,6 +98,24 @@ public class User {
      */
     public ArrayList<Rating> getRatingList() {
         return this.ratingList;
+    }
+
+    public void banUser(){
+        this.banned = true;
+    }
+
+    public void unbanUser(){
+        this.banned = false;
+    }
+
+    public boolean isBanned(){
+        return this.banned;
+    }
+
+    public void makeAdmin() { this.admin = true;}
+
+    public boolean isAdmin(){
+        return admin;
     }
 
     @Override
