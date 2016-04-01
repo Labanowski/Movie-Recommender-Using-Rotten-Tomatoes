@@ -1,5 +1,6 @@
 package team56.mrurt.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import team56.mrurt.R;
+import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.User;
+import team56.mrurt.model.UserStorage;
 
 /**
  * Created by alexanderlabanowski on 3/16/16.
@@ -18,8 +21,9 @@ import team56.mrurt.model.User;
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
 
     private Spinner dropdown;
-    private static String[] users = WelcomeActivity.mUserStorage.toArray();
+    private static String[] users;
     private static String currentUser;
+    Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
         setContentView(R.layout.admin_activity);
         dropdown = (Spinner)findViewById(R.id.spinner);
         dropdown.setOnItemSelectedListener(this);
+        UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(this).getUsers());
+        users = UserStorage.getInstance().toArray();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, users);
         dropdown.setAdapter(adapter);
     }
@@ -43,7 +49,7 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         currentUser = (String)parent.getItemAtPosition(position);
-        User user = WelcomeActivity.mUserStorage.findUserByName(currentUser);
+        User user = UserStorage.getInstance().findUserByName(currentUser);
         if(user.isAdmin()){
             ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is an admin.");
         } else if(user.isBanned()) {
@@ -66,10 +72,12 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
      * @param view
      */
     public void banUser(View view){
-        WelcomeActivity.mUserStorage.findUserByName(currentUser).banUser();
-        if(WelcomeActivity.mUserStorage.findUserByName(currentUser).isAdmin()){
+        if(UserStorage.getInstance().findUserByName(currentUser).isAdmin()){
             ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is an admin.");
         } else {
+            UserStorage.getInstance().findUserByName(currentUser).banUser();
+            DatabaseOperations.getHelper(c).updateUser(DatabaseOperations.getHelper(c), UserStorage.getInstance().findUserByName(currentUser));
+            UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
             ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is now banned.");
         }
     }
@@ -79,7 +87,9 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
      * @param view
      */
     public void unlockUser(View view){
-        WelcomeActivity.mUserStorage.findUserByName(currentUser).unbanUser();
+        UserStorage.getInstance().findUserByName(currentUser).unbanUser();
+        DatabaseOperations.getHelper(c).updateUser(DatabaseOperations.getHelper(c), UserStorage.getInstance().findUserByName(currentUser));
+        UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
         ((TextView) findViewById(R.id.textView4)).setText(currentUser + " is now unbanned.");
     }
 

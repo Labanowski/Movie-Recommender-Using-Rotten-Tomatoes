@@ -1,5 +1,6 @@
 package team56.mrurt.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import team56.mrurt.R;
+import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.User;
+import team56.mrurt.model.UserStorage;
 
 /**
  * The user's profile page
@@ -18,15 +21,16 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
     String currentLoggedIn = LoginActivity.currentLoggedInUser;
-    User user = WelcomeActivity.mUserStorage.findUserByName(currentLoggedIn);
-
-
+    User user;
+    Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
 
+        UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
+        user = UserStorage.getInstance().findUserByName(currentLoggedIn);
         mEmailView = (EditText) findViewById(R.id.userEmail);
         mUsernameView = (EditText) findViewById(R.id.userUsername);
         mNameView = (EditText) findViewById(R.id.userName);
@@ -49,22 +53,28 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     /**
-     * Logs out the user, if any changes have been made to the profile, the old user
+     * Saves the user, if any changes have been made to the profile, the old user
      * data is removed and the new data is added
      * @param view The View
      */
-    public void logout(View view){
+    public void saveChanges(View view){
         String e1 = mEmailView.getText().toString();
         String u1 = mUsernameView.getText().toString();
         String n1 = mNameView.getText().toString();
         String m1 = mMajorView.getText().toString();
         String p1 = mPasswordView.getText().toString();
 
+        //Deletes and updates the user's profile info.
+        if(currentLoggedIn != u1) {
+            DatabaseOperations.getHelper(c).updateUserRating(DatabaseOperations.getHelper(c), u1, currentLoggedIn);
+        }
+        DatabaseOperations.getHelper(c).deleteUser(DatabaseOperations.getHelper(c), user.getEmail());
+        DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), e1, u1, n1, m1, p1, 0, 0);
+        UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
 
-        WelcomeActivity.mUserStorage.remove(currentLoggedIn);
-        WelcomeActivity.mUserStorage.addUser(e1, u1, n1, m1, p1);
+        LoginActivity.currentLoggedInUser = u1;
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
+        Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
         finish();
     }

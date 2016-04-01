@@ -6,6 +6,10 @@ import java.util.ArrayList;
 /**
  * Created by Wyckoff on 2/13/2016.
  */
+
+/**
+ * A class that represents a User
+ */
 public class User {
     private String email;
     private String username;
@@ -16,6 +20,14 @@ public class User {
     private boolean banned;
     private boolean admin;
 
+    /**
+     * Creates a User Object
+     * @param email user email
+     * @param username username of user
+     * @param name the name of the user
+     * @param major the major
+     * @param password the majors
+     */
     public User(String email, String username, String name, String major, String password) {
         this.email = email;
         this.username = username;
@@ -100,20 +112,75 @@ public class User {
         return this.ratingList;
     }
 
+    /**
+     * Set the user to be banned or not
+     */
+    public void setBanStatus(boolean status){
+        this.banned = status;
+    }
+
+    /**
+     * Set the user to be an Admin or not
+     */
+    public void setAdminStatus(boolean status){
+        this.admin = status;
+    }
+
+    /**
+     * Get the banned status
+     * @return the int value
+     */
+    public int getBanStatus(){
+        if(banned) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * Get the admin status
+     * @return the int value
+     */
+    public int getAdminStatus(){
+        if(admin) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * Set the user to be banned
+     */
     public void banUser(){
         this.banned = true;
     }
 
+    /**
+     * Unban user
+     */
     public void unbanUser(){
         this.banned = false;
     }
 
+    /**
+     * Get banned status
+     * @return the status
+     */
     public boolean isBanned(){
         return this.banned;
     }
 
+    /**
+     * Set the user to be an Admin
+     */
     public void makeAdmin() { this.admin = true;}
 
+    /**
+     * Get admin status
+     * @return the status
+     */
     public boolean isAdmin(){
         return admin;
     }

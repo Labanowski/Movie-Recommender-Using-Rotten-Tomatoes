@@ -2,6 +2,9 @@ package team56.mrurt.model;
 
 import java.util.ArrayList;
 
+import team56.mrurt.activity.WelcomeActivity;
+import team56.mrurt.model.Database.DatabaseOperations;
+
 /**
  * Created by Haruka on 2016/03/04.
  */
@@ -38,6 +41,14 @@ public class RatingStorage {
     }
 
     /**
+     * gets the list of ratings stored
+     * @return returns list of ratings
+     */
+    public void setRatings(ArrayList<Rating> list) {
+        this.ratings = list;
+    }
+
+    /**
      * Adds rating to storage
      * @param rating rating to be added
      */
@@ -51,6 +62,15 @@ public class RatingStorage {
      */
     public void removeRating(Rating m) {
         this.ratings.remove(m);
+    }
+
+    /**
+     * Removes rating from this storage
+     * @param list is rating to be removed.
+     */
+    public void updateRatingDatabase(ArrayList<Rating> list) {
+        ratings.removeAll(ratings);
+        setRatings(list);
     }
 
     /**
@@ -92,4 +112,3 @@ public class RatingStorage {
 
 
 }
-

@@ -57,7 +57,7 @@ public class Recommender {
         List<Rating> ratedMovieList = RatingStorage.getInstance().getRatings();
         List<Rating> ratings = new ArrayList<Rating>();
         String currentLoggedIn = LoginActivity.currentLoggedInUser;
-        currentUser = WelcomeActivity.mUserStorage.findUserByName(currentLoggedIn);
+        currentUser = UserStorage.getInstance().findUserByName(currentLoggedIn);
         for (Rating r : ratedMovieList) {
             if (r.getMajor().equals(currentUser.getMajor())) {
                 ratings.add(r);

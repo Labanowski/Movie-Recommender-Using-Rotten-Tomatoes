@@ -1,5 +1,6 @@
 package team56.mrurt.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,10 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 import team56.mrurt.R;
+import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.Movie;
 import team56.mrurt.model.Movies;
+import team56.mrurt.model.RatingStorage;
 import team56.mrurt.model.Recommender;
 
 /**
@@ -24,7 +27,7 @@ import team56.mrurt.model.Recommender;
 public class RecommendMovieActivity extends AppCompatActivity {
     private Button recommendYear;
     private Button recommendMajor;
-
+    private Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText year = (EditText) findViewById(R.id.year);
+                RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
                 ArrayList<Movie> movie = Recommender.sortByYear(year.getText().toString());
                 changeView(movie);
             }
@@ -46,6 +50,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
         recommendMajor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
                 ArrayList<Movie> movie = Recommender.sortByMajor();
                 changeView(movie);
             }

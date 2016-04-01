@@ -12,6 +12,7 @@ import android.view.View;
 import team56.mrurt.R;
 import team56.mrurt.activity.HomepageActivity;
 import team56.mrurt.activity.WelcomeActivity;
+import team56.mrurt.model.UserStorage;
 
 /**
  * Created by alexlabanowski on 2/10/16.
@@ -31,13 +32,13 @@ public class LoginActivity extends AppCompatActivity {
         mPasswordView = (EditText) findViewById(R.id.password);
     }
 
-    public EditText getUsernameView() {
+    /*public EditText getUsernameView() {
         return mUsernameView;
     }
 
     public EditText getPassWordView() {
         return  mPasswordView;
-    }
+    }*/
 
     /**
      * Logins in the user if they input registered username and password
@@ -47,14 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         String username = mUsernameView.getText().toString();
         String password = mPasswordView.getText().toString();
 
-
-
-        if(WelcomeActivity.mUserStorage.handleLoginRequest(username, password)){
-            if(WelcomeActivity.mUserStorage.findUserByName(username).isAdmin()) {
+        if(UserStorage.getInstance().handleLoginRequest(username, password)){
+            if(UserStorage.getInstance().findUserByName(username).isAdmin()) {
                 Intent intent = new Intent(this, AdminActivity.class);
                 startActivity(intent);
                 finish();
-            } else if(WelcomeActivity.mUserStorage.findUserByName(username).isBanned()){
+            } else if(UserStorage.getInstance().findUserByName(username).isBanned()){
                 Context context = getApplicationContext();
                 int duration = Toast.LENGTH_SHORT;
                 Toast t = Toast.makeText(context, "You are banned!", duration);
