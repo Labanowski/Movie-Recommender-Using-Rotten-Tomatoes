@@ -5,10 +5,16 @@ import android.provider.BaseColumns;
 /**
  * Created by Haruka on 2016/03/30.
  */
+/**
+ * Keeps track of all the column names for the tables
+ */
 public class UserData {
     public UserData(){
     }
 
+    /**
+     * Keeps track of all the column names for the tables
+     */
     public static abstract class TableInfo implements BaseColumns{
         //USER TABLE
         public static final String USER_EMAIL = "USER_EMAIL"; //KEY

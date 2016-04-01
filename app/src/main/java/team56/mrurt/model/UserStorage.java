@@ -1,25 +1,22 @@
 package team56.mrurt.model;
 
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import team56.mrurt.activity.WelcomeActivity;
-import team56.mrurt.model.Database.DatabaseOperations;
-
 /**
  * Created by Wyckoff on 2/13/2016.
+ */
+/**
+ * A class thats holds the list of Users
  */
 public class UserStorage {
     private static Map<String, User> users = new HashMap<>();
     private static UserStorage usInstance;
     /**
-     * Gets an instance of Rating Storage
-     * @return returns the instance of RatingStorage
+     * Gets an instance of User Storage
+     * @return returns the instance of UserStorage
      */
     public static UserStorage getInstance() {
         if (usInstance == null) {
@@ -29,6 +26,11 @@ public class UserStorage {
 
     }
 
+    /**
+     * Gets the list of Users from the database and
+     * puts them into UserStorage for local user
+     * @param list1 the list of users from database
+     */
     public void setUserList(ArrayList<User> list1) {
         ArrayList<User> list = list1;
 
@@ -37,6 +39,10 @@ public class UserStorage {
         }
     }
 
+    /**
+     * Updates userstorage when changes were made to database
+     * @param list the list of users from database
+     */
     public void updateUserDatabase(ArrayList<User> list) {
         users.clear();
         setUserList(list);
@@ -86,6 +92,10 @@ public class UserStorage {
         }
     }
 
+    /**
+     * Gets the list of Users in array form
+     * @return the array of users
+     */
     public String[] toArray(){
         return Arrays.copyOf(this.users.keySet().toArray(), this.users.keySet().toArray().length, String[].class);
     }

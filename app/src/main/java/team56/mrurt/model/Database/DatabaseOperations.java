@@ -15,6 +15,10 @@ import team56.mrurt.model.User;
 /**
  * Created by Haruka on 2016/03/30.
  */
+
+/**
+ * A SQLiteOpenHelper class that manages all the database operations
+ */
 public class DatabaseOperations extends SQLiteOpenHelper {
     public static final int database_version = 1;
     public String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
@@ -27,10 +31,15 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     public DatabaseOperations (Context context) {
         super(context, UserData.TableInfo.DATABASE_NAME, null, database_version);
-        Log.d("Database Operations", "Database Create");
+        Log.d("Database Operations", "Database Created");
     }
     private static DatabaseOperations instance;
 
+    /**
+     * Gets an instance of DatabaseOperations
+     * @param context the application context
+     * @return returns the instance of DatabaseOperations
+     */
     public static synchronized DatabaseOperations getHelper(Context context) {
         if (instance == null)
             instance = new DatabaseOperations(context);
@@ -79,7 +88,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
     }
 
     /**
-     * put user into user table
+     * put rating into movie table
      */
     public void addRating(DatabaseOperations db, Rating r) {
         SQLiteDatabase SQ =  db.getWritableDatabase();
@@ -209,6 +218,11 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         return allRatings;
     }
 
+    /**
+     * Updates the user in the database
+     * @param d The instance of the database
+     * @param u the user we are going to update
+     */
     public void updateUser(DatabaseOperations d, User u) {
         SQLiteDatabase db = d.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -219,6 +233,11 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         db.update(UserData.TableInfo.TABLE_USER, cv, " USER_EMAIL = ?", new String[]{u.getEmail()});
     }
 
+    /**
+     * Updates the user's movie rating in the database
+     * @param d The instance of the database
+     * @param r the rating we are going to update
+     */
     public void updateRating(DatabaseOperations d, Rating r) {
         SQLiteDatabase db = d.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -227,8 +246,27 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         db.update(UserData.TableInfo.TABLE_MOVIE, values, " USER_NAME = ?", new String[]{r.getUser()});
     }
 
-    public boolean deleteUser(DatabaseOperations d, String email) {
+    /**
+     * Updates the user's movie rating in the database
+     * @param d The instance of the database
+     * @param newUsername the new user name
+     * @param oldUsername the users old username
+     */
+    public void updateUserRating(DatabaseOperations d, String newUsername, String oldUsername) {
         SQLiteDatabase db = d.getWritableDatabase();
-        return db.delete(UserData.TableInfo.TABLE_USER, UserData.TableInfo.USER_EMAIL + "=" + email, null) > 0;
+        ContentValues values = new ContentValues();
+
+        values.put(UserData.TableInfo.USER_NAME, newUsername);
+        db.update(UserData.TableInfo.TABLE_MOVIE, values, " USER_NAME = ?", new String[]{oldUsername});
+    }
+
+    /**
+     * Deletes User based on their email
+     * @param d The instance of the database
+     * @param email the user we will delete
+     */
+    public void deleteUser(DatabaseOperations d, String email) {
+        SQLiteDatabase db = d.getWritableDatabase();
+        db.delete(UserData.TableInfo.TABLE_USER, UserData.TableInfo.USER_EMAIL + " = ?", new String[]{email});
     }
 }

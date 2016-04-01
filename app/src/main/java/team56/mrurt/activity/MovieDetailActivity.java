@@ -124,7 +124,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() + " ");
+                                   //System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                } else {
                                    Context c = getApplicationContext();
                                    //updates rating in the database
@@ -135,7 +135,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                                    MovieDetailActivity.this.currentUser.removeRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
-                                   System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor() + " ");
+                                   //System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                }
                         return;
                     }

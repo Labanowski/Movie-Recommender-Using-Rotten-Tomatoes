@@ -32,13 +32,13 @@ public class LoginActivity extends AppCompatActivity {
         mPasswordView = (EditText) findViewById(R.id.password);
     }
 
-    public EditText getUsernameView() {
+    /*public EditText getUsernameView() {
         return mUsernameView;
     }
 
     public EditText getPassWordView() {
         return  mPasswordView;
-    }
+    }*/
 
     /**
      * Logins in the user if they input registered username and password

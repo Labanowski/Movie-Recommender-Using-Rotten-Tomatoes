@@ -21,16 +21,16 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
     String currentLoggedIn = LoginActivity.currentLoggedInUser;
-    User user = UserStorage.getInstance().findUserByName(currentLoggedIn);
+    User user;
     Context c = this;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
 
+        UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
+        user = UserStorage.getInstance().findUserByName(currentLoggedIn);
         mEmailView = (EditText) findViewById(R.id.userEmail);
         mUsernameView = (EditText) findViewById(R.id.userUsername);
         mNameView = (EditText) findViewById(R.id.userName);
@@ -53,7 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     /**
-     * Logs out the user, if any changes have been made to the profile, the old user
+     * Saves the user, if any changes have been made to the profile, the old user
      * data is removed and the new data is added
      * @param view The View
      */
@@ -64,9 +64,15 @@ public class ProfileActivity extends AppCompatActivity {
         String m1 = mMajorView.getText().toString();
         String p1 = mPasswordView.getText().toString();
 
+        //Deletes and updates the user's profile info.
+        if(currentLoggedIn != u1) {
+            DatabaseOperations.getHelper(c).updateUserRating(DatabaseOperations.getHelper(c), u1, currentLoggedIn);
+        }
         DatabaseOperations.getHelper(c).deleteUser(DatabaseOperations.getHelper(c), user.getEmail());
         DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), e1, u1, n1, m1, p1, 0, 0);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
+
+        LoginActivity.currentLoggedInUser = u1;
 
         Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
