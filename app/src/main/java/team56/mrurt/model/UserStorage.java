@@ -1,15 +1,46 @@
 package team56.mrurt.model;
 
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import team56.mrurt.activity.WelcomeActivity;
+import team56.mrurt.model.Database.DatabaseOperations;
 
 /**
  * Created by Wyckoff on 2/13/2016.
  */
 public class UserStorage {
     private static Map<String, User> users = new HashMap<>();
+    private static UserStorage usInstance;
+    /**
+     * Gets an instance of Rating Storage
+     * @return returns the instance of RatingStorage
+     */
+    public static UserStorage getInstance() {
+        if (usInstance == null) {
+            usInstance = new UserStorage();
+        }
+        return usInstance;
 
+    }
+
+    public void setUserList(ArrayList<User> list1) {
+        ArrayList<User> list = list1;
+
+        for(int a = 0; a < list.size(); a++) {
+            users.put(list1.get(a).getUsername(), list1.get(a));
+        }
+    }
+
+    public void updateUserDatabase(ArrayList<User> list) {
+        users.clear();
+        setUserList(list);
+    }
     /**
      * Find the user in the map by their username
      * @param username the user's username
@@ -58,4 +89,5 @@ public class UserStorage {
     public String[] toArray(){
         return Arrays.copyOf(this.users.keySet().toArray(), this.users.keySet().toArray().length, String[].class);
     }
+
 }

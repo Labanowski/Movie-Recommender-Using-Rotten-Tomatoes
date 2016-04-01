@@ -5,6 +5,7 @@ package team56.mrurt.activity;
  */
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,11 +25,13 @@ import android.widget.RatingBar;
 import android.app.AlertDialog;
 
 import team56.mrurt.R;
+import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.Movie;
 import team56.mrurt.model.Movies;
 import team56.mrurt.model.Rating;
 import team56.mrurt.model.RatingStorage;
 import team56.mrurt.model.User;
+import team56.mrurt.model.UserStorage;
 import team56.mrurt.presenters.MovieDetailFragment;
 
 
@@ -48,7 +51,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
         String currentLoggedIn = LoginActivity.currentLoggedInUser;
-        currentUser = WelcomeActivity.mUserStorage.findUserByName(currentLoggedIn);
+        currentUser = UserStorage.getInstance().findUserByName(currentLoggedIn);
 
 
         ActionBar actionBar = getSupportActionBar();
@@ -114,13 +117,21 @@ public class MovieDetailActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                                Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingbar1.getRating());
                                if (!RatingStorage.getInstance().getRatings().contains(newRating)) {
+                                   Context c = getApplicationContext();
+                                   //puts the data from database into ratingstorage for local access
+                                   DatabaseOperations.getHelper(c).addRating(DatabaseOperations.getHelper(c),newRating);
+                                   RatingStorage.getInstance().setRatings(DatabaseOperations.getHelper(c).getAllRatings());
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes
                                    System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                } else {
-                                   RatingStorage.getInstance().removeRating(newRating);
-                                   RatingStorage.getInstance().addRating(newRating);
+                                   Context c = getApplicationContext();
+                                   //updates rating in the database
+                                   DatabaseOperations.getHelper(c).updateRating(DatabaseOperations.getHelper(c), newRating);
+                                   //RatingStorage.getInstance().removeRating(newRating);
+                                   //RatingStorage.getInstance().addRating(newRating);
+                                   RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
                                    MovieDetailActivity.this.currentUser.removeRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
                                    //debuging purposes

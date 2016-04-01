@@ -100,6 +100,30 @@ public class User {
         return this.ratingList;
     }
 
+    public void setBanStatus(boolean status){
+        this.banned = status;
+    }
+
+    public void setAdminStatus(boolean status){
+        this.admin = status;
+    }
+
+    public int getBanStatus(){
+        if(banned) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
+    public int getAdminStatus(){
+        if(admin) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
     public void banUser(){
         this.banned = true;
     }
