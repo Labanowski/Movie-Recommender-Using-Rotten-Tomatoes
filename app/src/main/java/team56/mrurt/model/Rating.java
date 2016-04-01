@@ -76,7 +76,7 @@ public class Rating implements Comparable<Rating> {
 
     @Override
     public int compareTo(Rating a) {
-        return (int) (a.getMovie_Rating().compareTo(this.getMovie_Rating()));
+        return (a.getMovie_Rating().compareTo(this.getMovie_Rating()));
     }
 
 }

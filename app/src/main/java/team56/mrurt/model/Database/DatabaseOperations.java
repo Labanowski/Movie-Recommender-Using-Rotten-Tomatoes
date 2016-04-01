@@ -41,9 +41,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @return returns the instance of DatabaseOperations
      */
     public static synchronized DatabaseOperations getHelper(Context context) {
-        if (instance == null)
+        if (instance == null) {
             instance = new DatabaseOperations(context);
-
+        }
         return instance;
     }
 
@@ -63,11 +63,6 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void closeDB() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        if (db != null && db.isOpen())
-            db.close();
-    }
     /**
      * put user into user table
      */
