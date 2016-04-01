@@ -85,11 +85,7 @@ public class UserStorage {
      */
     public boolean handleLoginRequest(String userName, String password) {
         User user = findUserByName(userName);
-        if (user == null) {
-            return false;
-        } else {
-            return user.checkPassword(password);
-        }
+        return user != null && user.checkPassword(password);
     }
 
     /**

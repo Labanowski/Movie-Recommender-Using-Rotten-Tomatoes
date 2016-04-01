@@ -152,7 +152,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject resp) {
                         //handle a valid response coming back.  Getting this string mainly for debug
-                        response = resp.toString();;
+                        response = resp.toString();
 
                         //Now we parse the information.  Looking at the format, everything encapsulated in RestResponse object
                         JSONArray array = null;

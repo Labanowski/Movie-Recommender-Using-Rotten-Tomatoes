@@ -9,7 +9,7 @@ public class Movie implements Serializable, Comparable<Movie> {
     String title, year, synopsis, criticsRating, id;
     double userRatings;
     static float numOfUsers, total;
-    List<String> genres, ratingMajor;;
+    List<String> genres, ratingMajor;
 
     /**
      * Sets Movie title.
