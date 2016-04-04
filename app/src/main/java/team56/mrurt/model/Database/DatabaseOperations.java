@@ -13,7 +13,7 @@ import team56.mrurt.model.Rating;
 import team56.mrurt.model.User;
 
 /**
- * Created by Haruka on 2016/03/30.
+ * Created by Haruka
  */
 
 /**

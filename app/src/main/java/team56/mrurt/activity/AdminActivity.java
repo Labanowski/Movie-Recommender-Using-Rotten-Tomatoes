@@ -16,7 +16,7 @@ import team56.mrurt.model.User;
 import team56.mrurt.model.UserStorage;
 
 /**
- * Created by alexanderlabanowski on 3/16/16.
+ * Created by alexanderlabanowski
  */
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
 

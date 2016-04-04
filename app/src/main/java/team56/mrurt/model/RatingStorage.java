@@ -2,9 +2,6 @@ package team56.mrurt.model;
 
 import java.util.ArrayList;
 
-import team56.mrurt.activity.WelcomeActivity;
-import team56.mrurt.model.Database.DatabaseOperations;
-
 /**
  * Created by Haruka on 2016/03/04.
  */

@@ -1,10 +1,9 @@
 package team56.mrurt.activity;
 
 /**
- * Created by Haruka on 2016/02/24.
+ * Created by Haruka
  */
-import android.app.AlertDialog.Builder;
-import android.app.Dialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,11 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -27,7 +23,6 @@ import android.app.AlertDialog;
 import team56.mrurt.R;
 import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.Movie;
-import team56.mrurt.model.Movies;
 import team56.mrurt.model.Rating;
 import team56.mrurt.model.RatingStorage;
 import team56.mrurt.model.User;

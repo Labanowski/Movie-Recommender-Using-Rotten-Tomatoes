@@ -1,7 +1,6 @@
 package team56.mrurt.activity;
 
 import android.content.Context;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +9,10 @@ import android.widget.Toast;
 import android.view.View;
 
 import team56.mrurt.R;
-import team56.mrurt.activity.HomepageActivity;
-import team56.mrurt.activity.WelcomeActivity;
 import team56.mrurt.model.UserStorage;
 
 /**
- * Created by alexlabanowski on 2/10/16.
+ * Created by alexlabanowski
  */
 public class LoginActivity extends AppCompatActivity {
 

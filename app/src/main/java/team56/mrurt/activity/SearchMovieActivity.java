@@ -19,12 +19,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Movie;
-import team56.mrurt.model.Movies;
+
 
 
 /**
