@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 /**
  * Keeps track of all the column names for the tables
  */
-public class UserData {
+class UserData {
     public UserData(){
     }
 

@@ -1,34 +1,15 @@
 package com.example.alexlabanowski.movierecommenderusingrottentomatoes;
 
-import junit.framework.*;
-import junit.framework.TestCase;
-
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.ArrayList;
-
-import team56.mrurt.activity.LoginActivity;
-import team56.mrurt.model.Rating;
-import team56.mrurt.model.RatingStorage;
-import team56.mrurt.model.Recommender;
-import team56.mrurt.model.User;
-import team56.mrurt.model.UserStorage;
 import team56.mrurt.model.Movie;
-import team56.mrurt.model.Movies;
-
-import static org.junit.Assert.*;
-
 
 /**
- * Created by Wyckoff on 4/8/2016.
+ * Created by Wyckoff.
  */
-public class testSortByMajor extends TestCase {
+public class testSortByMajor {
     @Test
-    public void testSortByMajor() {
+    public void testSortByMajorTest() {
         System.out.println("Testing Equals Method in Movie Class");
         Movie a = new Movie();
         a.setTitle("Chicken Little");
@@ -59,15 +40,15 @@ public class testSortByMajor extends TestCase {
         f.setTitle("TheMatrix");
         f.setYear("1999");
 
-        assertTrue(a.equals(b)));
-        assertTrue(b.equals(g));
-        assertTrue(g.equals(a));
+        Assert.assertTrue(a.equals(b));
+        Assert.assertTrue(b.equals(g));
+        Assert.assertTrue(g.equals(a));
 
-        assertFalse(a.equals(c));
+        Assert.assertFalse(a.equals(c));
 
-        assertFalse(c.equals(d));
+        Assert.assertFalse(c.equals(d));
 
-        assertFalse(e.equals(f));
+        Assert.assertFalse(e.equals(f));
 
     }
 }

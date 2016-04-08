@@ -34,7 +34,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      */
     private RequestQueue queue;
 
-    public String response;
+    private String response;
     private SearchView MovieSearchView;
 
     @Override

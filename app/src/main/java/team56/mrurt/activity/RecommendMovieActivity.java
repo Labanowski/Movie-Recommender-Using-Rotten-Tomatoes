@@ -22,7 +22,7 @@ import team56.mrurt.model.Recommend;
 * Sorts Movies into a list by specific Criteria
  */
 public class RecommendMovieActivity extends AppCompatActivity {
-    private Context c = this;
+    private final Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
      *
      * @param movies the list of movie objects we created from the recommendations
      */
-    public void changeView(List<Movie> movies) {
+    private void changeView(List<Movie> movies) {
         Intent viewResultsIntent = new Intent(this, RecommendListActivity.class);
         viewResultsIntent.putExtra("movies", (ArrayList<Movie>) movies);
         startActivity(viewResultsIntent);

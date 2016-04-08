@@ -2,13 +2,10 @@ package team56.mrurt.model;
 import android.support.annotation.NonNull;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class Movie implements Serializable, Comparable<Movie> {
-    public String title, year, synopsis, criticsRating, id;
-    public double userRatings;
-    public static float numOfUsers, total;
-    public List<String> genres, ratingMajor;
+    private String title, year, synopsis, criticsRating, id;
+    private double userRatings;
 
     /**
      * Sets Movie title.
@@ -98,10 +95,7 @@ public class Movie implements Serializable, Comparable<Movie> {
     }
 
     public boolean equals(Movie m) {
-        if(m.getTitle().equals(this.title)) {
-            return true;
-        }
-        return false;
+        return (m.getTitle().equals(this.title));
     }
 
     public int hashCode() {

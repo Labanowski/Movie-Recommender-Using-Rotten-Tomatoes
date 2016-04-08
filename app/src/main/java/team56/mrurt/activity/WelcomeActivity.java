@@ -12,7 +12,7 @@ import team56.mrurt.model.UserStorage;
 
 
 public class WelcomeActivity extends AppCompatActivity {
-    public Context c = this;
+    private Context c = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

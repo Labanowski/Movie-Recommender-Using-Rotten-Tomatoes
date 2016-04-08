@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mMajorView;
     private EditText mPasswordView;
 
-    public Context ctx = this;
+    private final Context ctx = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
      *
      * @return username
      */
-    public String getUsernameString() {
+    private String getUsernameString() {
         return mUsernameView.getText().toString();
     }
 
@@ -51,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
      *
      * @return password
      */
-    public String getPasswordString() {
+    private String getPasswordString() {
         return mPasswordView.getText().toString();
     }
 
@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
      *
      * @return name
      */
-    public String getNameString() {
+    private String getNameString() {
         return mNameView.getText().toString();
     }
 
@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
      *
      * @return major
      */
-    public String getMajorString() {
+    private String getMajorString() {
         return mMajorView.getText().toString();
     }
 
@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
      *
      * @return email
      */
-    public String getEmailString() {
+    private String getEmailString() {
         return mEmailView.getText().toString();
     }
 

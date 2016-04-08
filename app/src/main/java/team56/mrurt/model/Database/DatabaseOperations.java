@@ -21,16 +21,9 @@ import team56.mrurt.model.User;
  * A SQLiteOpenHelper class that manages all the database operations
  */
 public class DatabaseOperations extends SQLiteOpenHelper {
-    public static final int database_version = 1;
-    public String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
-            UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
-            UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
-    public String CREATE_TABLE_RATINGS = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_MOVIE + "(" +
-            UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.MAJOR_USER + " TEXT," +
-            UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING +" TEXT," +
-            UserData.TableInfo.MOVIE_RATE +" TEXT," +UserData.TableInfo.MOVIE_ID + " TEXT );";
+    private static final int database_version = 1;
 
-    public DatabaseOperations (Context context) {
+    private DatabaseOperations (Context context) {
         super(context, UserData.TableInfo.DATABASE_NAME, null, database_version);
         Log.d("Database Operations", "Database Created");
     }
@@ -50,7 +43,14 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
+                UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
+                UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
         db.execSQL(CREATE_TABLE_USER);
+        String CREATE_TABLE_RATINGS = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_MOVIE + "(" +
+                UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.MAJOR_USER + " TEXT," +
+                UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING + " TEXT," +
+                UserData.TableInfo.MOVIE_RATE + " TEXT," + UserData.TableInfo.MOVIE_ID + " TEXT );";
         db.execSQL(CREATE_TABLE_RATINGS);
         Log.d("Database Operations", "Table Created");
     }
@@ -140,7 +140,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 allUsers.add(u);
             } while (c.moveToNext());
         }
-
+        c.close();
         return allUsers;
     }
 
@@ -174,6 +174,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         } else {
             u.setBanStatus(true);
         }
+        c.close();
         return u;
     }
     /**
@@ -211,6 +212,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 allRatings.add(r);
             } while (c.moveToNext());
         }
+        c.close();
         return allRatings;
     }
 

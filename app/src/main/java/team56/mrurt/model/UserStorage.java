@@ -9,7 +9,7 @@ import java.util.Map;
  * A class that holds the list of Users
  */
 public class UserStorage {
-    private static Map<String, User> users = new HashMap<>();
+    private final static Map<String, User> users = new HashMap<>();
     private static UserStorage usInstance;
     /**
      * Gets an instance of User Storage
@@ -28,10 +28,9 @@ public class UserStorage {
      * puts them into UserStorage for local user
      * @param list1 the list of users from database
      */
-    public void setUserList(List<User> list1) {
-        List<User> list = list1;
+    private void setUserList(List<User> list1) {
 
-        for(int a = 0; a < list.size(); a++) {
+        for(int a = 0; a < list1.size(); a++) {
             users.put(list1.get(a).getUsername(), list1.get(a));
         }
     }
@@ -90,7 +89,7 @@ public class UserStorage {
      * @return the array of users
      */
     public String[] toArray(){
-        return Arrays.copyOf(this.users.keySet().toArray(), this.users.keySet().toArray().length, String[].class);
+        return Arrays.copyOf(users.keySet().toArray(), users.keySet().toArray().length, String[].class);
     }
 
 }

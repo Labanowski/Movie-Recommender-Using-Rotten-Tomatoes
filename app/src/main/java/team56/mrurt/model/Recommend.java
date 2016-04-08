@@ -7,12 +7,10 @@ import java.util.Collections;
 import team56.mrurt.activity.LoginActivity;
 
 /**
- * Created by Haruka on 2016/03/04.
+ * Created by Haruka.
  * Sorts the movies based on recommendation criteria
  */
 public class Recommend {
-    public static List<Movie> moviesInYear, moviesForMajor;
-    public static User currentUser;
 
     /**
      * Sorts the movie by year
@@ -28,7 +26,7 @@ public class Recommend {
              }
         }
         Collections.sort(ratings);
-        moviesInYear = new ArrayList<>();
+        List<Movie> moviesInYear = new ArrayList<>();
         for (Rating r: ratings) {
             moviesInYear.add(r.getMovie());
         }
@@ -43,14 +41,14 @@ public class Recommend {
         List<Rating> ratedMovieList = RatingStorage.getInstance().getRatings();
         List<Rating> ratings = new ArrayList<>();
         String currentLoggedIn = LoginActivity.currentLoggedInUser;
-        currentUser = UserStorage.getInstance().findUserByName(currentLoggedIn);
+        User currentUser = UserStorage.getInstance().findUserByName(currentLoggedIn);
         for (Rating r : ratedMovieList) {
             if (r.getMajor().equals(currentUser.getMajor())) {
                 ratings.add(r);
             }
         }
         Collections.sort(ratings);
-        moviesForMajor = new ArrayList<>();
+        List<Movie> moviesForMajor = new ArrayList<>();
         for (Rating r: ratings) {
             moviesForMajor.add(r.getMovie());
         }

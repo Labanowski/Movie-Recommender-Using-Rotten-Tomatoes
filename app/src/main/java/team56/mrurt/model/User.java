@@ -9,12 +9,12 @@ import java.util.List;
  * A class that represents a User
  */
 public class User {
-    private String email;
-    private String username;
-    private String name;
-    private String major;
-    private String password;
-    private List<Rating> ratingList;
+    private final String email;
+    private final String username;
+    private final String name;
+    private final String major;
+    private final String password;
+    private final List<Rating> ratingList;
     private boolean banned;
     private boolean admin;
 
@@ -184,10 +184,7 @@ public class User {
     }
 
     public boolean equals(User u) {
-        if (u.getUsername().equals(this.getUsername())) {
-            return true;
-        }
-        return false;
+        return (u.getUsername().equals(this.getUsername()));
     }
 
     @Override

@@ -5,7 +5,7 @@
     tools:context=".activity.ProfileActivity">
 
     <item android:id="@+id/logout_id"
-        android:title="LogOut"
+        android:title="@string/logout"
         app:showAsAction="always"
         android:orderInCategory="1"
         android:menuCategory="secondary"/>
@@ -13,11 +13,11 @@
     <item
         android:id="@+id/profile_id"
         android:orderInCategory="2"
-        android:title="Profile"
+        android:title="@string/profile"
         app:showAsAction="always"/>
 
     <item android:id="@+id/search_id"
-        android:title="Search"
+        android:title="@string/search"
         app:showAsAction="ifRoom"
         android:orderInCategory="3"
         android:menuCategory="secondary"/>
