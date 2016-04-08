@@ -13,7 +13,7 @@ import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.UserStorage;
 
 /**
- * Created by connorwyckoff
+ * Created by Connor Wyckoff
  */
 public class RegisterActivity extends AppCompatActivity {
 

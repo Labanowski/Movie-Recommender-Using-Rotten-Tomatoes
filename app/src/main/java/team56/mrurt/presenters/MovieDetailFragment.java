@@ -1,8 +1,5 @@
 package team56.mrurt.presenters;
 
-/**
- * Created by Haruka on 2016/02/24.
- */
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;

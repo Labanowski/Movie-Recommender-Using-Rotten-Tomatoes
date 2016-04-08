@@ -1,4 +1,6 @@
 package team56.mrurt.model;
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -40,14 +42,14 @@ public class Movie implements Serializable, Comparable<Movie> {
         this.criticsRating = criticsRating;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     /**
      * Gets Movie title.
      * @return the title.
      */
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return this.title;
@@ -91,12 +93,11 @@ public class Movie implements Serializable, Comparable<Movie> {
     }
 
     @Override
-    public int compareTo(Movie a) {
+    public int compareTo(@NonNull Movie a) {
         return (int) this.userRatings - (int) a.userRatings;
     }
 
-    public boolean equals(Object o) {
-        Movie m = (Movie) o;
+    public boolean equals(Movie m) {
         if(m.getTitle().equals(this.title)) {
             return true;
         }

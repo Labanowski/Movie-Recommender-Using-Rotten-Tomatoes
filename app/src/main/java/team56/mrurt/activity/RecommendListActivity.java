@@ -20,7 +20,7 @@ import team56.mrurt.model.Movies;
 import team56.mrurt.presenters.MovieDetailFragment;
 
 /**
- * Created by kuiski on 3/5/2016.
+ * Created by Kui Ski on 3/5/2016.
  * Displays the movie list from recommendations
  */
 public class RecommendListActivity extends AppCompatActivity{

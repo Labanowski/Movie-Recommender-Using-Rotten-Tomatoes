@@ -101,7 +101,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
-                                assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -151,7 +150,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
-                                assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -198,7 +196,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
-                                assert jsonObject != null;
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -223,7 +220,7 @@ public class SearchMovieActivity extends AppCompatActivity {
 
     /**
      * This method changes to our new list view of the movies, but we have to pass the
-     * moviearray into the intent so the new screen gets the data.
+     * movie array into the intent so the new screen gets the data.
      *
      * @param movies the list of movie objects we created from the JSon response
      */

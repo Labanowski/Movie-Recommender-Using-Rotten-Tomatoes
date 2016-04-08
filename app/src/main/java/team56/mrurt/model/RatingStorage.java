@@ -38,8 +38,7 @@ public class RatingStorage {
     }
 
     /**
-     * gets the list of ratings stored
-     * @return returns list of ratings
+     * Sets the list of ratings stored
      */
     public void setRatings(List<Rating> list) {
         this.ratings = list;
@@ -58,7 +57,7 @@ public class RatingStorage {
      * @param list is rating to be removed.
      */
     public void updateRatingDatabase(List<Rating> list) {
-        ratings.removeAll(ratings);
+        ratings.clear();
         setRatings(list);
     }
 
