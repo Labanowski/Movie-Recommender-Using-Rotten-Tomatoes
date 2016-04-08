@@ -3,9 +3,6 @@ package team56.mrurt.model.Database;
 import android.provider.BaseColumns;
 
 /**
- * Created by Haruka on 2016/03/30.
- */
-/**
  * Keeps track of all the column names for the tables
  */
 public class UserData {
@@ -29,8 +26,8 @@ public class UserData {
         //RATING DATABASE
         public static final String MOVIE_TITLE = "TITLE";
         public static final String MOVIE_YEAR = "YEAR";
-        public static final String MOVIE_SYNO = "SYNOPSIS";
-        public static final String MOVIE_CRITRATE = "CRITICS_RATING";
+        public static final String MOVIE_SYNOPSIS = "SYNOPSIS";
+        public static final String MOVIE_CRITICS_RATING = "CRITICS_RATING";
         public static final String MOVIE_RATE = "USER_RATING";
         public static final String MOVIE_ID = "MOVIE_ID";
         public static final String TABLE_MOVIE = "MOVIE_INFO";

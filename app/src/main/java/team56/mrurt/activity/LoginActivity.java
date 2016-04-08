@@ -12,7 +12,7 @@ import team56.mrurt.R;
 import team56.mrurt.model.UserStorage;
 
 /**
- * Created by alexlabanowski
+ * Created by Alex Labanowski
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     }*/
 
     /**
-     * Logins in the user if they input registered username and password
+     * Logs in the user if they input registered username and password
      * @param v The View
      */
     public void login(View v){

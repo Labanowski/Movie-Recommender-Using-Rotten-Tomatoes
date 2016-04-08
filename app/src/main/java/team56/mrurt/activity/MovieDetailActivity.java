@@ -93,20 +93,20 @@ public class MovieDetailActivity extends AppCompatActivity {
     private void rateMovie(MenuItem item) {
         AlertDialog.Builder movie_rate = new AlertDialog.Builder(MovieDetailActivity.this);
         final Movie ratedMovie = (Movie) getIntent().getSerializableExtra("Movie Object");
-        final RatingBar ratingbar1 = new RatingBar(MovieDetailActivity.this);
-        ratingbar1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        final RatingBar ratingBar1 = new RatingBar(MovieDetailActivity.this);
+        ratingBar1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        ratingbar1.setNumStars(5);
-        ratingbar1.setRating(1.0f);
-        ratingbar1.setStepSize(1);
-        ratingbar1.setMax(5);
+        ratingBar1.setNumStars(5);
+        ratingBar1.setRating(1.0f);
+        ratingBar1.setStepSize(1);
+        ratingBar1.setMax(5);
 
         String m = "Rate this movie 1 to 5 stars";
         movie_rate.setMessage(m)
-                .setTitle("Rate this Movie").setView(ratingbar1).setPositiveButton("Rate", new DialogInterface.OnClickListener() {
+                .setTitle("Rate this Movie").setView(ratingBar1).setPositiveButton("Rate", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                               Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingbar1.getRating());
+                               Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingBar1.getRating());
                                if (!RatingStorage.getInstance().getRatings().contains(newRating)) {
                                    Context c = getApplicationContext();
 
@@ -132,6 +132,6 @@ public class MovieDetailActivity extends AppCompatActivity {
                 });
         AlertDialog ratingDialog = movie_rate.create();
         ratingDialog.show();
-        ratingbar1.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        ratingBar1.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
     }
 }

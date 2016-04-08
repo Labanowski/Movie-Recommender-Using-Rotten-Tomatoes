@@ -3,9 +3,7 @@ package team56.mrurt.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-/**
- * Created by Haruka on 2016/02/21.
- */
+
 /**
  * This hold the Menu methods
  */

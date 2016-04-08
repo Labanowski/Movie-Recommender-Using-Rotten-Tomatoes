@@ -22,10 +22,6 @@ import team56.mrurt.presenters.MovieDetailFragment;
 import java.util.List;
 
 /**
- * Created by Haruka on 2016/02/24.
- */
-
-/**
  * An activity representing a list of Movies. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,

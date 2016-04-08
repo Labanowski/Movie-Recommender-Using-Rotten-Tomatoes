@@ -6,10 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Wyckoff on 2/13/2016.
- */
-/**
- * A class thats holds the list of Users
+ * A class that holds the list of Users
  */
 public class UserStorage {
     private static Map<String, User> users = new HashMap<>();
@@ -40,7 +37,7 @@ public class UserStorage {
     }
 
     /**
-     * Updates userstorage when changes were made to database
+     * Updates userStorage when changes were made to database
      * @param list the list of users from database
      */
     public void updateUserDatabase(List<User> list) {
