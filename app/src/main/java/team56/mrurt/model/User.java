@@ -2,6 +2,7 @@ package team56.mrurt.model;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Wyckoff on 2/13/2016.
@@ -16,7 +17,7 @@ public class User {
     private String name;
     private String major;
     private String password;
-    private ArrayList<Rating> ratingList;
+    private List<Rating> ratingList;
     private boolean banned;
     private boolean admin;
 
@@ -108,7 +109,7 @@ public class User {
      * Return the user's ratings list
      * @return the user's rating list
      */
-    public ArrayList<Rating> getRatingList() {
+    public List<Rating> getRatingList() {
         return this.ratingList;
     }
 
@@ -187,7 +188,7 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        User u = (User) o;
+        final User u = (User) o;
         if (u.getUsername().equals(this.getUsername())) {
             return true;
         }

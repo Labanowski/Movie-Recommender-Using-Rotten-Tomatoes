@@ -25,14 +25,6 @@ public class Movies {
         ITEM_MAP.put(item.toString(), item);
     }
 
-    /**
-     * Gets details about Movie.
-     * @param position is index of Movie List.
-     * @return the Movie synopsis.
-     */
-    private static String makeDetails(int position) {
-        return ITEMS.get(position).getSynopsis();
-    }
 
     /**
      * Clears the static list/map of Movie objects (used to reset for a new search).

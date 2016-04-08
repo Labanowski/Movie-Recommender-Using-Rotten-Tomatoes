@@ -16,20 +16,18 @@ import team56.mrurt.model.User;
 import team56.mrurt.model.UserStorage;
 
 /**
- * Created by alexanderlabanowski on 3/16/16.
+ * Created by alexanderlabanowski
  */
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
-
-    private Spinner dropdown;
     private static String[] users;
     private static String currentUser;
-    Context c = this;
+    public Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_activity);
-        dropdown = (Spinner)findViewById(R.id.spinner);
+        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         dropdown.setOnItemSelectedListener(this);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(this).getUsers());
         users = UserStorage.getInstance().toArray();

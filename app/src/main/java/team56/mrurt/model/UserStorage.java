@@ -1,8 +1,8 @@
 package team56.mrurt.model;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,8 +31,8 @@ public class UserStorage {
      * puts them into UserStorage for local user
      * @param list1 the list of users from database
      */
-    public void setUserList(ArrayList<User> list1) {
-        ArrayList<User> list = list1;
+    public void setUserList(List<User> list1) {
+        List<User> list = list1;
 
         for(int a = 0; a < list.size(); a++) {
             users.put(list1.get(a).getUsername(), list1.get(a));
@@ -43,7 +43,7 @@ public class UserStorage {
      * Updates userstorage when changes were made to database
      * @param list the list of users from database
      */
-    public void updateUserDatabase(ArrayList<User> list) {
+    public void updateUserDatabase(List<User> list) {
         users.clear();
         setUserList(list);
     }
@@ -65,7 +65,7 @@ public class UserStorage {
      * @param password password of new user
      */
     public void addUser(String email, String username, String name, String major, String password) {
-        User user = new User(email, username, name, major, password);
+        final User user = new User(email, username, name, major, password);
         users.put(username, user);
     }
 
@@ -84,7 +84,7 @@ public class UserStorage {
      * @return If the user is registered, return true;
      */
     public boolean handleLoginRequest(String userName, String password) {
-        User user = findUserByName(userName);
+        final User user = findUserByName(userName);
         return user != null && user.checkPassword(password);
     }
 

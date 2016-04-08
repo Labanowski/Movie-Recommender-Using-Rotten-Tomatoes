@@ -11,13 +11,13 @@ public class Rating implements Comparable<Rating> {
     private String major;
     private String user;
     private Movie movie;
-    private double movie_Rating;
+    private double movieRating;
 
-    public Rating(String major, String user, Movie movie, double movie_Rating) {
+    public Rating(String major, String user, Movie movie, double movieRating) {
         this.major = major;
         this.user = user;
         this.movie = movie;
-        this.movie_Rating = movie_Rating;
+        this.movieRating = movieRating;
     }
 
     /**
@@ -48,8 +48,8 @@ public class Rating implements Comparable<Rating> {
      * Get the rating of the movie
      * @return the movie id
      */
-    public Double getMovie_Rating() {
-        return this.movie_Rating;
+    public Double getMovieRating() {
+        return this.movieRating;
     }
 
     @Override
@@ -71,12 +71,12 @@ public class Rating implements Comparable<Rating> {
      * @return the string representation of Rating
      */
     public String toString(){
-        return movie.getTitle() + " " + movie_Rating + " " + user;
+        return movie.getTitle() + " " + movieRating + " " + user;
     }
 
     @Override
     public int compareTo(Rating a) {
-        return (a.getMovie_Rating().compareTo(this.getMovie_Rating()));
+        return (a.getMovieRating().compareTo(this.getMovieRating()));
     }
 
 }

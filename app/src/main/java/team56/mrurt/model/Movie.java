@@ -1,15 +1,12 @@
 package team56.mrurt.model;
 import java.io.Serializable;
 import java.util.List;
-import java.util.ArrayList;
-import java.lang.Comparable;
-
 
 public class Movie implements Serializable, Comparable<Movie> {
-    String title, year, synopsis, criticsRating, id;
-    double userRatings;
-    static float numOfUsers, total;
-    List<String> genres, ratingMajor;
+    public String title, year, synopsis, criticsRating, id;
+    public double userRatings;
+    public static float numOfUsers, total;
+    public List<String> genres, ratingMajor;
 
     /**
      * Sets Movie title.
@@ -104,5 +101,9 @@ public class Movie implements Serializable, Comparable<Movie> {
             return true;
         }
         return false;
+    }
+
+    public int hashCode() {
+        return this.getTitle().hashCode();
     }
 }
