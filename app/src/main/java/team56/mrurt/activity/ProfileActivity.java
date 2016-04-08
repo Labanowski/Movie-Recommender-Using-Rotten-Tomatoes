@@ -20,9 +20,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
-    String currentLoggedIn = LoginActivity.currentLoggedInUser;
-    User user;
-    Context c = this;
+    public String currentLoggedIn = LoginActivity.currentLoggedInUser;
+    public User user;
+    public Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class ProfileActivity extends AppCompatActivity {
         String p1 = mPasswordView.getText().toString();
 
         //Deletes and updates the user's profile info.
-        if(currentLoggedIn != u1) {
+        if(currentLoggedIn.equals(u1)) {
             DatabaseOperations.getHelper(c).updateUserRating(DatabaseOperations.getHelper(c), u1, currentLoggedIn);
         }
         DatabaseOperations.getHelper(c).deleteUser(DatabaseOperations.getHelper(c), user.getEmail());

@@ -48,7 +48,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         String currentLoggedIn = LoginActivity.currentLoggedInUser;
         currentUser = UserStorage.getInstance().findUserByName(currentLoggedIn);
 
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(false);
@@ -91,7 +90,7 @@ public class MovieDetailActivity extends AppCompatActivity {
      * Opens an Alert Dialog allowing the user to rate a movie
      * @param item the menu option that was selected
      */
-    public void rateMovie(MenuItem item) {
+    private void rateMovie(MenuItem item) {
         AlertDialog.Builder movie_rate = new AlertDialog.Builder(MovieDetailActivity.this);
         final Movie ratedMovie = (Movie) getIntent().getSerializableExtra("Movie Object");
         final RatingBar ratingbar1 = new RatingBar(MovieDetailActivity.this);
@@ -102,43 +101,33 @@ public class MovieDetailActivity extends AppCompatActivity {
         ratingbar1.setStepSize(1);
         ratingbar1.setMax(5);
 
-
         String m = "Rate this movie 1 to 5 stars";
         movie_rate.setMessage(m)
-                .setTitle("Rate this Movie")
-                .setView(ratingbar1)
-                .setPositiveButton("Rate", new DialogInterface.OnClickListener() {
+                .setTitle("Rate this Movie").setView(ratingbar1).setPositiveButton("Rate", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                                Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingbar1.getRating());
                                if (!RatingStorage.getInstance().getRatings().contains(newRating)) {
                                    Context c = getApplicationContext();
-                                   //puts the data from database into ratingstorage for local access
+
                                    DatabaseOperations.getHelper(c).addRating(DatabaseOperations.getHelper(c),newRating);
                                    RatingStorage.getInstance().setRatings(DatabaseOperations.getHelper(c).getAllRatings());
                                    RatingStorage.getInstance().addRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
-                                   //debuging purposes
-                                   //System.out.println(ratingbar1.getRating() + "rating-if " + MovieDetailActivity.this.currentUser.getMajor() + " ");
+
                                } else {
                                    Context c = getApplicationContext();
-                                   //updates rating in the database
                                    DatabaseOperations.getHelper(c).updateRating(DatabaseOperations.getHelper(c), newRating);
-                                   //RatingStorage.getInstance().removeRating(newRating);
-                                   //RatingStorage.getInstance().addRating(newRating);
+
                                    RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
                                    MovieDetailActivity.this.currentUser.removeRating(newRating);
                                    MovieDetailActivity.this.currentUser.addRating(newRating);
-                                   //debuging purposes
-                                   //System.out.println(ratingbar1.getRating() + "rating-else " + MovieDetailActivity.this.currentUser.getMajor() + " ");
                                }
-                        return;
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        return;
                     }
                 });
         AlertDialog ratingDialog = movie_rate.create();

@@ -9,11 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.Movie;
-import team56.mrurt.model.Movies;
 import team56.mrurt.model.RatingStorage;
 import team56.mrurt.model.Recommender;
 
@@ -25,8 +25,6 @@ import team56.mrurt.model.Recommender;
 * Sorts Movies into a list by specific Criteria
  */
 public class RecommendMovieActivity extends AppCompatActivity {
-    private Button recommendYear;
-    private Button recommendMajor;
     private Context c = this;
 
     @Override
@@ -34,15 +32,15 @@ public class RecommendMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recommend_movie_activity);
 
-        this.recommendYear = (Button) findViewById(R.id.recommend_year);
-        this.recommendMajor = (Button) findViewById(R.id.recommend_major);
+        Button recommendYear = (Button) findViewById(R.id.recommend_year);
+        Button recommendMajor = (Button) findViewById(R.id.recommend_major);
 
         recommendYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText year = (EditText) findViewById(R.id.year);
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                ArrayList<Movie> movie = Recommender.sortByYear(year.getText().toString());
+                List<Movie> movie = Recommender.sortByYear(year.getText().toString());
                 changeView(movie);
             }
         });
@@ -51,7 +49,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                ArrayList<Movie> movie = Recommender.sortByMajor();
+                List<Movie> movie = Recommender.sortByMajor();
                 changeView(movie);
             }
         });
@@ -71,9 +69,9 @@ public class RecommendMovieActivity extends AppCompatActivity {
      *
      * @param movies the list of movie objects we created from the recommendations
      */
-    public void changeView(ArrayList<Movie> movies) {
+    public void changeView(List<Movie> movies) {
         Intent viewResultsIntent = new Intent(this, RecommendListActivity.class);
-        viewResultsIntent.putExtra("movies", movies);
+        viewResultsIntent.putExtra("movies", (ArrayList<Movie>) movies);
         startActivity(viewResultsIntent);
         finish();
     }

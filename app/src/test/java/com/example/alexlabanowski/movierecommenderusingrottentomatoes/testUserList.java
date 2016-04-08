@@ -12,9 +12,10 @@ import static org.junit.Assert.*;
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
-public class ExampleUnitTest {
+public class testUserList {
     @Test
     public void testUserList() {
+        System.out.println("Testing setting the UserList");
         ArrayList<User> test = new ArrayList<>();
         UserStorage.getInstance().updateUserDatabase(test);
     }

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import team56.mrurt.model.Movie;
 import team56.mrurt.model.Rating;
@@ -67,7 +68,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * put user into user table
      */
     public void putUserInformation(DatabaseOperations dop, String email, String username, String name, String major, String password, int banned, int admin) {
-        SQLiteDatabase SQ =  dop.getWritableDatabase();
+        SQLiteDatabase sQ =  dop.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(UserData.TableInfo.USER_EMAIL, email);
         cv.put(UserData.TableInfo.USER_NAME, username);
@@ -78,7 +79,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         cv.put(UserData.TableInfo.ADMIN_STATUS, admin);
 
         //insert rows
-        long k = SQ.insert(UserData.TableInfo.TABLE_USER, null, cv);
+        long k = sQ.insert(UserData.TableInfo.TABLE_USER, null, cv);
         Log.d("Database Operations", "Information inserted");
     }
 
@@ -86,7 +87,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * put rating into movie table
      */
     public void addRating(DatabaseOperations db, Rating r) {
-        SQLiteDatabase SQ =  db.getWritableDatabase();
+        SQLiteDatabase sQ =  db.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
         cv.put(UserData.TableInfo.USER_NAME, r.getUser());
@@ -95,10 +96,10 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         cv.put(UserData.TableInfo.MOVIE_YEAR, r.getMovie().getYear());
         cv.put(UserData.TableInfo.MOVIE_SYNO, r.getMovie().getSynopsis());
         cv.put(UserData.TableInfo.MOVIE_CRITRATE, r.getMovie().getCriticsRating());
-        cv.put(UserData.TableInfo.MOVIE_RATE, r.getMovie_Rating());
+        cv.put(UserData.TableInfo.MOVIE_RATE, r.getMovieRating());
         cv.put(UserData.TableInfo.MOVIE_ID, r.getMovie().getId());
 
-        long k = SQ.insert(UserData.TableInfo.TABLE_MOVIE, null, cv);
+        long k = sQ.insert(UserData.TableInfo.TABLE_MOVIE, null, cv);
         Log.d("Database Operations", "rRating inserted");
     }
 
@@ -106,8 +107,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * get all the users
      * @return returns a list of all the registered users
      */
-    public ArrayList<User> getUsers() {
-        ArrayList<User> allUsers = new ArrayList<>();
+    public List<User> getUsers() {
+        List<User> allUsers = new ArrayList<>();
         String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER;
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -179,9 +180,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * Gets all the ratings
      * @return returns an Arraylist of all the Ratings
      */
-    public ArrayList<Rating> getAllRatings() {
+    public List<Rating> getAllRatings() {
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<Rating> allRatings = new ArrayList<>();
+        List<Rating> allRatings = new ArrayList<>();
 
         String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_MOVIE;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -193,7 +194,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
                 String year = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_YEAR));
                 String synopsis = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_SYNO));
-                String critic_rate = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_CRITRATE));
+                String criticRate = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_CRITRATE));
                 double rating = c.getFloat(c.getColumnIndex(UserData.TableInfo.MOVIE_RATE));
                 String id = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_ID));
 
@@ -201,7 +202,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 m.setTitle(title);
                 m.setYear(year);
                 m.setSynopsis(synopsis);
-                m.setCriticsRating(critic_rate);
+                m.setCriticsRating(criticRate);
                 m.setId(id);
 
                 Rating r = new Rating(major, username,m,rating);
@@ -237,7 +238,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         SQLiteDatabase db = d.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(UserData.TableInfo.MOVIE_RATE, r.getMovie_Rating());
+        values.put(UserData.TableInfo.MOVIE_RATE, r.getMovieRating());
         db.update(UserData.TableInfo.TABLE_MOVIE, values, " USER_NAME = ?", new String[]{r.getUser()});
     }
 
