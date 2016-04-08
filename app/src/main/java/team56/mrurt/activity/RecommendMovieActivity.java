@@ -15,17 +15,14 @@ import team56.mrurt.R;
 import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.Movie;
 import team56.mrurt.model.RatingStorage;
-import team56.mrurt.model.Recommender;
+import team56.mrurt.model.Recommend;
 
-/**
- * Created by Haruka on 2016/03/04.
- */
 
 /*
 * Sorts Movies into a list by specific Criteria
  */
 public class RecommendMovieActivity extends AppCompatActivity {
-    private Context c = this;
+    private final Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +37,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText year = (EditText) findViewById(R.id.year);
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                List<Movie> movie = Recommender.sortByYear(year.getText().toString());
+                List<Movie> movie = Recommend.sortByYear(year.getText().toString());
                 changeView(movie);
             }
         });
@@ -49,7 +46,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                List<Movie> movie = Recommender.sortByMajor();
+                List<Movie> movie = Recommend.sortByMajor();
                 changeView(movie);
             }
         });
@@ -65,11 +62,11 @@ public class RecommendMovieActivity extends AppCompatActivity {
 
     /**
      * This method changes to our new list view of the movies, but we have to pass the
-     * moviearray into the intent so the new screen gets the data.
+     * movie array into the intent so the new screen gets the data.
      *
      * @param movies the list of movie objects we created from the recommendations
      */
-    public void changeView(List<Movie> movies) {
+    private void changeView(List<Movie> movies) {
         Intent viewResultsIntent = new Intent(this, RecommendListActivity.class);
         viewResultsIntent.putExtra("movies", (ArrayList<Movie>) movies);
         startActivity(viewResultsIntent);

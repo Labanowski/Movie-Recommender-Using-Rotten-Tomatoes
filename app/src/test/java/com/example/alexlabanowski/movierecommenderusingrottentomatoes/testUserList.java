@@ -12,15 +12,13 @@ import java.util.ArrayList;
 import team56.mrurt.model.User;
 import team56.mrurt.model.UserStorage;
 
-import static org.junit.Assert.*;
-
 /**
  * To work on unit tests, switch the Test Artifact in the Build Variants view.
  */
 @RunWith(MockitoJUnitRunner.class)
 public class testUserList extends TestCase {
     @Test
-    public void testUserList() {
+    public void testUserListTest() {
         System.out.println("Testing setting the UserList");
         List<User> test = new ArrayList<>();
         List<String> testAfter;

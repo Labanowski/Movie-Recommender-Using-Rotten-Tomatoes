@@ -15,7 +15,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search Movies"
+        android:text="@string/searchmovie"
         android:id="@+id/movieSearchButton"
         android:layout_below="@+id/movieSearchView"
         android:layout_alignParentLeft="true"
@@ -26,7 +26,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Releases"
+        android:text="@string/new_releases"
         android:id="@+id/newReleaseSearch"
         android:layout_below="@+id/movieSearchButton"
         android:layout_alignParentLeft="true"
@@ -38,7 +38,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recent DVDs"
+        android:text="@string/recent_dvds"
         android:id="@+id/recentDVDSearch"
         android:layout_alignTop="@+id/newReleaseSearch"
         android:layout_alignParentRight="true"

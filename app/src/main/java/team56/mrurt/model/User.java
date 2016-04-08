@@ -4,20 +4,17 @@ package team56.mrurt.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Wyckoff on 2/13/2016.
- */
 
 /**
  * A class that represents a User
  */
 public class User {
-    private String email;
-    private String username;
-    private String name;
-    private String major;
-    private String password;
-    private List<Rating> ratingList;
+    private final String email;
+    private final String username;
+    private final String name;
+    private final String major;
+    private final String password;
+    private final List<Rating> ratingList;
     private boolean banned;
     private boolean admin;
 
@@ -81,7 +78,7 @@ public class User {
     }
 
     /**
-     * Determines if the inputed password matches the user's password
+     * Determines if the inputted password matches the user's password
      * @param pass password being checked
      * @return True if the passwords match
      */
@@ -159,9 +156,9 @@ public class User {
     }
 
     /**
-     * Unban user
+     * Un-ban user
      */
-    public void unbanUser(){
+    public void unlockUser(){
         this.banned = false;
     }
 
@@ -186,13 +183,8 @@ public class User {
         return admin;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        final User u = (User) o;
-        if (u.getUsername().equals(this.getUsername())) {
-            return true;
-        }
-        return false;
+    public boolean equals(User u) {
+        return (u.getUsername().equals(this.getUsername()));
     }
 
     @Override

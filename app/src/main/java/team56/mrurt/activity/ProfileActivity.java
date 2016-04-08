@@ -20,9 +20,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
-    public String currentLoggedIn = LoginActivity.currentLoggedInUser;
-    public User user;
-    public Context c = this;
+    private final String currentLoggedIn = LoginActivity.currentLoggedInUser;
+    private User user;
+    private final Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

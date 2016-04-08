@@ -1,17 +1,16 @@
 package team56.mrurt.model;
 
-/**
- * Created by Haruka on 2016/03/04.
- */
+
+import android.support.annotation.NonNull;
 
 /**
  * A rating for a movie and stores the username that rated a movie
  */
 public class Rating implements Comparable<Rating> {
-    private String major;
-    private String user;
-    private Movie movie;
-    private double movieRating;
+    private final String major;
+    private final String user;
+    private final Movie movie;
+    private final double movieRating;
 
     public Rating(String major, String user, Movie movie, double movieRating) {
         this.major = major;
@@ -52,13 +51,8 @@ public class Rating implements Comparable<Rating> {
         return this.movieRating;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        Rating r = (Rating) o;
-        if(r.getMovie().equals(this.getMovie())) {
-            return true;
-        }
-        return false;
+    public boolean equals(Rating r) {
+        return (r.getMovie().equals(this.getMovie()));
     }
 
     @Override
@@ -75,7 +69,7 @@ public class Rating implements Comparable<Rating> {
     }
 
     @Override
-    public int compareTo(Rating a) {
+    public int compareTo(@NonNull Rating a) {
         return (a.getMovieRating().compareTo(this.getMovieRating()));
     }
 

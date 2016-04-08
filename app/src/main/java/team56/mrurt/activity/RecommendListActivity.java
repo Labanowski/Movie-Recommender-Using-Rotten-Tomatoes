@@ -20,7 +20,7 @@ import team56.mrurt.model.Movies;
 import team56.mrurt.presenters.MovieDetailFragment;
 
 /**
- * Created by kuiski on 3/5/2016.
+ * Created by Kui Ski on 3/5/2016.
  * Displays the movie list from recommendations
  */
 public class RecommendListActivity extends AppCompatActivity{
@@ -29,11 +29,6 @@ public class RecommendListActivity extends AppCompatActivity{
      * device.
      */
     private boolean mTwoPane;
-
-    /**
-     * List of Movie objects
-     */
-    private List<Movie> movies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +53,11 @@ public class RecommendListActivity extends AppCompatActivity{
 
         //Here we extract the objects out of the intent
         //Note that to pass them, they have to be serializable
-        movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+        /*
+      List of Movie objects
+     */
+        @SuppressWarnings("unchecked")
+        List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
         for (Movie s : movies) {
             Movies.addItem(s);
         }
@@ -79,7 +78,7 @@ public class RecommendListActivity extends AppCompatActivity{
      * @param recyclerView view to set up with correct items from list
      */
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(Movies.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter());
     }
 
     /**
@@ -91,8 +90,8 @@ public class RecommendListActivity extends AppCompatActivity{
 
         private final List<Movie> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<Movie> items) {
-            mValues = items;
+        public SimpleItemRecyclerViewAdapter() {
+            mValues = Movies.ITEMS;
         }
 
         @Override

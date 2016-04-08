@@ -11,9 +11,10 @@
 
 
     <EditText             android:id="@+id/eEmailView"
+        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/prompt_email"
         android:maxLines="1"
         android:singleLine="true"
         android:imeOptions="actionNext"/>
@@ -21,7 +22,7 @@
     <EditText             android:id="@+id/eUsernameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:hint="@string/prompt_username"
         android:imeOptions="actionNext"
         android:singleLine="true"
         android:maxLines="1"/>
@@ -29,7 +30,7 @@
     <EditText             android:id="@+id/eNameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="@string/prompt_name"
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true"/>
@@ -37,16 +38,17 @@
     <EditText             android:id="@+id/eMajorView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Major"
+        android:hint="@string/major"
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true"/>
 
 
     <EditText             android:id="@+id/ePasswordView"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="@string/prompt_password"
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true" />
@@ -55,7 +57,7 @@
         android:layout_width="353dp" android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textStyle="bold"
-        android:text="Register"
+        android:text="@string/register_button"
         android:onClick="register"/>
 
 

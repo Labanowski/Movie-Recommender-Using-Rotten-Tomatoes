@@ -22,10 +22,6 @@ import team56.mrurt.presenters.MovieDetailFragment;
 import java.util.List;
 
 /**
- * Created by Haruka on 2016/02/24.
- */
-
-/**
  * An activity representing a list of Movies. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
@@ -40,11 +36,6 @@ public class MovieListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
-
-    /**
-     * List of Movie objects
-     */
-    private List<Movie> movies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +60,11 @@ public class MovieListActivity extends AppCompatActivity {
 
         //Here we extract the objects out of the intent
         //Note that to pass them, they have to be serializable
-        movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+        /*
+      List of Movie objects
+     */
+        @SuppressWarnings("unchecked")
+        List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
         for (Movie s : movies) {
             Movies.addItem(s);
         }
@@ -90,7 +85,7 @@ public class MovieListActivity extends AppCompatActivity {
      * @param recyclerView view to set up with correct items from list
      */
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(Movies.ITEMS));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter());
     }
 
     /**
@@ -102,8 +97,8 @@ public class MovieListActivity extends AppCompatActivity {
 
         private final List<Movie> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<Movie> items) {
-            mValues = items;
+        public SimpleItemRecyclerViewAdapter() {
+            mValues = Movies.ITEMS;
         }
 
         @Override

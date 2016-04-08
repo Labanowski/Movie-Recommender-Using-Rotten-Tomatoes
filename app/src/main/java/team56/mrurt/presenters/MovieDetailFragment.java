@@ -1,8 +1,5 @@
 package team56.mrurt.presenters;
 
-/**
- * Created by Haruka on 2016/02/24.
- */
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
@@ -36,7 +33,7 @@ public class MovieDetailFragment extends Fragment {
     /**
      * The movie content this fragment is presenting.
      */
-    public Movie mItem;
+    private Movie mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
