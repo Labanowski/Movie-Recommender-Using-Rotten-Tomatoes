@@ -12,7 +12,7 @@ import team56.mrurt.model.UserStorage;
 
 
 public class WelcomeActivity extends AppCompatActivity {
-    Context c = this;
+    public Context c = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
      * @param v The View
      */
     public void openLogin(View v) {
-        Intent intent = new Intent(this, LoginActivity.class);
+        final Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         onPause();
     }
@@ -38,7 +38,7 @@ public class WelcomeActivity extends AppCompatActivity {
      * @param v The View
      */
     public void openRegister(View v) {
-        Intent intent = new Intent(this, RegisterActivity.class);
+        final Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
         onPause();
     }

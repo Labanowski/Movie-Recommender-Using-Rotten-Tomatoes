@@ -36,7 +36,7 @@ public class MovieDetailFragment extends Fragment {
     /**
      * The movie content this fragment is presenting.
      */
-    Movie mItem;
+    public Movie mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

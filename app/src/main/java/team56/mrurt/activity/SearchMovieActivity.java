@@ -19,11 +19,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Movie;
-
-
 
 /**
  * This is the Search Movie Page
@@ -35,13 +34,8 @@ public class SearchMovieActivity extends AppCompatActivity {
      */
     private RequestQueue queue;
 
-    private String response;
-
+    public String response;
     private SearchView MovieSearchView;
-    private Button MovieSearchButton;
-    private Button newReleaseSearchButton;
-    private Button recentDVDSearchButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +44,9 @@ public class SearchMovieActivity extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
 
         this.MovieSearchView = (SearchView) findViewById(R.id.movieSearchView);
-        this.MovieSearchButton = (Button) findViewById(R.id.movieSearchButton);
-        this.newReleaseSearchButton = (Button) findViewById(R.id.newReleaseSearch);
-        this.recentDVDSearchButton = (Button) findViewById(R.id.recentDVDSearch);
+        Button MovieSearchButton = (Button) findViewById(R.id.movieSearchButton);
+        Button newReleaseSearchButton = (Button) findViewById(R.id.newReleaseSearch);
+        Button recentDVDSearchButton = (Button) findViewById(R.id.recentDVDSearch);
 
         MovieSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,10 +86,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject resp) {
-                        //handle a valid response coming back.  Getting this string mainly for debug
                         response = resp.toString();
-
-                        //Now we parse the information.  Looking at the format, everything encapsulated in RestResponse object
                         JSONArray array = null;
                         try {
                             array = resp.getJSONArray("movies");
@@ -106,9 +97,7 @@ public class SearchMovieActivity extends AppCompatActivity {
 
                         ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
-
                             try {
-                                //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
@@ -124,7 +113,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         }
-                        //once we have all data, then go to list screen
                         changeView(movies);
                     }
                 }, new Response.ErrorListener() {
@@ -134,7 +122,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                         response = "JSon Request Failed!!";
                     }
                 });
-        //this actually queues up the async response with Volley
+
         queue.add(jsObjRequest);
         return true;
     }
@@ -142,17 +130,14 @@ public class SearchMovieActivity extends AppCompatActivity {
     /**
      * Gets recent releases from RottenTomatoes API and displays them.
      */
-    public void getRecentReleases() {
+    private void getRecentReleases() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=yedukp76ffytfuy24zsqk7f5";
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject resp) {
-                        //handle a valid response coming back.  Getting this string mainly for debug
                         response = resp.toString();
-
-                        //Now we parse the information.  Looking at the format, everything encapsulated in RestResponse object
                         JSONArray array = null;
                         try {
                             array = resp.getJSONArray("movies");
@@ -160,12 +145,9 @@ public class SearchMovieActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         assert array != null;
-
                         ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
-
                             try {
-                                //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
@@ -174,16 +156,12 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
                                 m.setCriticsRating(ratingsJSON.optString("critics_score"));
-                                //save the object for later
                                 movies.add(m);
-
-
                             } catch (JSONException e) {
                                 Log.d("MovieApp", "Failed to get JSON object");
                                 e.printStackTrace();
                             }
                         }
-                        //once we have all data, then go to list screen
                         changeView(movies);
                     }
                 }, new Response.ErrorListener() {
@@ -193,24 +171,20 @@ public class SearchMovieActivity extends AppCompatActivity {
                         response = "JSon Request Failed!!";
                     }
                 });
-        //this actually queues up the async response with Volley
         queue.add(jsObjRequest);
     }
 
     /**
      * Gets recent DVDs from RottenTomatoes API and displays.
      */
-    public void getRecentDVDs() {
+    private void getRecentDVDs() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?apikey=yedukp76ffytfuy24zsqk7f5";
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject resp) {
-                        //handle a valid response coming back.  Getting this string mainly for debug
                         response = resp.toString();
-
-                        //Now we parse the information.  Looking at the format, everything encapsulated in RestResponse object
                         JSONArray array = null;
                         try {
                             array = resp.getJSONArray("movies");
@@ -218,12 +192,9 @@ public class SearchMovieActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         assert array != null;
-
                         ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
-
                             try {
-                                //for each array element, we have to create an object
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
                                 Movie m = new Movie();
@@ -232,14 +203,12 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
                                 m.setCriticsRating(ratingsJSON.optString("critics_score"));
-                                //save the object for later
                                 movies.add(m);
                             } catch (JSONException e) {
                                 Log.d("MovieApp", "Failed to get JSON object");
                                 e.printStackTrace();
                             }
                         }
-                        //once we have all data, then go to list screen
                         changeView(movies);
                     }
                 }, new Response.ErrorListener() {
@@ -249,7 +218,6 @@ public class SearchMovieActivity extends AppCompatActivity {
                         response = "JSon Request Failed!!";
                     }
                 });
-        //this actually queues up the async response with Volley
         queue.add(jsObjRequest);
     }
 
@@ -259,9 +227,9 @@ public class SearchMovieActivity extends AppCompatActivity {
      *
      * @param movies the list of movie objects we created from the JSon response
      */
-    public void changeView(ArrayList<Movie> movies) {
+    private void changeView(List<Movie> movies) {
         Intent viewResultsIntent = new Intent(this, MovieListActivity.class);
-        viewResultsIntent.putExtra("movies", movies);
+        viewResultsIntent.putExtra("movies", (ArrayList<Movie>)movies);
         startActivity(viewResultsIntent);
         finish();
     }

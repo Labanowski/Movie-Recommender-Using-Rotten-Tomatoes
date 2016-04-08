@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import team56.mrurt.R;
@@ -18,23 +17,18 @@ import team56.mrurt.model.UserStorage;
  */
 public class RegisterActivity extends AppCompatActivity {
 
-
     private EditText mEmailView;
     private EditText mUsernameView;
     private EditText mNameView;
     private EditText mMajorView;
     private EditText mPasswordView;
 
-    private Button mRegisterButton;
-    Context ctx = this;
-
-    private boolean bool;
+    public Context ctx = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
-        //mUserStorage = new UserStorage();
 
         mEmailView = (EditText) findViewById(R.id.eEmailView);
         mUsernameView = (EditText) findViewById(R.id.eUsernameView);
@@ -97,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
         DatabaseOperations.getHelper(ctx).putUserInformation(DatabaseOperations.getHelper(ctx), getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString(), 0, 0);
 
         UserStorage.getInstance().addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
-        Intent intent = new Intent(this, LoginActivity.class);
+        final Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

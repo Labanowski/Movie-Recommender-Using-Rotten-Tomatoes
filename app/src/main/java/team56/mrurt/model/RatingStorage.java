@@ -1,16 +1,16 @@
 package team56.mrurt.model;
 
+import java.util.List;
 import java.util.ArrayList;
-
 /**
- * Created by Haruka on 2016/03/04.
+ * Created by Haruka
  */
 /**
  * A class that stores ratings and the users that rated them, stored locally
  */
 public class RatingStorage {
 
-    private ArrayList<Rating> ratings;
+    private List<Rating> ratings;
     private static RatingStorage rsInstance;
 
     private RatingStorage() {
@@ -33,7 +33,7 @@ public class RatingStorage {
      * gets the list of ratings stored
      * @return returns list of ratings
      */
-    public ArrayList<Rating> getRatings() {
+    public List<Rating> getRatings() {
         return this.ratings;
     }
 
@@ -41,7 +41,7 @@ public class RatingStorage {
      * gets the list of ratings stored
      * @return returns list of ratings
      */
-    public void setRatings(ArrayList<Rating> list) {
+    public void setRatings(List<Rating> list) {
         this.ratings = list;
     }
 
@@ -55,57 +55,11 @@ public class RatingStorage {
 
     /**
      * Removes rating from this storage
-     * @param m is rating to be removed.
-     */
-    public void removeRating(Rating m) {
-        this.ratings.remove(m);
-    }
-
-    /**
-     * Removes rating from this storage
      * @param list is rating to be removed.
      */
-    public void updateRatingDatabase(ArrayList<Rating> list) {
+    public void updateRatingDatabase(List<Rating> list) {
         ratings.removeAll(ratings);
         setRatings(list);
     }
-
-    /**
-     * Gets average Rating of Movie by a particular major group
-     *
-     * @param movie id of the movie when want the average rating of
-     * @param major      the major of the user
-     * @return the average rating for that major group
-     */
-    public double getAverageRatingByMajor(Movie movie, String major) {
-        double movie_rating = 0;
-        int counter = 0;
-        for (Rating r : this.ratings) {
-            if (r.getMovie().equals(movie) && r.getMajor().equals(major)) {
-                counter++;
-                movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
-            }
-        }
-        return movie_rating;
-    }
-
-    /**
-     * Gets average rating for a movie
-     *
-     * @param movie id of the movie when want the average rating of
-     * @return the average rating
-     */
-    public String getAverageRating(Movie movie) {
-        double movie_rating = 0;
-        int counter = 0;
-        for (Rating r : this.ratings) {
-            if (r.getMovie().equals(movie)) {
-                counter++;
-                movie_rating = ((r.getMovie_Rating()) + movie_rating) / counter;
-            }
-        }
-        return "Average User Rating: " + movie_rating ;
-    }
-
 
 }
