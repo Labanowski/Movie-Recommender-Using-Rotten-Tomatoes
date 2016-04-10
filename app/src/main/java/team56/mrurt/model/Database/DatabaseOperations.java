@@ -20,6 +20,7 @@ import team56.mrurt.model.User;
 /**
  * A SQLiteOpenHelper class that manages all the database operations
  */
+<<<<<<< HEAD
 public final class DatabaseOperations extends SQLiteOpenHelper {
     /**
      * Database version int
@@ -32,6 +33,13 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
      */
     private DatabaseOperations (Context context) {
         super(context, UserData.TableInfo.DATABASE_NAME, null, DBVERSION);
+=======
+public class DatabaseOperations extends SQLiteOpenHelper {
+    private static final int database_version = 1;
+
+    private DatabaseOperations (Context context) {
+        super(context, UserData.TableInfo.DATABASE_NAME, null, database_version);
+>>>>>>> origin/master
         Log.d("Database Operations", "Database Created");
     }
 
@@ -54,6 +62,7 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+<<<<<<< HEAD
         final String createTableUser = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
                 UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
                 UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
@@ -63,6 +72,17 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
                 UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING + " TEXT," +
                 UserData.TableInfo.MOVIE_RATE + " TEXT," + UserData.TableInfo.MOVIE_ID + " TEXT );";
         db.execSQL(createTableRatings);
+=======
+        String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
+                UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
+                UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
+        db.execSQL(CREATE_TABLE_USER);
+        String CREATE_TABLE_RATINGS = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_MOVIE + "(" +
+                UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.MAJOR_USER + " TEXT," +
+                UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING + " TEXT," +
+                UserData.TableInfo.MOVIE_RATE + " TEXT," + UserData.TableInfo.MOVIE_ID + " TEXT );";
+        db.execSQL(CREATE_TABLE_RATINGS);
+>>>>>>> origin/master
         Log.d("Database Operations", "Table Created");
     }
 

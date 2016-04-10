@@ -9,6 +9,7 @@ import java.util.List;
  * A class that represents a User
  */
 public class User {
+<<<<<<< HEAD
     /**
      * the string's used for the attributes of a user
      */
@@ -20,6 +21,14 @@ public class User {
     /**
      * boolean that determines if the user is banned or not
      */
+=======
+    private final String email;
+    private final String username;
+    private final String name;
+    private final String major;
+    private final String password;
+    private final List<Rating> ratingList;
+>>>>>>> origin/master
     private boolean banned;
     /**
      * boolean that determines if the user is an admin or not
@@ -199,7 +208,10 @@ public class User {
      * @return true if the users are equal
      */
     public boolean equals(User u) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         return (u.getUsername().equals(this.getUsername()));
     }
 

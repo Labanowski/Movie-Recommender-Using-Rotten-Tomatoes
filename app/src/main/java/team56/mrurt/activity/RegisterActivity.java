@@ -22,9 +22,12 @@ public class RegisterActivity extends AppCompatActivity {
      */
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
+<<<<<<< HEAD
     /**
      * context c
      */
+=======
+>>>>>>> origin/master
     private final Context ctx = this;
 
     @Override

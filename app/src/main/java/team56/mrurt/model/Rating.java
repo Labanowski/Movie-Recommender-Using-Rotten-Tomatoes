@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
  * A rating for a movie and stores the username that rated a movie
  */
 public class Rating implements Comparable<Rating> {
+<<<<<<< HEAD
     /**
      * strings major and user used in the constructor
      */
@@ -18,6 +19,11 @@ public class Rating implements Comparable<Rating> {
     /**
      * double that is used to give a movie a rating
      */
+=======
+    private final String major;
+    private final String user;
+    private final Movie movie;
+>>>>>>> origin/master
     private final double movieRating;
 
     /**

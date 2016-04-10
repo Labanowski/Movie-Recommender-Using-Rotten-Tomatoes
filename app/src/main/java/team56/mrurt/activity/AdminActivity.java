@@ -19,6 +19,7 @@ import team56.mrurt.model.UserStorage;
  * Created by Alexander Labanowski
  */
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
+<<<<<<< HEAD
     /**
      * the currentUser on the app
      */
@@ -26,6 +27,9 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
     /**
      * context c
      */
+=======
+    private static String currentUser;
+>>>>>>> origin/master
     private final Context c = this;
 
     @Override
@@ -35,8 +39,13 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
         final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         dropdown.setOnItemSelectedListener(this);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(this).getUsers());
+<<<<<<< HEAD
         final String[] users = UserStorage.getInstance().toArray();
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, users);
+=======
+        String[] users = UserStorage.getInstance().toArray();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, users);
+>>>>>>> origin/master
         dropdown.setAdapter(adapter);
     }
 

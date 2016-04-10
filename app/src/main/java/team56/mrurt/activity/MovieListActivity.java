@@ -64,7 +64,11 @@ public class MovieListActivity extends AppCompatActivity {
       List of Movie objects
      */
         @SuppressWarnings("unchecked")
+<<<<<<< HEAD
         final List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+=======
+        List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+>>>>>>> origin/master
         for (Movie s : movies) {
             Movies.addItem(s);
         }
@@ -100,9 +104,12 @@ public class MovieListActivity extends AppCompatActivity {
          */
         private final List<Movie> mValues;
 
+<<<<<<< HEAD
         /**
          * constructor
          */
+=======
+>>>>>>> origin/master
         public SimpleItemRecyclerViewAdapter() {
             mValues = Movies.ITEMS;
         }

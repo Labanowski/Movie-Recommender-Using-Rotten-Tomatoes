@@ -12,9 +12,12 @@ import team56.mrurt.model.UserStorage;
 
 
 public class WelcomeActivity extends AppCompatActivity {
+<<<<<<< HEAD
     /**
      * Context c
      */
+=======
+>>>>>>> origin/master
     private Context c = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

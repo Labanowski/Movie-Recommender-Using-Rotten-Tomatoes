@@ -13,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
      * Logout User
      * @param item the menu item clicked on
      */
-    public void logout(MenuItem item){
+    void logout(MenuItem item){
         finish();
     }
 
@@ -21,8 +21,13 @@ public class MenuActivity extends AppCompatActivity {
      * View/Edit Profile page
      * @param item the menu item clicked on
      */
+<<<<<<< HEAD
     public void viewProfile(MenuItem item){
         final Intent intent = new Intent(this, ProfileActivity.class);
+=======
+    void viewProfile(MenuItem item){
+        Intent intent = new Intent(this, ProfileActivity.class);
+>>>>>>> origin/master
         startActivity(intent);
         finish();
     }
@@ -31,8 +36,13 @@ public class MenuActivity extends AppCompatActivity {
      * Takes user to Search Page
      * @param item the menu item clicked on
      */
+<<<<<<< HEAD
     public void searchMovie(MenuItem item) {
         final Intent intent = new Intent(this, SearchMovieActivity.class);
+=======
+    void searchMovie(MenuItem item) {
+        Intent intent = new Intent(this, SearchMovieActivity.class);
+>>>>>>> origin/master
         startActivity(intent);
         finish();
     }
@@ -41,8 +51,13 @@ public class MenuActivity extends AppCompatActivity {
      * Takes user to Search Page
      * @param item the menu item clicked on
      */
+<<<<<<< HEAD
     public void recommendMovie(MenuItem item) {
         final Intent intent = new Intent(this, RecommendMovieActivity.class);
+=======
+    void recommendMovie(MenuItem item) {
+        Intent intent = new Intent(this, RecommendMovieActivity.class);
+>>>>>>> origin/master
         startActivity(intent);
         finish();
     }

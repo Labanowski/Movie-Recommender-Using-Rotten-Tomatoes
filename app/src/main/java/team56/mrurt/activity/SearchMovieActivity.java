@@ -34,6 +34,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      */
     private RequestQueue queue;
 
+<<<<<<< HEAD
     /**
      * a string
      */
@@ -42,6 +43,10 @@ public class SearchMovieActivity extends AppCompatActivity {
      * a SearchView
      */
     private SearchView movieSearchView;
+=======
+    private String response;
+    private SearchView MovieSearchView;
+>>>>>>> origin/master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

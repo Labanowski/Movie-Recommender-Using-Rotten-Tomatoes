@@ -6,9 +6,12 @@ import android.provider.BaseColumns;
  * Keeps track of all the column names for the tables
  */
 class UserData {
+<<<<<<< HEAD
     /**
      * Constructor
      */
+=======
+>>>>>>> origin/master
     public UserData(){
     }
 

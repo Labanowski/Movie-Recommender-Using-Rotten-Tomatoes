@@ -23,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
      */
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
+<<<<<<< HEAD
     /**
      * the current user logged in to the app
      */
@@ -34,6 +35,10 @@ public class ProfileActivity extends AppCompatActivity {
     /**
      * context c
      */
+=======
+    private final String currentLoggedIn = LoginActivity.currentLoggedInUser;
+    private User user;
+>>>>>>> origin/master
     private final Context c = this;
 
     @Override

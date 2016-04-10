@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import java.io.Serializable;
 
 public class Movie implements Serializable, Comparable<Movie> {
+<<<<<<< HEAD
     /**
      * the movie attributes
      */
@@ -11,6 +12,9 @@ public class Movie implements Serializable, Comparable<Movie> {
     /**
      * ratings the user has given to movies
      */
+=======
+    private String title, year, synopsis, criticsRating, id;
+>>>>>>> origin/master
     private double userRatings;
 
     /**
