@@ -6,9 +6,6 @@ import android.provider.BaseColumns;
  * Keeps track of all the column names for the tables
  */
 class UserData {
-    public UserData(){
-    }
-
     /**
      * Keeps track of all the column names for the tables
      */

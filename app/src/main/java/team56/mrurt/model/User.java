@@ -169,12 +169,6 @@ public class User {
     public boolean isBanned(){
         return this.banned;
     }
-
-    /**
-     * Set the user to be an Admin
-     */
-    public void makeAdmin() { this.admin = true;}
-
     /**
      * Get admin status
      * @return the status

@@ -66,14 +66,6 @@ public class UserStorage {
     }
 
     /**
-     * removes the user with the corresponding username from the map
-     * @param username the username of the user being removed
-     */
-    public void remove(String username) {
-        users.remove(username);
-    }
-
-    /**
      * Determines if the user trying to log in is registered or not
      * @param userName Username that the user input
      * @param password password that the user input
