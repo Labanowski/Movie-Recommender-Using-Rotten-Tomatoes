@@ -9,7 +9,17 @@ import java.util.Map;
  * A class that holds the list of Users
  */
 public class UserStorage {
+<<<<<<< HEAD
+    /**
+     * a map used to store users
+     */
+    private static final Map<String, User> USERS = new HashMap<>();
+    /**
+     * the instance of the userStorage
+     */
+=======
     private final static Map<String, User> users = new HashMap<>();
+>>>>>>> origin/master
     private static UserStorage usInstance;
     /**
      * Gets an instance of User Storage
@@ -31,7 +41,11 @@ public class UserStorage {
     private void setUserList(List<User> list1) {
 
         for(int a = 0; a < list1.size(); a++) {
+<<<<<<< HEAD
+            USERS.put(list1.get(a).getUsername(), list1.get(a));
+=======
             users.put(list1.get(a).getUsername(), list1.get(a));
+>>>>>>> origin/master
         }
     }
 
@@ -40,7 +54,7 @@ public class UserStorage {
      * @param list the list of users from database
      */
     public void updateUserDatabase(List<User> list) {
-        users.clear();
+        USERS.clear();
         setUserList(list);
     }
     /**
@@ -49,7 +63,7 @@ public class UserStorage {
      * @return the User with the corresponding username
      */
     public User findUserByName(String username){
-        return users.get(username);
+        return USERS.get(username);
     }
 
     /**
@@ -62,7 +76,7 @@ public class UserStorage {
      */
     public void addUser(String email, String username, String name, String major, String password) {
         final User user = new User(email, username, name, major, password);
-        users.put(username, user);
+        USERS.put(username, user);
     }
 
     /**
@@ -70,7 +84,7 @@ public class UserStorage {
      * @param username the username of the user being removed
      */
     public void remove(String username) {
-        users.remove(username);
+        USERS.remove(username);
     }
 
     /**
@@ -89,7 +103,11 @@ public class UserStorage {
      * @return the array of users
      */
     public String[] toArray(){
+<<<<<<< HEAD
+        return Arrays.copyOf(USERS.keySet().toArray(), USERS.keySet().toArray().length, String[].class);
+=======
         return Arrays.copyOf(users.keySet().toArray(), users.keySet().toArray().length, String[].class);
+>>>>>>> origin/master
     }
 
 }

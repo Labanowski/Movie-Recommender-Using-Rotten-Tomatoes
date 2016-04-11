@@ -18,10 +18,27 @@ import team56.mrurt.model.UserStorage;
  */
 public class ProfileActivity extends AppCompatActivity {
 
+    /**
+     * the editTexts used for changing profile attributes
+     */
     private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
+<<<<<<< HEAD
+    /**
+     * the current user logged in to the app
+     */
+    private final String currentLoggedIn = LoginActivity.currentLoggedInUser;
+    /**
+     * a user object
+     */
+    private User user;
+    /**
+     * context c
+     */
+=======
     private final String currentLoggedIn = LoginActivity.currentLoggedInUser;
     private User user;
+>>>>>>> origin/master
     private final Context c = this;
 
     @Override
@@ -47,7 +64,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to HomePage instead logging out
-        Intent homeIntent = new Intent(ProfileActivity.this, HomepageActivity.class);
+        final Intent homeIntent = new Intent(ProfileActivity.this, HomepageActivity.class);
         startActivity(homeIntent);
         finish();
     }
@@ -58,11 +75,11 @@ public class ProfileActivity extends AppCompatActivity {
      * @param view The View
      */
     public void saveChanges(View view){
-        String e1 = mEmailView.getText().toString();
-        String u1 = mUsernameView.getText().toString();
-        String n1 = mNameView.getText().toString();
-        String m1 = mMajorView.getText().toString();
-        String p1 = mPasswordView.getText().toString();
+        final String e1 = mEmailView.getText().toString();
+        final String u1 = mUsernameView.getText().toString();
+        final String n1 = mNameView.getText().toString();
+        final String m1 = mMajorView.getText().toString();
+        final String p1 = mPasswordView.getText().toString();
 
         //Deletes and updates the user's profile info.
         if(currentLoggedIn.equals(u1)) {
@@ -74,7 +91,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         LoginActivity.currentLoggedInUser = u1;
 
-        Intent intent = new Intent(this, HomepageActivity.class);
+        final Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
         finish();
     }

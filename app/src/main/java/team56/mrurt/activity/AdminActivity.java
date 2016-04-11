@@ -19,18 +19,33 @@ import team56.mrurt.model.UserStorage;
  * Created by Alexander Labanowski
  */
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
+<<<<<<< HEAD
+    /**
+     * the currentUser on the app
+     */
     private static String currentUser;
+    /**
+     * context c
+     */
+=======
+    private static String currentUser;
+>>>>>>> origin/master
     private final Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_activity);
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner);
+        final Spinner dropdown = (Spinner)findViewById(R.id.spinner);
         dropdown.setOnItemSelectedListener(this);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(this).getUsers());
+<<<<<<< HEAD
+        final String[] users = UserStorage.getInstance().toArray();
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, users);
+=======
         String[] users = UserStorage.getInstance().toArray();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, users);
+>>>>>>> origin/master
         dropdown.setAdapter(adapter);
     }
 
@@ -46,7 +61,7 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         currentUser = (String)parent.getItemAtPosition(position);
-        User user = UserStorage.getInstance().findUserByName(currentUser);
+        final User user = UserStorage.getInstance().findUserByName(currentUser);
         if(user.isAdmin()){
             ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.admin, currentUser)));
         } else if(user.isBanned()) {

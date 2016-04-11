@@ -9,29 +9,46 @@ import java.util.List;
  * A class that represents a User
  */
 public class User {
+<<<<<<< HEAD
+    /**
+     * the string's used for the attributes of a user
+     */
+    private final String email, username, name, major, password;
+    /**
+     * a list of ratings the user has given
+     */
+    private final List<Rating> ratingList;
+    /**
+     * boolean that determines if the user is banned or not
+     */
+=======
     private final String email;
     private final String username;
     private final String name;
     private final String major;
     private final String password;
     private final List<Rating> ratingList;
+>>>>>>> origin/master
     private boolean banned;
+    /**
+     * boolean that determines if the user is an admin or not
+     */
     private boolean admin;
 
     /**
      * Creates a User Object
-     * @param email user email
-     * @param username username of user
-     * @param name the name of the user
-     * @param major the major
-     * @param password the majors
+     * @param emailP user email
+     * @param usernameP username of user
+     * @param nameP the name of the user
+     * @param majorP the major
+     * @param passwordP the majors
      */
-    public User(String email, String username, String name, String major, String password) {
-        this.email = email;
-        this.username = username;
-        this.name = name;
-        this.major = major;
-        this.password = password;
+    public User(String emailP, String usernameP, String nameP, String majorP, String passwordP) {
+        this.email = emailP;
+        this.username = usernameP;
+        this.name = nameP;
+        this.major = majorP;
+        this.password = passwordP;
         this.ratingList = new ArrayList<>();
         this.banned = false;
         this.admin = false;
@@ -112,6 +129,7 @@ public class User {
 
     /**
      * Set the user to be banned or not
+     * @param status if the user is banned or not
      */
     public void setBanStatus(boolean status){
         this.banned = status;
@@ -119,6 +137,7 @@ public class User {
 
     /**
      * Set the user to be an Admin or not
+     * @param status if the user is an admin or not
      */
     public void setAdminStatus(boolean status){
         this.admin = status;
@@ -183,7 +202,16 @@ public class User {
         return admin;
     }
 
+    /**
+     * checks if two users are the same based off username
+     * @param u the user being compared
+     * @return true if the users are equal
+     */
     public boolean equals(User u) {
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
         return (u.getUsername().equals(this.getUsername()));
     }
 

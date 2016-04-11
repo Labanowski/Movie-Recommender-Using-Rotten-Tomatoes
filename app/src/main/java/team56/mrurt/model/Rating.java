@@ -7,16 +7,37 @@ import android.support.annotation.NonNull;
  * A rating for a movie and stores the username that rated a movie
  */
 public class Rating implements Comparable<Rating> {
+<<<<<<< HEAD
+    /**
+     * strings major and user used in the constructor
+     */
+    private final String major, user;
+    /**
+     * movie object used in the constructor
+     */
+    private final Movie movie;
+    /**
+     * double that is used to give a movie a rating
+     */
+=======
     private final String major;
     private final String user;
     private final Movie movie;
+>>>>>>> origin/master
     private final double movieRating;
 
-    public Rating(String major, String user, Movie movie, double movieRating) {
-        this.major = major;
-        this.user = user;
-        this.movie = movie;
-        this.movieRating = movieRating;
+    /**
+     * a constructor for the rating
+     * @param majorP major of person giving rating
+     * @param userP  user giving rating
+     * @param movieP the movie being rated
+     * @param movieRatingP the movieRating
+     */
+    public Rating(String majorP, String userP, Movie movieP, double movieRatingP) {
+        this.major = majorP;
+        this.user = userP;
+        this.movie = movieP;
+        this.movieRating = movieRatingP;
     }
 
     /**
@@ -51,6 +72,11 @@ public class Rating implements Comparable<Rating> {
         return this.movieRating;
     }
 
+    /**
+     *
+     * @param r checks if the movies are equals
+     * @return true if the movies are equals
+     */
     public boolean equals(Rating r) {
         return (r.getMovie().equals(this.getMovie()));
     }

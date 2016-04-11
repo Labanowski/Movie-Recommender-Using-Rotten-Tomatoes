@@ -4,43 +4,57 @@ import android.support.annotation.NonNull;
 import java.io.Serializable;
 
 public class Movie implements Serializable, Comparable<Movie> {
+<<<<<<< HEAD
+    /**
+     * the movie attributes
+     */
     private String title, year, synopsis, criticsRating, id;
+    /**
+     * ratings the user has given to movies
+     */
+=======
+    private String title, year, synopsis, criticsRating, id;
+>>>>>>> origin/master
     private double userRatings;
 
     /**
      * Sets Movie title.
-     * @param title is movie title.
+     * @param titleP is movie title.
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String titleP) {
+        this.title = titleP;
     }
 
     /**
      * Sets Movie release year.
-     * @param year is release year of movie.
+     * @param yearP is release year of movie.
      */
-    public void setYear(String year) {
-        this.year = year;
+    public void setYear(String yearP) {
+        this.year = yearP;
     }
 
     /**
      * Sets Movie synopsis.
-     * @param synopsis movie synopsis.
+     * @param synopsisP movie synopsis.
      */
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
+    public void setSynopsis(String synopsisP) {
+        this.synopsis = synopsisP;
     }
 
     /**
      * Sets critics rating
-     * @param criticsRating is critics rating
+     * @param criticsRatingP is critics rating
      */
-    public void setCriticsRating(String criticsRating) {
-        this.criticsRating = criticsRating;
+    public void setCriticsRating(String criticsRatingP) {
+        this.criticsRating = criticsRatingP;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    /**
+     * set the Id
+     * @param idP a string
+     */
+    public void setId(String idP) {
+        this.id = idP;
     }
 
     /**
@@ -85,6 +99,10 @@ public class Movie implements Serializable, Comparable<Movie> {
         return this.id;
     }
 
+    /**
+     * returns a string of the title of the movie with the year and critics rating
+     * @return The title of the movie along with the year and critics rating
+     */
     public String toString() {
         return (getTitle() + " (" + getYear() + ") " + getCriticsRating() + " %");
     }
@@ -94,10 +112,19 @@ public class Movie implements Serializable, Comparable<Movie> {
         return (int) this.userRatings - (int) a.userRatings;
     }
 
+    /**
+     * method to check if two movies are equal
+     * @param m movies being comapred to
+     * @return if movie equal to
+     */
     public boolean equals(Movie m) {
         return (m.getTitle().equals(this.title));
     }
 
+    /**
+     * produces a hashcode for the title
+     * @return the hashcode
+     */
     public int hashCode() {
         return this.getTitle().hashCode();
     }

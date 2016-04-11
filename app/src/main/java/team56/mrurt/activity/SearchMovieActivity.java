@@ -34,8 +34,19 @@ public class SearchMovieActivity extends AppCompatActivity {
      */
     private RequestQueue queue;
 
+<<<<<<< HEAD
+    /**
+     * a string
+     */
+    private String response;
+    /**
+     * a SearchView
+     */
+    private SearchView movieSearchView;
+=======
     private String response;
     private SearchView MovieSearchView;
+>>>>>>> origin/master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +54,12 @@ public class SearchMovieActivity extends AppCompatActivity {
         setContentView(R.layout.search_movie_activity);
         queue = Volley.newRequestQueue(this);
 
-        this.MovieSearchView = (SearchView) findViewById(R.id.movieSearchView);
-        Button MovieSearchButton = (Button) findViewById(R.id.movieSearchButton);
-        Button newReleaseSearchButton = (Button) findViewById(R.id.newReleaseSearch);
-        Button recentDVDSearchButton = (Button) findViewById(R.id.recentDVDSearch);
+        this.movieSearchView = (SearchView) findViewById(R.id.movieSearchView);
+        final  Button movieSearchButton = (Button) findViewById(R.id.movieSearchButton);
+        final  Button newReleaseSearchButton = (Button) findViewById(R.id.newReleaseSearch);
+        final Button recentDVDSearchButton = (Button) findViewById(R.id.recentDVDSearch);
 
-        MovieSearchButton.setOnClickListener(new View.OnClickListener() {
+        movieSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onSearchRequested();
@@ -71,7 +82,7 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to HomePage instead logging out
-        Intent homeIntent = new Intent(SearchMovieActivity.this, HomepageActivity.class);
+        final Intent homeIntent = new Intent(SearchMovieActivity.this, HomepageActivity.class);
         startActivity(homeIntent);
         finish();
     }
@@ -79,10 +90,10 @@ public class SearchMovieActivity extends AppCompatActivity {
     @Override
     public boolean onSearchRequested() {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=yedukp76ffytfuy24zsqk7f5";
-        String query = MovieSearchView.getQuery().toString().replace(" ", "+");
+        final String query = movieSearchView.getQuery().toString().replace(" ", "+");
 
         url += ("&q=" + query + "&page_limit=40");
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+        final JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject resp) {
@@ -91,16 +102,16 @@ public class SearchMovieActivity extends AppCompatActivity {
                         try {
                             array = resp.getJSONArray("movies");
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.d("JSON error", "error");
                         }
                         assert array != null;
 
-                        ArrayList<Movie> movies = new ArrayList<>();
+                        final  ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
                             try {
-                                JSONObject jsonObject = array.getJSONObject(i);
-                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
-                                Movie m = new Movie();
+                                final  JSONObject jsonObject = array.getJSONObject(i);
+                                final JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
+                                final  Movie m = new Movie();
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -109,7 +120,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 movies.add(m);
                             } catch (JSONException e) {
                                 Log.d("VolleyApp", "Failed to get JSON object");
-                                e.printStackTrace();
+                                Log.d("JSON error", "error");
                             }
                         }
                         changeView(movies);
@@ -130,7 +141,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      * Gets recent releases from RottenTomatoes API and displays them.
      */
     private void getRecentReleases() {
-        String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=yedukp76ffytfuy24zsqk7f5";
+        final String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json?apikey=yedukp76ffytfuy24zsqk7f5";
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -141,15 +152,15 @@ public class SearchMovieActivity extends AppCompatActivity {
                         try {
                             array = resp.getJSONArray("movies");
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.d("JSON error", "error");
                         }
                         assert array != null;
-                        ArrayList<Movie> movies = new ArrayList<>();
+                        final  ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
                             try {
-                                JSONObject jsonObject = array.getJSONObject(i);
-                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
-                                Movie m = new Movie();
+                                final JSONObject jsonObject = array.getJSONObject(i);
+                                final JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
+                                final Movie m = new Movie();
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -157,7 +168,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 movies.add(m);
                             } catch (JSONException e) {
                                 Log.d("MovieApp", "Failed to get JSON object");
-                                e.printStackTrace();
+                                Log.d("JSON error", "error");
                             }
                         }
                         changeView(movies);
@@ -176,9 +187,9 @@ public class SearchMovieActivity extends AppCompatActivity {
      * Gets recent DVDs from RottenTomatoes API and displays.
      */
     private void getRecentDVDs() {
-        String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?apikey=yedukp76ffytfuy24zsqk7f5";
+        final String url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/new_releases.json?apikey=yedukp76ffytfuy24zsqk7f5";
 
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+        final JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject resp) {
@@ -187,15 +198,15 @@ public class SearchMovieActivity extends AppCompatActivity {
                         try {
                             array = resp.getJSONArray("movies");
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Log.d("JSON error", "error");
                         }
                         assert array != null;
-                        ArrayList<Movie> movies = new ArrayList<>();
+                        final ArrayList<Movie> movies = new ArrayList<>();
                         for(int i=0; i < array.length(); i++) {
                             try {
-                                JSONObject jsonObject = array.getJSONObject(i);
-                                JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
-                                Movie m = new Movie();
+                                final JSONObject jsonObject = array.getJSONObject(i);
+                                final JSONObject ratingsJSON = jsonObject.getJSONObject("ratings");
+                                final Movie m = new Movie();
                                 m.setTitle(jsonObject.optString("title"));
                                 m.setYear(jsonObject.optString("year"));
                                 m.setSynopsis(jsonObject.optString("synopsis"));
@@ -203,7 +214,7 @@ public class SearchMovieActivity extends AppCompatActivity {
                                 movies.add(m);
                             } catch (JSONException e) {
                                 Log.d("MovieApp", "Failed to get JSON object");
-                                e.printStackTrace();
+                                Log.d("JSON error", "error");
                             }
                         }
                         changeView(movies);
@@ -225,7 +236,7 @@ public class SearchMovieActivity extends AppCompatActivity {
      * @param movies the list of movie objects we created from the JSon response
      */
     private void changeView(List<Movie> movies) {
-        Intent viewResultsIntent = new Intent(this, MovieListActivity.class);
+        final Intent viewResultsIntent = new Intent(this, MovieListActivity.class);
         viewResultsIntent.putExtra("movies", (ArrayList<Movie>)movies);
         startActivity(viewResultsIntent);
         finish();

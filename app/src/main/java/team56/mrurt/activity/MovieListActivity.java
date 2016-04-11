@@ -42,11 +42,11 @@ public class MovieListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_list_activity);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        View recyclerView = findViewById(R.id.movie_list);
+        final View recyclerView = findViewById(R.id.movie_list);
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
@@ -64,7 +64,11 @@ public class MovieListActivity extends AppCompatActivity {
       List of Movie objects
      */
         @SuppressWarnings("unchecked")
+<<<<<<< HEAD
+        final List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+=======
         List<Movie> movies = (List<Movie>) getIntent().getSerializableExtra("movies");
+>>>>>>> origin/master
         for (Movie s : movies) {
             Movies.addItem(s);
         }
@@ -74,7 +78,7 @@ public class MovieListActivity extends AppCompatActivity {
     public void onBackPressed() {
         //Go back to SearchMovieActivity instead of closing app.
         Movies.clear();
-        Intent searchIntent = new Intent(MovieListActivity.this, SearchMovieActivity.class);
+        final Intent searchIntent = new Intent(MovieListActivity.this, SearchMovieActivity.class);
         startActivity(searchIntent);
         finish();
     }
@@ -95,15 +99,24 @@ public class MovieListActivity extends AppCompatActivity {
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
+        /**
+         * a list of movies
+         */
         private final List<Movie> mValues;
 
+<<<<<<< HEAD
+        /**
+         * constructor
+         */
+=======
+>>>>>>> origin/master
         public SimpleItemRecyclerViewAdapter() {
             mValues = Movies.ITEMS;
         }
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
+            final View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.movie_list_content, parent, false);
             return new ViewHolder(view);
         }
@@ -117,16 +130,16 @@ public class MovieListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (mTwoPane) {
-                        Bundle arguments = new Bundle();
+                        final Bundle arguments = new Bundle();
                         arguments.putString(MovieDetailFragment.ARG_ITEM_ID, holder.mItem.getTitle());
-                        MovieDetailFragment fragment = new MovieDetailFragment();
+                        final MovieDetailFragment fragment = new MovieDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.movie_detail_container, fragment)
                                 .commit();
                     } else {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context, MovieDetailActivity.class);
+                        final Context context = v.getContext();
+                        final Intent intent = new Intent(context, MovieDetailActivity.class);
                         intent.putExtra(MovieDetailFragment.ARG_ITEM_ID, holder.mItem.toString());
                         intent.putExtra("Movie Object", holder.mItem);
 
@@ -145,11 +158,27 @@ public class MovieListActivity extends AppCompatActivity {
          * Container for a View in RecyclerView.
          */
         public class ViewHolder extends RecyclerView.ViewHolder {
+            /**
+             * a view
+             */
             public final View mView;
+            /**
+             * Text view used for id
+             */
             public final TextView mIdView;
+            /**
+             * Text view used for content
+             */
             public final TextView mContentView;
+            /**
+             * a movie object
+             */
             public Movie mItem;
 
+            /**
+             * constructor
+             * @param view a view object
+             */
             public ViewHolder(View view) {
                 super(view);
                 mView = view;

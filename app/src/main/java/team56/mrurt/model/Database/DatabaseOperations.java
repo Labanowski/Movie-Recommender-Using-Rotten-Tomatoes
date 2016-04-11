@@ -20,13 +20,32 @@ import team56.mrurt.model.User;
 /**
  * A SQLiteOpenHelper class that manages all the database operations
  */
+<<<<<<< HEAD
+public final class DatabaseOperations extends SQLiteOpenHelper {
+    /**
+     * Database version int
+     */
+    private static final int DBVERSION = 1;
+
+    /**
+     * Constructor for the class
+     * @param context the context
+     */
+    private DatabaseOperations (Context context) {
+        super(context, UserData.TableInfo.DATABASE_NAME, null, DBVERSION);
+=======
 public class DatabaseOperations extends SQLiteOpenHelper {
     private static final int database_version = 1;
 
     private DatabaseOperations (Context context) {
         super(context, UserData.TableInfo.DATABASE_NAME, null, database_version);
+>>>>>>> origin/master
         Log.d("Database Operations", "Database Created");
     }
+
+    /**
+     * instance of DataBaseOperations
+     */
     private static DatabaseOperations instance;
 
     /**
@@ -43,6 +62,17 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+<<<<<<< HEAD
+        final String createTableUser = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
+                UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
+                UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
+        db.execSQL(createTableUser);
+        final String createTableRatings = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_MOVIE + "(" +
+                UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.MAJOR_USER + " TEXT," +
+                UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING + " TEXT," +
+                UserData.TableInfo.MOVIE_RATE + " TEXT," + UserData.TableInfo.MOVIE_ID + " TEXT );";
+        db.execSQL(createTableRatings);
+=======
         String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS " + UserData.TableInfo.TABLE_USER + "(" +
                 UserData.TableInfo.USER_EMAIL + " TEXT," + UserData.TableInfo.USER_NAME + " TEXT," + UserData.TableInfo.NAME_USER + " TEXT," +
                 UserData.TableInfo.MAJOR_USER + " TEXT," + UserData.TableInfo.BANNED_STATUS + " INTEGER," + UserData.TableInfo.ADMIN_STATUS + " INTEGER," + UserData.TableInfo.PASSWORD_USER + " TEXT );";
@@ -52,6 +82,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 UserData.TableInfo.MOVIE_TITLE + " TEXT," + UserData.TableInfo.MOVIE_YEAR + " TEXT," + UserData.TableInfo.MOVIE_SYNOPSIS + " TEXT," + UserData.TableInfo.MOVIE_CRITICS_RATING + " TEXT," +
                 UserData.TableInfo.MOVIE_RATE + " TEXT," + UserData.TableInfo.MOVIE_ID + " TEXT );";
         db.execSQL(CREATE_TABLE_RATINGS);
+>>>>>>> origin/master
         Log.d("Database Operations", "Table Created");
     }
 
@@ -65,11 +96,19 @@ public class DatabaseOperations extends SQLiteOpenHelper {
     }
 
     /**
-     * put user into user table
+     * put user in table info
+     * @param dop the database
+     * @param email user email
+     * @param username user username
+     * @param name user name
+     * @param major user major
+     * @param password user's password
+     * @param banned if the user is banned or not
+     * @param admin if user is admin or not
      */
     public void putUserInformation(DatabaseOperations dop, String email, String username, String name, String major, String password, int banned, int admin) {
-        SQLiteDatabase sQ =  dop.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        final SQLiteDatabase sQ =  dop.getWritableDatabase();
+        final ContentValues cv = new ContentValues();
         cv.put(UserData.TableInfo.USER_EMAIL, email);
         cv.put(UserData.TableInfo.USER_NAME, username);
         cv.put(UserData.TableInfo.NAME_USER, name);
@@ -85,10 +124,12 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     /**
      * put rating into movie table
+     * @param db the database
+     * @param r the rating being added to the database
      */
     public void addRating(DatabaseOperations db, Rating r) {
-        SQLiteDatabase sQ =  db.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        final SQLiteDatabase sQ =  db.getWritableDatabase();
+        final ContentValues cv = new ContentValues();
 
         cv.put(UserData.TableInfo.USER_NAME, r.getUser());
         cv.put(UserData.TableInfo.MOVIE_TITLE, r.getMovie().getTitle());
@@ -108,23 +149,23 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @return returns a list of all the registered users
      */
     public List<User> getUsers() {
-        List<User> allUsers = new ArrayList<>();
-        String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER;
+        final List<User> allUsers = new ArrayList<>();
+        final String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER;
 
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
+        final SQLiteDatabase db = this.getReadableDatabase();
+        final Cursor c = db.rawQuery(selectQuery, null);
 
         if (c.moveToFirst()) {
             do {
-                String email = c.getString(c.getColumnIndex(UserData.TableInfo.USER_EMAIL));
-                String username = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
-                String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
-                String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
-                String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
-                int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
-                int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
+                final String email = c.getString(c.getColumnIndex(UserData.TableInfo.USER_EMAIL));
+                final String username = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
+                final String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
+                final String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
+                final String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
+                final int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
+                final int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
 
-                User u = new User(email, username, name, major, password);
+                final User u = new User(email, username, name, major, password);
                 if(admin == 0) {
                     u.setAdminStatus(false);
                 } else {
@@ -146,23 +187,24 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     /**
      * Gets a single user
+     * @param username username of the user
      * @return returns a single user
      */
     public User getSingleUser(String username) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER + " WHERE "
+        final SQLiteDatabase db = this.getReadableDatabase();
+        final String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER + " WHERE "
                 + UserData.TableInfo.USER_NAME + " = " + username;
-        Cursor c = db.rawQuery(selectQuery, null);
+        final Cursor c = db.rawQuery(selectQuery, null);
 
-        String email = c.getString(c.getColumnIndex(UserData.TableInfo.USER_EMAIL));
-        String username1 = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
-        String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
-        String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
-        String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
-        int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
-        int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
+        final String email = c.getString(c.getColumnIndex(UserData.TableInfo.USER_EMAIL));
+        final String username1 = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
+        final String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
+        final String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
+        final String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
+        final int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
+        final int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
 
-        User u = new User(email, username1, name, major, password);
+        final User u = new User(email, username1, name, major, password);
 
         if(admin == 0) {
             u.setAdminStatus(false);
@@ -182,31 +224,31 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @return returns an list of all the Ratings
      */
     public List<Rating> getAllRatings() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        List<Rating> allRatings = new ArrayList<>();
+        final SQLiteDatabase db = this.getReadableDatabase();
+        final List<Rating> allRatings = new ArrayList<>();
 
-        String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_MOVIE;
-        Cursor c = db.rawQuery(selectQuery, null);
+        final String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_MOVIE;
+        final Cursor c = db.rawQuery(selectQuery, null);
 
         if (c.moveToFirst()) {
             do {
-                String username = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
-                String title = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_TITLE));
-                String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
-                String year = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_YEAR));
-                String synopsis = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_SYNOPSIS));
-                String criticRate = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_CRITICS_RATING));
-                double rating = c.getFloat(c.getColumnIndex(UserData.TableInfo.MOVIE_RATE));
-                String id = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_ID));
+                final  String username = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
+                final String title = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_TITLE));
+                final String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
+                final String year = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_YEAR));
+                final String synopsis = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_SYNOPSIS));
+                final String criticRate = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_CRITICS_RATING));
+                final double rating = c.getFloat(c.getColumnIndex(UserData.TableInfo.MOVIE_RATE));
+                final String id = c.getString(c.getColumnIndex(UserData.TableInfo.MOVIE_ID));
 
-                Movie m = new Movie();
+                final  Movie m = new Movie();
                 m.setTitle(title);
                 m.setYear(year);
                 m.setSynopsis(synopsis);
                 m.setCriticsRating(criticRate);
                 m.setId(id);
 
-                Rating r = new Rating(major, username,m,rating);
+                final  Rating r = new Rating(major, username,m,rating);
 
                 // adding to allUsers
                 allRatings.add(r);
@@ -222,8 +264,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @param u the user we are going to update
      */
     public void updateUser(DatabaseOperations d, User u) {
-        SQLiteDatabase db = d.getWritableDatabase();
-        ContentValues cv = new ContentValues();
+        final SQLiteDatabase db = d.getWritableDatabase();
+        final ContentValues cv = new ContentValues();
 
         cv.put(UserData.TableInfo.BANNED_STATUS, u.getBanStatus());
         cv.put(UserData.TableInfo.ADMIN_STATUS, u.getAdminStatus());
@@ -237,8 +279,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @param r the rating we are going to update
      */
     public void updateRating(DatabaseOperations d, Rating r) {
-        SQLiteDatabase db = d.getWritableDatabase();
-        ContentValues values = new ContentValues();
+        final SQLiteDatabase db = d.getWritableDatabase();
+        final ContentValues values = new ContentValues();
 
         values.put(UserData.TableInfo.MOVIE_RATE, r.getMovieRating());
         db.update(UserData.TableInfo.TABLE_MOVIE, values, " USER_NAME = ?", new String[]{r.getUser()});
@@ -251,8 +293,8 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @param oldUsername the users old username
      */
     public void updateUserRating(DatabaseOperations d, String newUsername, String oldUsername) {
-        SQLiteDatabase db = d.getWritableDatabase();
-        ContentValues values = new ContentValues();
+        final SQLiteDatabase db = d.getWritableDatabase();
+        final ContentValues values = new ContentValues();
 
         values.put(UserData.TableInfo.USER_NAME, newUsername);
         db.update(UserData.TableInfo.TABLE_MOVIE, values, " USER_NAME = ?", new String[]{oldUsername});
@@ -264,7 +306,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
      * @param email the user we will delete
      */
     public void deleteUser(DatabaseOperations d, String email) {
-        SQLiteDatabase db = d.getWritableDatabase();
+        final  SQLiteDatabase db = d.getWritableDatabase();
         db.delete(UserData.TableInfo.TABLE_USER, UserData.TableInfo.USER_EMAIL + " = ?", new String[]{email});
     }
 }

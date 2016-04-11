@@ -17,12 +17,17 @@ import team56.mrurt.model.UserStorage;
  */
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText mEmailView;
-    private EditText mUsernameView;
-    private EditText mNameView;
-    private EditText mMajorView;
-    private EditText mPasswordView;
+    /**
+     * edit texts used to register in the app
+     */
+    private EditText mEmailView, mUsernameView, mNameView, mMajorView, mPasswordView;
 
+<<<<<<< HEAD
+    /**
+     * context c
+     */
+=======
+>>>>>>> origin/master
     private final Context ctx = this;
 
     @Override

@@ -22,6 +22,12 @@ import team56.mrurt.model.Recommend;
 * Sorts Movies into a list by specific Criteria
  */
 public class RecommendMovieActivity extends AppCompatActivity {
+<<<<<<< HEAD
+    /**
+     * context c
+     */
+=======
+>>>>>>> origin/master
     private final Context c = this;
 
     @Override
@@ -29,15 +35,15 @@ public class RecommendMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recommend_movie_activity);
 
-        Button recommendYear = (Button) findViewById(R.id.recommend_year);
-        Button recommendMajor = (Button) findViewById(R.id.recommend_major);
+        final Button recommendYear = (Button) findViewById(R.id.recommend_year);
+        final Button recommendMajor = (Button) findViewById(R.id.recommend_major);
 
         recommendYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText year = (EditText) findViewById(R.id.year);
+                final EditText year = (EditText) findViewById(R.id.year);
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                List<Movie> movie = Recommend.sortByYear(year.getText().toString());
+                final  List<Movie> movie = Recommend.sortByYear(year.getText().toString());
                 changeView(movie);
             }
         });
@@ -46,7 +52,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
-                List<Movie> movie = Recommend.sortByMajor();
+                final  List<Movie> movie = Recommend.sortByMajor();
                 changeView(movie);
             }
         });
@@ -55,7 +61,7 @@ public class RecommendMovieActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         //Go back to Homepage instead of closing app.
-        Intent searchIntent = new Intent(RecommendMovieActivity.this, HomepageActivity.class);
+        final Intent searchIntent = new Intent(RecommendMovieActivity.this, HomepageActivity.class);
         startActivity(searchIntent);
         finish();
     }
@@ -67,7 +73,11 @@ public class RecommendMovieActivity extends AppCompatActivity {
      * @param movies the list of movie objects we created from the recommendations
      */
     private void changeView(List<Movie> movies) {
+<<<<<<< HEAD
+        final Intent viewResultsIntent = new Intent(this, RecommendListActivity.class);
+=======
         Intent viewResultsIntent = new Intent(this, RecommendListActivity.class);
+>>>>>>> origin/master
         viewResultsIntent.putExtra("movies", (ArrayList<Movie>) movies);
         startActivity(viewResultsIntent);
         finish();
