@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_bb5b27a9bc4bab560d785de5c7e87f3032db6e07.jar" />
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_7202dfb7c769a0eeecc7b415aca342199c6da0e1.jar" />
     </item>
     <item
         jar="C:\Users\N550JK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
@@ -16,32 +16,11 @@
         <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_b2d59b379dfcc6907ad9598ed000178b88deec92.jar" />
     </item>
     <item
-        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_4d15c75aa94ed2c9f22bd3879a46723a38f58742.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_8be37b34c25ff93edb0971c75d13cf7c65bbce78.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_b1e5e0fe6d8a48661f6312c3d52372c58ba6294e.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_61a39b215cd30ff05230e72447b734bacabd40e1.jar" />
+        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_bb5b27a9bc4bab560d785de5c7e87f3032db6e07.jar" />
     </item>
     <item
         jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
@@ -51,6 +30,13 @@
         <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_9a62fff427578cf893e1b396aa56fe0b9d2aebe9.jar" />
     </item>
     <item
+        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_4d15c75aa94ed2c9f22bd3879a46723a38f58742.jar" />
+    </item>
+    <item
         jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
@@ -58,39 +44,11 @@
         <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_889ef0dfa3e82e24c02a749b0bbe42f4d4983346.jar" />
     </item>
     <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_b3e56b793c7109fd9f3cbc70540e2bdced897ff7.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_685639f611d176cbeb200873f5c2c158abe79df9.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="C:\Users\N550JK\Documents\GitHub\Movie-Recommender-Using-Rotten-Tomatoes\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_b3623c8b1d43a11f115fa0d02de60bce05e6cd4e.jar" />
-    </item>
-    <item
         jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="5c5699834e9722f1c288fea2de82725d078ba127">
         <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_78db5a08edc2bcd371bb3f8ad8dea8f0385bed0b.jar" />
-    </item>
-    <item
-        jar="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\N550JK\Downloads\Movie-Recommender-Using-Rotten-Tomatoes-master\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_7202dfb7c769a0eeecc7b415aca342199c6da0e1.jar" />
     </item>
 
 </items>
