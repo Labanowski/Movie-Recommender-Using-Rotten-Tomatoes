@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\homepage_activity.xml",
-        "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\layout\\homepage_activity.xml"
-    },
-    {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
         "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\homepage_activity.xml",
+        "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\layout\\homepage_activity.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
@@ -16,12 +16,12 @@
         "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
@@ -48,12 +48,12 @@
         "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\layout\\movie_detail_activity.xml"
     },
     {
-        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\search_movie.xml",
         "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\layout\\search_movie.xml"
+    },
+    {
+        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
@@ -224,16 +224,16 @@
         "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
-        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\layout\\content_main.xml"
+        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
@@ -312,16 +312,16 @@
         "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item.xml"
     },
     {
-        "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\movie_detail.xml",
         "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\layout\\movie_detail.xml"
     },
     {
-        "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
