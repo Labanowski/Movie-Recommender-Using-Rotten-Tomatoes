@@ -10,9 +10,6 @@ import team56.mrurt.model.Recommend;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- * Created by kuiski.
- */
 public class SortByYearTest {
 
     @Test

@@ -200,7 +200,7 @@ public class User {
      */
     @Override
     public boolean equals(Object u) {
-        return ((User)u).getUsername().equals(((User)this).getUsername());
+        return ((User)u).getUsername().equals((this).getUsername());
     }
     @Override
     public int hashCode() {

@@ -56,7 +56,7 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
         if(user.isAdmin()){
             ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.admin, currentUser)));
         } else if(user.isBanned()) {
-            ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.isbanned, currentUser)));
+            ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.isBanned, currentUser)));
         } else {
             ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.active, currentUser)));
         }
@@ -81,7 +81,7 @@ public class AdminActivity extends AppCompatActivity implements OnItemSelectedLi
             UserStorage.getInstance().findUserByName(currentUser).banUser();
             DatabaseOperations.getHelper(c).updateUser(DatabaseOperations.getHelper(c), UserStorage.getInstance().findUserByName(currentUser));
             UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
-            ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.isbanned, currentUser)));
+            ((TextView) findViewById(R.id.textView4)).setText((getString(R.string.isBanned, currentUser)));
         }
     }
 

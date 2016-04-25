@@ -27,8 +27,8 @@
     <string name="recommend">Recommend</string>
     <string name="major">Major</string>
     <string name="ban">Ban</string>
-    <string name="ratemovie">Rate Movie</string>
-    <string name="searchmovie">Search Movies</string>
+    <string name="rateMovie">Rate Movie</string>
+    <string name="searchMovie">Search Movies</string>
     <string name="recommend_by_my_major">Recommend by My Major</string>
     <string name="new_releases">New Releases</string>
     <string name="unlock">Unlock</string>
@@ -38,8 +38,8 @@
     <string name="save_changes">Save Changes</string>
     <string name="by_year">By Year</string>
 
-    <string name="isbanned">%1$s is banned.</string>
-    <string name="admin">%1$s is admin.</string>
+    <string name="isBanned">%1$s is banned.</string>
+    <string name="admin">%1$s is an admin.</string>
     <string name="active">%1$s is active.</string>
     <string name="unbanned">%1$s is now unbanned.</string>
 </resources>
