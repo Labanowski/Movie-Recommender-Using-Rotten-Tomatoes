@@ -20,6 +20,10 @@
         "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\menu\\menu_profile.xml"
     },
     {
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
         "merged": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_profile.xml",
         "source": "C:\\Users\\Wyckoff\\Desktop\\New folder\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\menu\\menu_profile.xml"
     },
@@ -28,8 +32,20 @@
         "source": "C:\\Users\\kuiski\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\menu\\menu_homepage.xml"
     },
     {
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_homepage.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\menu\\menu_homepage.xml"
+    },
+    {
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_movie_detail.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\menu\\menu_movie_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_movie_detail.xml",
         "source": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\src\\main\\res\\menu\\menu_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_profile.xml",
+        "source": "C:\\Users\\N550JK\\Documents\\GitHub\\Movie-Recommender-Using-Rotten-Tomatoes\\app\\src\\main\\res\\menu\\menu_profile.xml"
     },
     {
         "merged": "C:\\Users\\N550JK\\Downloads\\Movie-Recommender-Using-Rotten-Tomatoes-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_homepage.xml",

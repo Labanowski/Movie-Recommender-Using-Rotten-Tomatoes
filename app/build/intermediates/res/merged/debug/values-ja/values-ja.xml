@@ -19,5 +19,47 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"共有"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"%sと共有"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"折りたたむ"</string>
+    <string name="action_register">登録</string>
+    <string name="action_register_short">登録</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="action_sign_in_short">ログイン</string>
+    <string name="active">%1$s はアクティブ</string>
+    <string name="admin">%1$s はアドミニストレータアカウント</string>
+    <string name="app_name">映画おすすめ</string>
+    <string name="ban">Ban</string>
+    <string name="by_year">年間</string>
+    <string name="click_recommend_major">専攻のおすすめ</string>
+    <string name="enter_pass_again">入力されたパスワードは正しくありません。</string>
+    <string name="error_field_required">この情報は必要です</string>
+    <string name="error_invalid_email">このメールアドレスを使用できません。</string>
+    <string name="error_invalid_password">入力されたパスワードは正しくありません</string>
+    <string name="forgot_password">パスワードを忘れた場合</string>
+    <string name="isbanned">%1$s のユーザーネームのアクセスは禁止されています</string>
+    <string name="login_button">ログイン</string>
+    <string name="logout">ログアウト</string>
+    <string name="major">専攻</string>
+    <string name="new_releases">ニューリリース</string>
+    <string name="profile">プロフィール</string>
+    <string name="prompt_email">メールアドレス</string>
+    <string name="prompt_name">名前</string>
+    <string name="prompt_password">パスワード</string>
+    <string name="prompt_username">ユーザーネーム</string>
+    <string name="ratemovie">映画を評価</string>
+    <string name="recent_dvds">新発売DVD</string>
+    <string name="recommend">おすすめ</string>
+    <string name="recommend_by_my_major">専攻のおすすめ</string>
+    <string name="recover_by_email">メールアドレスを入力</string>
+    <string name="recover_by_username">ユーザーネームを入力</string>
+    <string name="register_button">登録</string>
+    <string name="save_changes">変更を保存</string>
+    <string name="search">検索</string>
+    <string name="search_hint">名前またメールアドレスを入力してください</string>
+    <string name="searchmovie">映画を検索</string>
+    <string name="select_your_year">年間を選択</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="submit">確認</string>
+    <string name="title_movie_detail">説明</string>
+    <string name="title_movie_list">映画</string>
+    <string name="unbanned">%1$s を使用するようになりました。</string>
+    <string name="unlock">アンロック</string>
 </resources>
