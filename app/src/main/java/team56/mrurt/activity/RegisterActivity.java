@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
      * @param v The View
      */
     public void register(View v) {
-        DatabaseOperations.getHelper(ctx).putUserInformation(DatabaseOperations.getHelper(ctx), getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
+        DatabaseOperations.getHelper(ctx).putUserInformation(DatabaseOperations.getHelper(ctx), getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString(), 0, 0);
 
         UserStorage.getInstance().addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());
         final Intent intent = new Intent(this, LoginActivity.class);

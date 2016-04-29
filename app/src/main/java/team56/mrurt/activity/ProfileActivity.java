@@ -81,7 +81,7 @@ public class ProfileActivity extends AppCompatActivity {
             DatabaseOperations.getHelper(c).updateUserRating(DatabaseOperations.getHelper(c), u1, currentLoggedIn);
         }
         DatabaseOperations.getHelper(c).deleteUser(DatabaseOperations.getHelper(c), user.getEmail());
-        DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), e1, u1, n1, m1, p1);
+        DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), e1, u1, n1, m1, p1, 0, 0);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(c).getUsers());
 
         LoginActivity.setCurrentLoggedInUser(u1);

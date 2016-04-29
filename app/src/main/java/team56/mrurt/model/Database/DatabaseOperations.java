@@ -90,7 +90,7 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
      * @param major user major
      * @param password user's password
      */
-    public void putUserInformation(DatabaseOperations dop, String email, String username, String name, String major, String password) {
+    public void putUserInformation(DatabaseOperations dop, String email, String username, String name, String major, String password, int banned, int admin) {
         final SQLiteDatabase sQ =  dop.getWritableDatabase();
         final ContentValues cv = new ContentValues();
         cv.put(UserData.TableInfo.USER_EMAIL, email);
@@ -98,8 +98,8 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
         cv.put(UserData.TableInfo.NAME_USER, name);
         cv.put(UserData.TableInfo.MAJOR_USER, major);
         cv.put(UserData.TableInfo.PASSWORD_USER, password);
-        cv.put(UserData.TableInfo.BANNED_STATUS, 0);
-        cv.put(UserData.TableInfo.ADMIN_STATUS, 0);
+        cv.put(UserData.TableInfo.BANNED_STATUS, banned);
+        cv.put(UserData.TableInfo.ADMIN_STATUS, admin);
 
         //insert rows
         sQ.insert(UserData.TableInfo.TABLE_USER, null, cv);
