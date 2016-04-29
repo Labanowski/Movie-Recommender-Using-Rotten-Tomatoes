@@ -185,7 +185,6 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
         final String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
         final String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
         final String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
-        final int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
         final int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
 
         final User u = new User(email, username1, name, major, password);
@@ -193,16 +192,46 @@ public final class DatabaseOperations extends SQLiteOpenHelper {
         if(admin == 0) {
             u.setAdminStatus(false);
         } else {
-            u.setAdminStatus(true);
+            return new User("","","","","");
         }
-        if(banned == 0) {
-            u.setBanStatus(false);
-        } else {
-            u.setBanStatus(true);
-        }
-        c.close();
-        return u;
+	    return u;
     }
+
+    public User getSingleUserEmail(String e) {
+        final SQLiteDatabase db = this.getReadableDatabase();
+        final String selectQuery = "SELECT  * FROM " + UserData.TableInfo.TABLE_USER + " WHERE "
+                + UserData.TableInfo.USER_EMAIL + " = " + "'" + e + "'";
+        final Cursor c = db.rawQuery(selectQuery, null);
+
+        if (c != null && c.moveToFirst()) {
+            c.moveToFirst();
+            final String email = c.getString(c.getColumnIndex(UserData.TableInfo.USER_EMAIL));
+            final String username1 = c.getString(c.getColumnIndex(UserData.TableInfo.USER_NAME));
+            final String name = c.getString(c.getColumnIndex(UserData.TableInfo.NAME_USER));
+            final String major = c.getString(c.getColumnIndex(UserData.TableInfo.MAJOR_USER));
+            final String password = c.getString(c.getColumnIndex(UserData.TableInfo.PASSWORD_USER));
+            final int banned = c.getInt(c.getColumnIndex(UserData.TableInfo.BANNED_STATUS));
+            final int admin = c.getInt(c.getColumnIndex(UserData.TableInfo.ADMIN_STATUS));
+
+            final User u = new User(email, username1, name, major, password);
+
+            if(admin == 0) {
+                u.setAdminStatus(false);
+            } else {
+                u.setAdminStatus(true);
+            }
+            if(banned == 0) {
+                u.setBanStatus(false);
+            } else {
+                u.setBanStatus(true);
+            }
+            c.close();
+            return u;
+        } else {
+            return new User("","","","","");
+        }
+    }
+
     /**
      * Gets all the ratings
      * @return returns an list of all the Ratings

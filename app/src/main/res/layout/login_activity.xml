@@ -5,6 +5,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin" tools:context=".activity.LoginActivity"
+              android:background="@color/white"
     >
 
     <!-- Login progress -->
@@ -13,7 +14,7 @@
         android:layout_marginBottom="8dp" android:visibility="gone" />
 
     <ScrollView android:id="@+id/login_form" android:layout_width="match_parent"
-        android:layout_height="172dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent"
             android:layout_height="wrap_content" android:orientation="vertical">
@@ -22,6 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_username"
+                                  android:textColorHint="@color/black"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -31,6 +33,7 @@
             <AutoCompleteTextView android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                                  android:textColorHint="@color/black"
                 android:hint="@string/prompt_password"
                 android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
@@ -39,12 +42,31 @@
                 android:maxLines="1" android:singleLine="true" />
 
             <Button android:id="@+id/username_sign_in_button" style="?android:textAppearanceSmall"
+                    android:background="@color/black"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" android:text="@string/action_sign_in_short"
                 android:textStyle="bold"
+                    android:textColor="@color/white"
                 android:onClick="login" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/forgot_password"
+                android:id="@+id/forgetPassword"
+                android:clickable="false"
+                android:textColor="#a81128"
+                android:onClick="forgotPassword" />
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="225dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/popcorn"
+        android:layout_marginTop="27dp"/>
 
 </LinearLayout>

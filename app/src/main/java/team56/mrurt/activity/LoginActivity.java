@@ -2,6 +2,7 @@ package team56.mrurt.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
@@ -11,9 +12,6 @@ import android.view.View;
 import team56.mrurt.R;
 import team56.mrurt.model.UserStorage;
 
-/**
- * Created by Alex Labanowski
- */
 public class LoginActivity extends AppCompatActivity {
 
     /**
@@ -52,6 +50,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mUsernameView = (EditText) findViewById(R.id.login_username);
         mPasswordView = (EditText) findViewById(R.id.password);
+
+        mUsernameView.setTextColor(Color.BLACK);
+        mPasswordView.setTextColor(Color.BLACK);
     }
 
     /*public EditText getUsernameView() {
@@ -67,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
      * @param v The View
      */
     public void login(View v){
-        final  String username = mUsernameView.getText().toString();
+        final String username = mUsernameView.getText().toString();
         final String password = mPasswordView.getText().toString();
 
         if(UserStorage.getInstance().handleLoginRequest(username, password)){
@@ -92,5 +93,11 @@ public class LoginActivity extends AppCompatActivity {
             t.show();
         }
         currentLoggedInUser = username;
+    }
+
+    public void forgotPassword(View v) {
+        final Intent intent = new Intent(this, ForgetPasswordActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

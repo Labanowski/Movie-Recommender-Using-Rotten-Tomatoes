@@ -1,5 +1,6 @@
 package team56.mrurt.activity;
 
+//import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import team56.mrurt.model.UserStorage;
 
 
 public class WelcomeActivity extends AppCompatActivity {
+    //public Context c = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

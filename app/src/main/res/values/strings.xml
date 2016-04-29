@@ -14,6 +14,12 @@
     <string name="action_sign_in_short">Sign In</string>
     <string name="action_register">Register</string>
 
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#0000FF</color>
+    <color name="gold">#ffd700</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is invalid</string>
     <string name="error_field_required">This field is required</string>
@@ -42,4 +48,9 @@
     <string name="admin">%1$s is an admin.</string>
     <string name="active">%1$s is active.</string>
     <string name="unbanned">%1$s is now unbanned.</string>
+
+    <string name="submit">Submit</string>
+    <string name="recover_by_username">Recover by Username</string>
+    <string name="recover_by_email">Or recover by Email</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>

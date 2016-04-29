@@ -15,9 +15,6 @@ import team56.mrurt.model.Database.DatabaseOperations;
 import team56.mrurt.model.User;
 import team56.mrurt.model.UserStorage;
 
-/**
- * Created by Alexander Labanowski
- */
 public class AdminActivity extends AppCompatActivity implements OnItemSelectedListener{
     /**
      * the currentUser on the app
