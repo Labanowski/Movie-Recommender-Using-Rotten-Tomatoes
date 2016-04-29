@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
      * @param v The View
      */
     public void login(View v){
-        final String username = mUsernameView.getText().toString();
+        final String username = mUsernameView.getText().toString().toUpperCase();
         final String password = mPasswordView.getText().toString();
 
         if(UserStorage.getInstance().handleLoginRequest(username, password)){
