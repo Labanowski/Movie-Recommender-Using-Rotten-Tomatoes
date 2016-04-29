@@ -5,6 +5,8 @@
 
 
     <Button
+        android:background="@color/black"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/by_year"
@@ -15,7 +17,9 @@
 
 
     <Button
-        android:layout_width="wrap_content"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:text="@string/recommend_by_my_major"
         android:id="@+id/submit"
@@ -25,7 +29,7 @@
 
     <EditText
         android:inputType="text"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:layout_alignParentTop="true"

@@ -33,11 +33,13 @@ public class RecommendMovieActivity extends AppCompatActivity {
         setContentView(R.layout.recommend_movie_activity);
 
         final Button recommendYear = (Button) findViewById(R.id.recommend_year);
+
         final Button recommendMajor = (Button) findViewById(R.id.submit);
 
         recommendYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final EditText year = (EditText) findViewById(R.id.username);
                 RatingStorage.getInstance().updateRatingDatabase(DatabaseOperations.getHelper(c).getAllRatings());
                 final  List<Movie> movie = Recommend.sortByYear(year.getText().toString());

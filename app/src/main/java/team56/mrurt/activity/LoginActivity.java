@@ -2,9 +2,9 @@ package team56.mrurt.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.view.View;
@@ -12,9 +12,6 @@ import android.view.View;
 import team56.mrurt.R;
 import team56.mrurt.model.UserStorage;
 
-/**
- * Created by Alex Labanowski
- */
 public class LoginActivity extends AppCompatActivity {
 
     /**
@@ -53,6 +50,9 @@ public class LoginActivity extends AppCompatActivity {
 
         mUsernameView = (EditText) findViewById(R.id.login_username);
         mPasswordView = (EditText) findViewById(R.id.password);
+
+        mUsernameView.setTextColor(Color.BLACK);
+        mPasswordView.setTextColor(Color.BLACK);
     }
 
     /*public EditText getUsernameView() {

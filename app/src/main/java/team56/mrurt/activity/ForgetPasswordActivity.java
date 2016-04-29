@@ -26,9 +26,6 @@ import javax.mail.internet.MimeMessage;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 
-/**
- * Created by kuiski on 4/23/2016.
- */
 public class ForgetPasswordActivity extends AppCompatActivity {
 
     private EditText emailView, usernameView;
