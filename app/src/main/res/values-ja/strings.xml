@@ -29,7 +29,7 @@
     <string name="major">専攻</string>
     <string name="ban">Ban</string>
     <string name="rateMovie">映画を評価</string>
-    <string name="searchmovie">映画を検索</string>
+    <string name="searchMovie">映画を検索</string>
     <string name="recommend_by_my_major">専攻のおすすめ</string>
     <string name="new_releases">ニューリリース</string>
     <string name="unlock">アンロック</string>
@@ -39,7 +39,7 @@
     <string name="save_changes">変更を保存</string>
     <string name="by_year">年間</string>
 
-    <string name="isbanned">%1$s のユーザーネームのアクセスは禁止されています</string>
+    <string name="isBanned">%1$s のユーザーネームのアクセスは禁止されています</string>
     <string name="admin">%1$s はアドミニストレータアカウント</string>
     <string name="active">%1$s はアクティブ</string>
     <string name="unbanned">%1$s を使用するようになりました。</string>

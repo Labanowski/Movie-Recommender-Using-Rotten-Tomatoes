@@ -17,7 +17,7 @@
         android:textColor="@color/white"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="@string/searchmovie"
+        android:text="@string/searchMovie"
         android:id="@+id/movieSearchButton"
         android:layout_below="@+id/movieSearchView"
         android:layout_alignParentLeft="true"
