@@ -54,5 +54,10 @@
     <string name="recover_by_email">Or recover by Email</string>
     <string name="forgot_password">Forgot Password?</string>
 
-    <string name="incorrectInfo">Your info is incorrect. Please try again.</string>'
+    <string name="incorrectInfo">Your info is incorrect. Please try again.</string>
+
+    <string name="rateMovie1to5">Rate this movie 1 to 5 stars</string>
+    <string name="rateThisMovie">Rate this movie</string>
+    <string name="rate">Rate</string>
+    <string name="cancel">Cancel</string>
 </resources>

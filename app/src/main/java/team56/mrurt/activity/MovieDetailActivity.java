@@ -104,9 +104,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         ratingBar1.setStepSize(1);
         ratingBar1.setMax(five);
 
-        final String m = "Rate this movie 1 to 5 stars";
+        final String m = getString(R.string.rateMovie1to5);
         movieRate.setMessage(m)
-                .setTitle("Rate this Movie").setView(ratingBar1).setPositiveButton("Rate", new DialogInterface.OnClickListener() {
+                .setTitle(getString(R.string.rateThisMovie)).setView(ratingBar1).setPositiveButton(getString(R.string.rate), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         final Rating newRating = new Rating(MovieDetailActivity.this.currentUser.getMajor(), MovieDetailActivity.this.currentUser.getUsername(), ratedMovie, ratingBar1.getRating());
@@ -125,7 +125,7 @@ public class MovieDetailActivity extends AppCompatActivity {
                         }
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                     }
