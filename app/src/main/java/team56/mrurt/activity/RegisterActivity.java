@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import team56.mrurt.R;
 import team56.mrurt.model.Database.DatabaseOperations;
@@ -90,6 +91,35 @@ public class RegisterActivity extends AppCompatActivity {
      * @param v The View
      */
     public void register(View v) {
+        final Context context = getApplicationContext();
+        final int duration = Toast.LENGTH_LONG;
+
+        if (!getEmailString().contains("@") && !getEmailString().contains(".")) {
+            final Toast t = Toast.makeText(context, (getString(R.string.invalidEmail)), duration);
+            t.show();
+            return;
+        } else if (getUsernameString().length() < 1) {
+            final Toast t = Toast.makeText(context, (getString(R.string.invalidUsername)), duration);
+            t.show();
+            return;
+        } else if(UserStorage.getInstance().findUserByName(getUsernameString()) != null) {
+            final Toast t = Toast.makeText(context, (getString(R.string.usernameAlreadyTaken)), duration);
+            t.show();
+            return;
+        } else if(getNameString().length() < 2) {
+            final Toast t = Toast.makeText(context, (getString(R.string.invalidName)), duration);
+            t.show();
+            return;
+        } else if(getMajorString().length() < 3) {
+            final Toast t = Toast.makeText(context, (getString(R.string.invalidMajor)), duration);
+            t.show();
+            return;
+        } else if(getPasswordString().length() < 3) {
+            final Toast t = Toast.makeText(context, (getString(R.string.invalidPassword)), duration);
+            t.show();
+            return;
+        }
+
         DatabaseOperations.getHelper(ctx).putUserInformation(DatabaseOperations.getHelper(ctx), getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString(), 0, 0);
 
         UserStorage.getInstance().addUser(getEmailString(), getUsernameString(), getNameString(), getMajorString(), getPasswordString());

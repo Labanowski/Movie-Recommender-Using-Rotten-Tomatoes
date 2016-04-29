@@ -60,4 +60,11 @@
     <string name="rateThisMovie">Rate this movie</string>
     <string name="rate">Rate</string>
     <string name="cancel">Cancel</string>
+
+    <string name="invalidEmail">Invalid Email</string>
+    <string name="invalidUsername">Invalid Username</string>
+    <string name="invalidName">Invalid Name</string>
+    <string name="invalidMajor">Invalid Major</string>
+    <string name="invalidPassword">Your Password is too Short</string>
+    <string name="usernameAlreadyTaken">This username is already in use</string>
 </resources>
