@@ -20,7 +20,8 @@
         android:maxLines="1"
         android:singleLine="true"
         android:imeOptions="actionNext"
-                          android:layout_weight="0.15"/>
+                          android:layout_weight="0.15"
+        android:textColor="@color/black" />
 
     <EditText             android:id="@+id/eUsernameView"
         android:layout_width="match_parent"
@@ -30,7 +31,8 @@
         android:imeOptions="actionNext"
         android:singleLine="true"
         android:maxLines="1"
-                          android:layout_weight="0.15"/>
+                          android:layout_weight="0.15"
+        android:textColor="@color/black" />
 
     <EditText             android:id="@+id/eNameView"
         android:layout_width="match_parent"
@@ -40,7 +42,8 @@
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true"
-                          android:layout_weight="0.15"/>
+                          android:layout_weight="0.15"
+        android:textColor="@color/black" />
 
     <EditText             android:id="@+id/eMajorView"
         android:layout_width="match_parent"
@@ -50,7 +53,8 @@
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true"
-                          android:layout_weight="0.15"/>
+                          android:layout_weight="0.15"
+        android:textColor="@color/black" />
 
 
     <EditText             android:id="@+id/ePasswordView"
@@ -62,7 +66,8 @@
         android:imeOptions="actionNext"
         android:maxLines="1"
         android:singleLine="true"
-                          android:layout_weight="0.15"/>
+                          android:layout_weight="0.15"
+        android:textColor="@color/black" />
 
     <Button
         android:background="@color/black"
