@@ -68,7 +68,7 @@ public class UserStorage {
      */
     public void addUser(String email, String username, String name, String major, String password) {
         final User user = new User(email, username, name, major, password);
-        USERS.put(username.toUpperCase(), user);
+        USERS.put(username, user);
     }
 
     /**
