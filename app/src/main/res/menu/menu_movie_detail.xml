@@ -7,7 +7,7 @@
     <item
         android:id="@+id/rate_id"
         android:orderInCategory="2"
-        android:title="@string/ratemovie"
+        android:title="@string/rateMovie"
         app:showAsAction="always"/>
 
 

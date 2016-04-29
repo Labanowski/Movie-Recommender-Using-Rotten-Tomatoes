@@ -33,7 +33,7 @@
     <string name="recommend">Recommend</string>
     <string name="major">Major</string>
     <string name="ban">Ban</string>
-    <string name="ratemovie">Rate Movie</string>
+    <string name="rateMovie">Rate Movie</string>
     <string name="searchmovie">Search Movies</string>
     <string name="recommend_by_my_major">Recommend by My Major</string>
     <string name="new_releases">New Releases</string>
