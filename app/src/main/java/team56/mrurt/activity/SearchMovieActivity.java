@@ -104,6 +104,8 @@ public class SearchMovieActivity extends AppCompatActivity {
         String url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=yedukp76ffytfuy24zsqk7f5";
         final String query = movieSearchView.getQuery().toString().replace(" ", "+");
 
+        if(query.equals("")) return false;
+
         url += ("&q=" + query + "&page_limit=40");
         final JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
