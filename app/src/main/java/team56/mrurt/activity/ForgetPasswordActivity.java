@@ -54,13 +54,16 @@ public class ForgetPasswordActivity extends AppCompatActivity {
             user = DatabaseOperations.getHelper(c).getSingleUser(usernameView.getText().toString());
         } else if(!emailView.getText().toString().equals("") && usernameView.getText().toString().equals("")) {
             user = DatabaseOperations.getHelper(c).getSingleUserEmail(emailView.getText().toString());
+        } else if(!usernameView.getText().toString().equals("")) {
+            user = DatabaseOperations.getHelper(c).getSingleUser(usernameView.getText().toString());
+        } else {
+            return;
         }
         if (user.getEmail().equals("")) {
             final int duration = Toast.LENGTH_LONG;
             final Toast t = Toast.makeText(c, (getString(R.string.incorrectInfo)), duration);
             t.show();
-        }
-        else {
+        } else {
             String email = user.getEmail();
             String subject = "Password Recovery";
             String message = "Username: " + user.getUsername() + "\nPassword: " + user.getPassword();
