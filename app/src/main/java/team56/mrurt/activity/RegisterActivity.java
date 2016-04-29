@@ -110,11 +110,11 @@ public class RegisterActivity extends AppCompatActivity {
             final Toast t = Toast.makeText(context, (getString(R.string.invalidName)), duration);
             t.show();
             return;
-        } else if(getMajorString().length() < 2) {
+        } else if(getMajorString().length() < 3) {
             final Toast t = Toast.makeText(context, (getString(R.string.invalidMajor)), duration);
             t.show();
             return;
-        } else if(getPasswordString().length() < 6) {
+        } else if(getPasswordString().length() < 3) {
             final Toast t = Toast.makeText(context, (getString(R.string.invalidPassword)), duration);
             t.show();
             return;
