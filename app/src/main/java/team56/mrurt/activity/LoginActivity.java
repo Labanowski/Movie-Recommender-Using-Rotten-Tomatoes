@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
             } else if(UserStorage.getInstance().findUserByName(username).isBanned()){
                 final Context context = getApplicationContext();
                 final int duration = Toast.LENGTH_SHORT;
-                final Toast t = Toast.makeText(context, "You are banned!", duration);
+                final Toast t = Toast.makeText(context, (getString(R.string.isBanned, username)), duration);
                 t.show();
             } else {
                 final Intent intent = new Intent(this, HomepageActivity.class);
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             final Context context = getApplicationContext();
             final  int duration = Toast.LENGTH_SHORT;
-            final  Toast t = Toast.makeText(context, "Login failure!", duration);
+            final  Toast t = Toast.makeText(context, (getString(R.string.incorrectInfo)), duration);
             t.show();
         }
         currentLoggedInUser = username;

@@ -57,7 +57,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         }
         if (user.getEmail().equals("")) {
             final int duration = Toast.LENGTH_LONG;
-            final Toast t = Toast.makeText(c, "Your info is incorrect. Please try again", duration);
+            final Toast t = Toast.makeText(c, (getString(R.string.incorrectInfo)), duration);
             t.show();
         }
         else {
