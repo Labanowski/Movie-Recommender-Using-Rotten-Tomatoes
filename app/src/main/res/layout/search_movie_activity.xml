@@ -20,10 +20,8 @@
         android:text="@string/searchMovie"
         android:id="@+id/movieSearchButton"
         android:layout_below="@+id/movieSearchView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="116dp"
-        android:layout_marginStart="116dp" />
+        android:layout_toLeftOf="@+id/recentDVDSearch"
+        android:layout_toStartOf="@+id/recentDVDSearch" />
 
     <Button
         android:background="@color/black"
@@ -32,12 +30,10 @@
         android:layout_height="wrap_content"
         android:text="@string/new_releases"
         android:id="@+id/newReleaseSearch"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/movieSearchButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="43dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="37dp" />
+        android:layout_toLeftOf="@+id/movieSearchButton"
+        android:layout_toStartOf="@+id/movieSearchButton" />
 
     <Button
         android:background="@color/black"
@@ -46,11 +42,11 @@
         android:layout_height="wrap_content"
         android:text="@string/recent_dvds"
         android:id="@+id/recentDVDSearch"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp"
         android:layout_alignTop="@+id/newReleaseSearch"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="53dp"
-        android:layout_marginEnd="53dp" />
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

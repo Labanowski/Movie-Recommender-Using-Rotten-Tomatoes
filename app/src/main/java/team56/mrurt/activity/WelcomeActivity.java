@@ -18,7 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_activity);
         //Adds the admin stuff, only once! Then updates the userStorage for local storage
-        DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), "admin@admin.com", "admin", "admin", "administrator", "password1", 0, 1);
+        //DatabaseOperations.getHelper(c).putUserInformation(DatabaseOperations.getHelper(c), "admin@admin.com", "admin", "admin", "administrator", "password1", 0, 1);
         UserStorage.getInstance().updateUserDatabase(DatabaseOperations.getHelper(this).getUsers());
     }
 
